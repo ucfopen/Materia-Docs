@@ -4,12 +4,17 @@
 		<title>{{ page.title }}</title>
 
 		<meta charset="utf-8" />
-		<meta content="ucf, University of Central Florida, Learning Systems and Technology, Materia, Educational Widget Platform, Edutainment, Open Source Education, Steam for education, games, apps, widgets, instructional" name="keywords">
-		<meta content="Materia is a  powerful new way to deliver interactive games, tools, &amp; study aids." name="description">
-		<meta content="Materia - Open Source Learning Platform" property="og:site_name">
-		<meta property="og:image" content="{{ site.baseurl }}/assets/img/facebook-thumbnail.png">
-		<meta name="author" content="{{ site.author.name }}">
+		<meta name="description" content="{{ content | strip_html | strip_newlines | truncate: 300 | escape }}" />
+		<meta name="keywords" content="ucf, University of Central Florida, Learning Systems and Technology, Materia, Educational Widget Platform, Edutainment, Open Source Education, Steam for education, games, apps, widgets, instructional">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta property="og:title" content="{{ page.title }} - {{ site.title }}" />
+		<meta property="og:site_name" content="Materia Documentation - An Open Source Learning Platform">
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="{{site.url}}{{site.baseurl}}{{page.url}}" />
+		<meta property="og:description" content="{{ content | strip_html | strip_newlines | truncate: 300 | escape }}" />
+
+		<meta name="twitter:card" content="summary" />
 
 		<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
 
@@ -22,7 +27,7 @@
 	</head>
 	<body>
 		<div class="page-wrapper">
-				{% include header.html %}
+			{% include header.html %}
 			{{ content }}
 		</div>
 
