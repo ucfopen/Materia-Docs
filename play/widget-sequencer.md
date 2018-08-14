@@ -4,13 +4,13 @@ title: Sequencer Guide
 tagline: Details about using the Sequencer widget
 class: students
 ---
-{% include JB/setup %}
+
 
 # Overview #
 
 Students must order a random set of words or phrases in the correct order.
 
-![sequencer screen]({{BASE_PATH}}/assets/img/widget_guides_sequencer.jpg "sequencer screen")
+![sequencer screen]({{ site.baseurl }}/assets/img/widget_guides_sequencer.jpg "sequencer screen")
 
 0. Title of the widget
 0. Sequence list area
@@ -21,12 +21,12 @@ Students must order a random set of words or phrases in the correct order.
 0. Submit button
 
 <figure>
-	<img src="{{BASE_PATH}}/assets/img/widget_guides_sequencer_incorrect.jpg" alt="" class="screenshot first" />
+	<img src="{{ site.baseurl }}/assets/img/widget_guides_sequencer_incorrect.jpg" alt="" class="screenshot first" />
 	<figcaption>Example of a failing sequence submission</figcaption>
 </figure>
 
 <figure>
-	<img src="{{BASE_PATH}}/assets/img/widget_guides_sequencer_correct.jpg" alt="" class="screenshot first" />
+	<img src="{{ site.baseurl }}/assets/img/widget_guides_sequencer_correct.jpg" alt="" class="screenshot first" />
 	<figcaption>Example of a passing sequence submission</figcaption>
 </figure>
 

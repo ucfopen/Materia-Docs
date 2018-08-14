@@ -4,7 +4,7 @@ title: Question Structures
 tagline: Standardized question structures for use in Materia
 class: developers
 ---
-{% include JB/setup %}
+
 
 # About Materia's Question Sets #
 

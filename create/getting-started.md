@@ -4,7 +4,7 @@ title: Author's Guide
 tagline: Instructor's guide to using Materia in your course
 class: instructors
 ---
-{% include JB/setup %}
+
 
 # Creating a New Widget #
 The first step to using Materia in your course is to create a new widget with your own custom content. Each widget has a creator interface which allows you to easily customize it to your needs. Once created, the widget can be distributed and shared with students and other instructors.
@@ -13,7 +13,7 @@ The first step to using Materia in your course is to create a new widget with yo
 Begin by logging in to Materia using the appropriate credentials, and selecting the *Widget Catalog* link at the top of the page.
 
 <figure>
-	<img src="{{BASE_PATH}}/assets/img/click_profile_link.png">
+	<img src="{{ site.baseurl }}/assets/img/click_profile_link.png" alt="Screenshot showing the materia menu where Widget Catalog is shown">
 	<figcaption>
 		Select the <strong>Widget Catalog</strong> link to view the widgets available for use.
 	</figcaption>
@@ -22,11 +22,11 @@ Begin by logging in to Materia using the appropriate credentials, and selecting 
 The catalog page provides a list of available widgets, with search options to filter them on the left. Mousing over a widget provides an overview of their features and supported data.
 
 <figure>
-	<a href="{{BASE_PATH}}/assets/img/widget_catalog.png" class="fancybox">
-		<img src="{{BASE_PATH}}/assets/img/widget_catalog_thumb.png">
+	<a href="{{ site.baseurl }}/assets/img/widget_catalog.png" class="fancybox">
+		<img src="{{ site.baseurl }}/assets/img/widget_catalog_thumb.png" alt="screenshot showing the materia widget catalog">
 	</a>
 	<figcaption>
-		<a href="{{BASE_PATH}}/assets/img/widget_catalog.png" class="fancybox">
+		<a href="{{ site.baseurl }}/assets/img/widget_catalog.png" class="fancybox">
 			<span class="icon-zoom-in"></span>
 		</a>From here, you can select a widget to create.
 	</figcaption>
@@ -35,11 +35,11 @@ The catalog page provides a list of available widgets, with search options to fi
 Selecting a widget brings you to the widget detail screen with screen shots of the widget in action, and links to play a demo or to build your own.
 
 <figure>
-	<a href="{{BASE_PATH}}/assets/img/widget_detail.png" class="fancybox">
-		<img src="{{BASE_PATH}}/assets/img/widget_detail_thumb.png">
+	<a href="{{ site.baseurl }}/assets/img/widget_detail.png" class="fancybox">
+		<img src="{{ site.baseurl }}/assets/img/widget_detail_thumb.png" alt="screenshot of materia showing the widget details screen">
 	</a>
 	<figcaption>
-		<a href="{{BASE_PATH}}/assets/img/widget_detail.png" class="fancybox">
+		<a href="{{ site.baseurl }}/assets/img/widget_detail.png" class="fancybox">
 			<span class="icon-zoom-in"></span>
 		</a>The detail page provides you with an overview of the selected widget.
 	</figcaption>
@@ -53,7 +53,7 @@ Each widget has a unique creator designed specifically to help you customize the
 Below is an example of the *Hangman* widget creator.
 
 <figure>
-	<img src="{{BASE_PATH}}/assets/img/creator_example.png" class="screenshot" />
+	<img src="{{ site.baseurl }}/assets/img/creator_example.png" class="screenshot" alt="Screenshot showing the hangman creator"/>
 </figure>
 
 0. Question importing, Publish, Preview, and Save Draft features. *Note: these buttons are standard across all creators.*
@@ -70,7 +70,7 @@ Note that each creator typically has a text box in which to enter a new question
 Individual questions you created for previous widgets may be imported into the creator using this feature. When selected, a pop-up dialog will open listing other questions you've created. Simply select any number of these and click the **Import Selected** button at the bottom.
 
 <figure>
-	<img src="{{BASE_PATH}}/assets/img/import_questions.png" />
+	<img src="{{ site.baseurl }}/assets/img/import_questions.png" alt="screenshot showing the question importer"/>
 	<figcaption>
 		The <em>Import Questions</em> pop-up window allows you to use questions from previous widgets you've created.
 	</figcaption>
@@ -88,7 +88,7 @@ All creators share the same options once your widget is ready to go.
 
 
 <figure>
-	<img src="{{BASE_PATH}}/assets/img/publish-preview-save-draft-buttons.jpg" />
+	<img src="{{ site.baseurl }}/assets/img/publish-preview-save-draft-buttons.jpg" alt="Screenshot showing the publish, preview, and save buttons" />
 	<figcaption>
 		The Publish, Preview, and Save Draft buttons help you build and edit your widgets.
 	</figcaption>

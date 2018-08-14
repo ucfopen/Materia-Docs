@@ -4,7 +4,7 @@ title: Server Requirements
 tagline: What's needed to get Materia running
 class: admin
 ---
-{% include JB/setup %}
+
 
 # Production Server #
 

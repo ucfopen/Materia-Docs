@@ -4,13 +4,13 @@ title: Word Search Guide
 tagline: Details about using the Word Search widget
 class: students
 ---
-{% include JB/setup %}
+
 
 # Overview #
 
 Students must search a word puzzle for a predetermined set of words
 
-![word search screen]({{BASE_PATH}}/assets/img/widget_guides_wordsearch.jpg "word search screen")
+![word search screen]({{ site.baseurl }}/assets/img/widget_guides_wordsearch.jpg "word search screen")
 
 0. Title of the widget
 0. Word list

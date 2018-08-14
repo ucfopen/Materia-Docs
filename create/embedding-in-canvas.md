@@ -4,7 +4,7 @@ title: Embedding Widgets in Canvas
 tagline: Using Materia as an Instructor
 class: instructors
 ---
-{% include JB/setup %}
+
 
 # Overview #
 Materia integrates into any LMS that supports LTI assignments. This page provides a step-by-step guide on using a Materia widget in your [Instructure Canvas](http://www.instructure.com/) course.
@@ -13,11 +13,11 @@ Materia integrates into any LMS that supports LTI assignments. This page provide
 This method will put your Materia widget directly into your Canvas course as an assignment. Students will click on the assignment, complete the widget, and scores will pass to your course automatically without students needing to log into Materia.
 
 <figure>
-	<a href="{{BASE_PATH}}/assets/img/lti-assignment-1.png" class="fancybox">
-		<img src="{{BASE_PATH}}/assets/img/lti-assignment-1-thumb.png">
+	<a href="{{ site.baseurl }}/assets/img/lti-assignment-1.png" class="fancybox">
+		<img src="{{ site.baseurl }}/assets/img/lti-assignment-1-thumb.png" alt="Screenshot showing the Canvas LTI assignment steps 1-4">
 	</a>
 	<figcaption>
-		<a href="{{BASE_PATH}}/assets/img/lti-assignment-1.png" class="fancybox">
+		<a href="{{ site.baseurl }}/assets/img/lti-assignment-1.png" class="fancybox">
 			<span class="icon-zoom-in"></span>
 		</a> Creating a new External Tool assignment
 	</figcaption>
@@ -33,8 +33,8 @@ This method will put your Materia widget directly into your Canvas course as an 
 </aside>
 
 <figure>
-	<a href="{{BASE_PATH}}/assets/img/lti-assignment-2.png" class="fancybox">
-		<img src="{{BASE_PATH}}/assets/img/lti-assignment-2-thumb.png">
+	<a href="{{ site.baseurl }}/assets/img/lti-assignment-2.png" class="fancybox">
+		<img src="{{ site.baseurl }}/assets/img/lti-assignment-2-thumb.png" alt="Screenshot showing Canvas LTI assignment step 5">
 	</a>
 	<figcaption>The External Tool shown on the Assignments page.</figcaption>
 </figure>
@@ -44,8 +44,8 @@ This method will put your Materia widget directly into your Canvas course as an 
 </ol>
 
 <figure>
-	<a href="{{BASE_PATH}}/assets/img/lti-assignment-3.png" class="fancybox">
-		<img src="{{BASE_PATH}}/assets/img/lti-assignment-3-thumb.png">
+	<a href="{{ site.baseurl }}/assets/img/lti-assignment-3.png" class="fancybox">
+		<img src="{{ site.baseurl }}/assets/img/lti-assignment-3-thumb.png" alt="Screenshot showing Canvas LTI assignment step 6">
 	</a>
 	<figcaption>The Edit Assignment button will allow you to make the assignment a Materia widget.</figcaption>
 </figure>
@@ -55,11 +55,11 @@ This method will put your Materia widget directly into your Canvas course as an 
 </ol>
 
 <figure>
-	<a href="{{BASE_PATH}}/assets/img/lti-assignment-4.png" class="fancybox">
-		<img src="{{BASE_PATH}}/assets/img/lti-assignment-4-thumb.png">
+	<a href="{{ site.baseurl }}/assets/img/lti-assignment-4.png" class="fancybox">
+		<img src="{{ site.baseurl }}/assets/img/lti-assignment-4-thumb.png" alt="Screenshot showing Canvas LTI assignment step 7">
 	</a>
 	<figcaption>
-		<a href="{{BASE_PATH}}/assets/img/lti-assignment-4.png" class="fancybox"><span class="icon-zoom-in"></span></a> Setting up your assignment to be a Materia widget
+		<a href="{{ site.baseurl }}/assets/img/lti-assignment-4.png" class="fancybox"><span class="icon-zoom-in"></span></a> Setting up your assignment to be a Materia widget
 	</figcaption>
 </figure>
 
@@ -70,12 +70,12 @@ This method will put your Materia widget directly into your Canvas course as an 
 </ol>
 
 <aside>
-	If you don't see Materia in this list, then it hasn't been installed into your Canvas instance. If you're managing your own Materia instance then read <a href="{{BASE_PATH}}/develop/system-integrations.html">Systems Integrations</a> to set this up. Otherwise, you'll need to help from your Materia system administrators.
+	If you don't see Materia in this list, then it hasn't been installed into your Canvas instance. If you're managing your own Materia instance then read <a href="{{ site.baseurl }}/develop/system-integrations.html">Systems Integrations</a> to set this up. Otherwise, you'll need to help from your Materia system administrators.
 </aside>
 
 <figure>
-	<a href="{{BASE_PATH}}/assets/img/lti-assignment-5.png" class="fancybox">
-		<img src="{{BASE_PATH}}/assets/img/lti-assignment-5-thumb.png">
+	<a href="{{ site.baseurl }}/assets/img/lti-assignment-5.png" class="fancybox">
+		<img src="{{ site.baseurl }}/assets/img/lti-assignment-5-thumb.png" alt="Screenshot showing Canvas LTI assignment step 10">
 	</a>
 	<figcaption></figcaption>
 </figure>
@@ -85,11 +85,11 @@ This method will put your Materia widget directly into your Canvas course as an 
 </ol>
 
 <figure>
-	<a href="{{BASE_PATH}}/assets/img/lti-assignment-6.png" class="fancybox">
-		<img src="{{BASE_PATH}}/assets/img/lti-assignment-6-thumb.png">
+	<a href="{{ site.baseurl }}/assets/img/lti-assignment-6.png" class="fancybox">
+		<img src="{{ site.baseurl }}/assets/img/lti-assignment-6-thumb.png" alt="Screenshot showing Canvas LTI assignment step 11">
 	</a>
 	<figcaption>
-		<a href="{{BASE_PATH}}/assets/img/lti-assignment-6.png" class="fancybox"><span class="icon-zoom-in"></span></a> Selecting which widget to use
+		<a href="{{ site.baseurl }}/assets/img/lti-assignment-6.png" class="fancybox"><span class="icon-zoom-in"></span></a> Selecting which widget to use
 	</figcaption>
 </figure>
 
@@ -102,11 +102,11 @@ This method will put your Materia widget directly into your Canvas course as an 
 </aside>
 
 <figure>
-	<a href="{{BASE_PATH}}/assets/img/lti-assignment-7.png" class="fancybox">
-		<img src="{{BASE_PATH}}/assets/img/lti-assignment-7-thumb.png">
+	<a href="{{ site.baseurl }}/assets/img/lti-assignment-7.png" class="fancybox">
+		<img src="{{ site.baseurl }}/assets/img/lti-assignment-7-thumb.png" alt="Screenshot showing Canvas LTI assignment selected screen">
 	</a>
 	<figcaption>
-		<a href="{{BASE_PATH}}/assets/img/lti-assignment-7.png" class="fancybox"><span class="icon-zoom-in"></span></a> The widget selected screen
+		<a href="{{ site.baseurl }}/assets/img/lti-assignment-7.png" class="fancybox"><span class="icon-zoom-in"></span></a> The widget selected screen
 	</figcaption>
 </figure>
 
@@ -117,11 +117,11 @@ Once you’ve selected your widget you’re done with creating your assignment. 
 There is another way to use Materia in Canvas if don't want to pass scores back as an assignment. This is perfect for situations where you just want to add a study tool into the content of your course.
 
 <figure>
-	<a href="{{BASE_PATH}}/assets/img/lti-module-1.png" class="fancybox">
-		<img src="{{BASE_PATH}}/assets/img/lti-module-1-thumb.png">
+	<a href="{{ site.baseurl }}/assets/img/lti-module-1.png" class="fancybox">
+		<img src="{{ site.baseurl }}/assets/img/lti-module-1-thumb.png" alt="Screenshot showing Canvas LTI module item">
 	</a>
 	<figcaption>
-		<a href="{{BASE_PATH}}/assets/img/lti-module-1.png" class="fancybox"><span class="icon-zoom-in"></span></a> Creating a new Materia widget module
+		<a href="{{ site.baseurl }}/assets/img/lti-module-1.png" class="fancybox"><span class="icon-zoom-in"></span></a> Creating a new Materia widget module
 	</figcaption>
 </figure>
 
@@ -131,12 +131,12 @@ There is another way to use Materia in Canvas if don't want to pass scores back 
 0. Click **Add Item**
 
 <aside>
-	If you don't see Materia in this list, then it hasn't been installed into your Canvas instance. If you're managing your own Materia instance then read <a href="{{BASE_PATH}}/develop/system-integrations.html">Systems Integrations</a> to set this up. Otherwise, you'll need to help from your Materia system administrators.
+	If you don't see Materia in this list, then it hasn't been installed into your Canvas instance. If you're managing your own Materia instance then read <a href="{{ site.baseurl }}/develop/system-integrations.html">Systems Integrations</a> to set this up. Otherwise, you'll need to help from your Materia system administrators.
 </aside>
 
 <figure>
-	<a href="{{BASE_PATH}}/assets/img/lti-module-2.png" class="fancybox">
-		<img src="{{BASE_PATH}}/assets/img/lti-module-2-thumb.png">
+	<a href="{{ site.baseurl }}/assets/img/lti-module-2.png" class="fancybox">
+		<img src="{{ site.baseurl }}/assets/img/lti-module-2-thumb.png" alt="Screenshot showing Canvas LTI module item in step 5">
 	</a>
 </figure>
 

@@ -1,3 +1,4 @@
 # compiled html files
 _site
+_test
 .DS_Store

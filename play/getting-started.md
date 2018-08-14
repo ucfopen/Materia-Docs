@@ -4,7 +4,7 @@ title: Player's Guide
 tagline: A quick start guide for students
 class: students
 ---
-{% include JB/setup %}
+
 
 # The Big Picture #
 

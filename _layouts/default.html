@@ -1,8 +1,5 @@
-{% include JB/setup %}
 <!DOCTYPE html>
-<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
-<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+<html>
 	<head>
 		<title>{{ page.title }}</title>
 
@@ -10,24 +7,22 @@
 		<meta content="ucf, University of Central Florida, Learning Systems and Technology, Materia, Educational Widget Platform, Edutainment, Open Source Education, Steam for education, games, apps, widgets, instructional" name="keywords">
 		<meta content="Materia is a  powerful new way to deliver interactive games, tools, &amp; study aids." name="description">
 		<meta content="Materia - Open Source Learning Platform" property="og:site_name">
-		<meta property="og:image" content="{{BASE_PATH}}/assets/img/facebook-thumbnail.png">
+		<meta property="og:image" content="{{ site.baseurl }}/assets/img/facebook-thumbnail.png">
 		<meta name="author" content="{{ site.author.name }}">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Kameron:700&text=0123456789%25" type="text/css" data-src="fonts" />
-		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700,700italic,900&amp;v2" type="text/css" data-src="fonts" />
-		<link href="{{BASE_PATH}}/assets/css/bootstrap.css" rel="stylesheet">
-		<link href="{{BASE_PATH}}/assets/css/bootstrap-responsive.css" rel="stylesheet">
-		<link href="{{BASE_PATH}}/assets/css/font-awesome.css" rel="stylesheet">
-		<link href="{{BASE_PATH}}/assets/css/site.css" rel="stylesheet">
-		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-		<!--[if lt IE 9]>
-		  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
+		<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
+
+		<link href="//fonts.googleapis.com/css?family=Kameron:700&text=0123456789%25" rel="stylesheet" type="text/css" data-src="fonts" />
+		<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,700italic,900&amp;v2" rel="stylesheet" type="text/css" data-src="fonts" />
+		<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap-responsive.min.css" rel="stylesheet" />
+		<link href="{{ site.baseurl }}/assets/css/font-awesome.css" rel="stylesheet">
+		<link href="{{ site.baseurl }}/assets/css/site.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="page-wrapper">
-			{% include header.html %}
+				{% include header.html %}
 			{{ content }}
 		</div>
 
@@ -51,7 +46,7 @@
 					</div>
 				</div>
 				<div class="row-fluid legal">
-					<img src="{{BASE_PATH}}/assets/img/ucf-logo.png" />
+					<img src="{{ site.baseurl }}/assets/img/ucf-logo.png" alt="UCF Logo" />
 					<span class="trademark">
 						Materia is a registered trademark of the University of Central Florida.
 					</span>
@@ -60,7 +55,7 @@
 		</footer>
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-		<script src="{{BASE_PATH}}/assets/js/bootstrap.min.js"></script>
-		{% include JB/analytics %}
+		<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/bootstrap.min.js"></script>
+		{% include google_analytics.html %}
 	</body>
 </html>

@@ -1,5 +1,23 @@
-These pages are built using jekyll https://jekyllrb.com/docs/usage/
+# Materia Documents
 
+## Requirements
 
-install jekyll, run `jekyll server`, load up `http://localhost:4000`
+- ruby
+- bundler
+
+## Installation
+
+- Run `bundle install`
+
+## Edit and live reloading the docs in the browser
+
+- Run `bundle exec rake dev`
+
+## Running the HTML Proofer
+
+- Run `bundle exec rake test`
+
+## Building the docs
+
+- Run `bundle exec rake build`
 

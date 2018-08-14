@@ -4,13 +4,13 @@ title: Labeling Guide
 tagline: Details about using the Labeling widget
 class: students
 ---
-{% include JB/setup %}
+
 
 # Overview #
 
 Labeling is a quiz tool which requires students to correctly identify certain parts of an image by placing labels on their matches within the image.
 
-![labeling screen]({{BASE_PATH}}/assets/img/widget_guides_labeling.jpg "labeling screen")
+![labeling screen]({{ site.baseurl }}/assets/img/widget_guides_labeling.jpg "labeling screen")
 
 ## Overview ##
 

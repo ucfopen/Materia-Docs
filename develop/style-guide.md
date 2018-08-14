@@ -4,7 +4,7 @@ title: Code Style Guide
 tagline: Formatting guide for contributing code
 class: developers
 ---
-{% include JB/setup %}
+
 
 # Code style guide
 

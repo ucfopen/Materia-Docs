@@ -4,13 +4,13 @@ title: Last Chance Cadet Guide
 tagline: Details about using the Last Chance Cadet widget
 class: students
 ---
-{% include JB/setup %}
+
 
 # Overview #
 
 Students must match the correct set of terms. The goal here is to match a ship to an astronaut.
 
-![last chance cadet screen]({{BASE_PATH}}/assets/img/widget_guides_lastchancecadet.jpg "last chance cadet screen")
+![last chance cadet screen]({{ site.baseurl }}/assets/img/widget_guides_lastchancecadet.jpg "last chance cadet screen")
 
 0. Title of the widget
 0. Help control

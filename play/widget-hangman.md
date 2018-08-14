@@ -4,13 +4,13 @@ title: Hangman Guide
 tagline: Details about using the Hangman widget
 class: students
 ---
-{% include JB/setup %}
+
 
 # Overview #
 
 Students are provided with a clue and must guess the word or phrase within a certain amount of letters.
 
-![hangman screen]({{BASE_PATH}}/assets/img/widget_guides_hangman.jpg "hangman screen")
+![hangman screen]({{ site.baseurl }}/assets/img/widget_guides_hangman.jpg "hangman screen")
 
 0. Title of the widget
 0. Current word/phrase

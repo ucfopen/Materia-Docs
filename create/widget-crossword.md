@@ -4,13 +4,13 @@ title: Crossword Guide
 tagline: Details about using the Crossword widget
 class: instructors
 ---
-{% include JB/setup %}
+
 
 ## Overview ##
 
 Crossword is a quiz tool that uses words and clues to randomly generate a crossword puzzle.
 
-![crossword creator screen]({{BASE_PATH}}/assets/img/create_widget_crossword.png "crossword creator screen")
+![crossword creator screen]({{ site.baseurl }}/assets/img/create_widget_crossword.png "crossword creator screen")
 
 0. Title of the widget
 0. Word List
@@ -24,7 +24,7 @@ To create a crossword puzzle, the widget needs a list of words, clues for those 
 
 ### Preview and Options ###
 
-![puzzle preview window]({{BASE_PATH}}/assets/img/crossword_detail.png "puzzle preview window")
+![puzzle preview window]({{ site.baseurl }}/assets/img/crossword_detail.png "puzzle preview window")
 
 #### Generate New Puzzle ####
 

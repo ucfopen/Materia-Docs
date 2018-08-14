@@ -4,7 +4,7 @@ title: Finding Assignments
 tagline: How to locate widgets assigned to you.
 class: students
 ---
-{% include JB/setup %}
+
 
 # Where Do I Find My Assignments? #
 
@@ -15,4 +15,4 @@ Students cannot find widgets assigned to them from the Materia site. Instead, wi
 ## Play History ##
 
 Your entire play history is available in on your profile page. It lists all widgets for which you have earned a score. Read more in the
-[Viewing Scores]({{BASE_PATH}}/play/viewing-scores.html) section.
+[Viewing Scores]({{ site.baseurl }}/play/viewing-scores.html) section.

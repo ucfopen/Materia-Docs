@@ -4,13 +4,13 @@ title: Flash Cards Guide
 tagline: Details about creating a Flash Cards widget
 class: instructors
 ---
-{% include JB/setup %}
+
 
 ## Overview ##
 
 Flash Cards are study tools in which a virtual tutor shows a standard deck of flash cards.
 
-![flash cards creator screen]({{BASE_PATH}}/assets/img/create_widget_flash_cards.png "flash cards creator screen")
+![flash cards creator screen]({{ site.baseurl }}/assets/img/create_widget_flash_cards.png "flash cards creator screen")
 
 0. Title of the widget
 0. Add a new Flash Card

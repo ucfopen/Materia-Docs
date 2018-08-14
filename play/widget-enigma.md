@@ -4,7 +4,7 @@ title: Enigma Guide
 tagline: Details about using the Enigma widget
 class: students
 ---
-{% include JB/setup %}
+
 
 # Overview #
 
@@ -12,7 +12,7 @@ Enigma is a Jeopardy-like study and quiz tool. Question are separated into categ
 
 ## Main Board ##
 
-![enigma screen]({{BASE_PATH}}/assets/img/widget_guides_enigma.png "enigma screen")
+![enigma screen]({{ site.baseurl }}/assets/img/widget_guides_enigma.png "enigma screen")
 
 0. Title of the widget
 0. Current earned score percentage
@@ -24,7 +24,7 @@ Enigma is a Jeopardy-like study and quiz tool. Question are separated into categ
 
 ## Question Screen ##
 
-![enigma question screen]({{BASE_PATH}}/assets/img/widget_guides_enigma_question_screen.png "enigma question screen")
+![enigma question screen]({{ site.baseurl }}/assets/img/widget_guides_enigma_question_screen.png "enigma question screen")
 
 0. Question number and category name
 0. Question text

@@ -4,7 +4,7 @@ title: Deploying Materia
 tagline: For development &amp; production
 class: admin
 ---
-{% include JB/setup %}
+
 
 <aside>
 	These instructions refer to and link to internal UCF resources.
@@ -18,7 +18,7 @@ The container, install instructions and software requirements can be found [in t
 
 # Production - Server Install
 
-Our Docker container is not ready for production use. For now you'll want to setup your server with the requirements defined [here](/admin/server-requirements.html).
+Our Docker container is not ready for production use. For now you'll want to setup your server with the requirements defined [here]({{ site.baseurl }}/admin/server-requirements.html).
 
 # Domain Setup #
 

@@ -4,7 +4,6 @@ title: Administrative Commands
 tagline: Making use of Fuel tasks to automate Materia administration
 class: admin
 ---
-{% include JB/setup %}
 
 # Using Materia's Fuel tasks #
 

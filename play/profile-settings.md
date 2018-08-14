@@ -4,18 +4,18 @@ title: Profile Settings
 tagline: Manage your notification and avatar settings.
 class: students
 ---
-{% include JB/setup %}
+
 
 # Settings Page #
 
 Settings can be accessed from the Materia profile page. First, open the profile page by first clicking on your name at the top left of the page, then click on the *settings* link in the left side under your large avatar.
 
 <figure>
-	<a href="{{BASE_PATH}}/assets/img/settings_page.png" class="fancybox">
-		<img src="{{BASE_PATH}}/assets/img/settings_page_thumb.png">
+	<a href="{{ site.baseurl }}/assets/img/settings_page.png" class="fancybox">
+		<img src="{{ site.baseurl }}/assets/img/settings_page_thumb.png">
 	</a>
 	<figcaption>
-		<a href="{{BASE_PATH}}/assets/img/settings_page.png" class="fancybox">
+		<a href="{{ site.baseurl }}/assets/img/settings_page.png" class="fancybox">
 			<span class="icon-zoom-in"></span>
 		</a>
 		Example settings page

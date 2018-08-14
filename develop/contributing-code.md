@@ -4,7 +4,7 @@ title: Contributing Code
 tagline: How to contribute to Materia
 class: developers
 ---
-{% include JB/setup %}
+
 
 # Mindset #
 
@@ -15,7 +15,7 @@ We open sourced Materia so that the world can use this great tool we've invested
 Materia follows a our [Style Guide](style-guide.html) religiously. Follow it.
 
 # Stay Connected #
-Check out [Platform Community]({{BASE_PATH}}/develop/platform-community.html) for more information on getting in touch and getting help from other developers.
+Check out [Platform Community]({{ site.baseurl }}/develop/platform-community.html) for more information on getting in touch and getting help from other developers.
 
 # Git Work-flow #
 

@@ -4,7 +4,7 @@ title: Platform Community
 tagline: for your copy of Materia
 class: developers
 ---
-{% include JB/setup %}
+
 
 # Discussion #
 

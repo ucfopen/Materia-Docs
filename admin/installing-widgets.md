@@ -4,7 +4,7 @@ title: Installing Widgets
 tagline: for your copy of Materia
 class: admin
 ---
-{% include JB/setup %}
+
 
 # Installing the widget packages #
 
@@ -26,4 +26,4 @@ If you'd like you can install one or more widgets that you specify by running
 
 # Installing widgets from source #
 
-Please read the [Developer's Guide]({{BASE_PATH}}/develop/widget-developer-guide.html) for more information on installing widgets from source.
+Please read the [Developer's Guide]({{ site.baseurl }}/develop/widget-developer-guide.html) for more information on installing widgets from source.

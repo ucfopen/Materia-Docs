@@ -4,7 +4,7 @@ title: LTI Client Side Extensions
 tagline: Embedding Materia in your Javascript App
 class: developers
 ---
-{% include JB/setup %}
+
 
 # Materia Javascript Events #
 

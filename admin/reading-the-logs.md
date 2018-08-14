@@ -4,7 +4,7 @@ title: Materia Log Files
 tagline: Understanding the Materia Logs
 class: admin
 ---
-{% include JB/setup %}
+
 
 # Reading Materia's Log Files #
 

@@ -4,7 +4,7 @@ title: Timeline Guide
 tagline: Details about using the Timeline widget
 class: students
 ---
-{% include JB/setup %}
+
 
 # Overview #
 
@@ -12,7 +12,7 @@ Allows students to visually arrange items in a chronological manner.
 
 ## Timeline View ##
 
-![timeline main screen]({{BASE_PATH}}/assets/img/widget_guides_timeline.png "timeline main screen")
+![timeline main screen]({{ site.baseurl }}/assets/img/widget_guides_timeline.png "timeline main screen")
 
 0. Title of the widget
 0. View Control
@@ -37,7 +37,7 @@ The timeline may also be distinguished by eras. The example above shows viewing 
 
 ## List View ##
 
-![timeline list screen]({{BASE_PATH}}/assets/img/widget_guides_timeline2.png "timeline list screen")
+![timeline list screen]({{ site.baseurl }}/assets/img/widget_guides_timeline2.png "timeline list screen")
 
 0. Title of event
 0. Associated categories and eras of the event

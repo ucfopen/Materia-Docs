@@ -4,13 +4,13 @@ title: Enigma Guide
 tagline: Details about using the Enigma widget
 class: students
 ---
-{% include JB/setup %}
+
 
 ## Overview ##
 
 Enigma is a Jeopardy-like study or quiz tool. Questions are separated into categories.
 
-![enigma creator screen]({{BASE_PATH}}/assets/img/create_widget_enigma.png "enigma creator screen")
+![enigma creator screen]({{ site.baseurl }}/assets/img/create_widget_enigma.png "enigma creator screen")
 
 0. Title of the widget
 0. Randomize Answer Order
@@ -29,7 +29,7 @@ Categories can be used to group questions according to similarities in their con
 
 ### Questions ###
 
-![enigma question screen]({{BASE_PATH}}/assets/img/create_widget_enigma_question.png "enigma question screen")
+![enigma question screen]({{ site.baseurl }}/assets/img/create_widget_enigma_question.png "enigma question screen")
 
 0. Question Text
 0. Answer Text

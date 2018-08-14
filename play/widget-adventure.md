@@ -4,13 +4,13 @@ title: Adventure Guide
 tagline: Details about using the Choose Your Own Adventure widget
 class: students
 ---
-{% include JB/setup %}
+
 
 # Overview #
 
 Choose Your Own Adventure is a powerful widget that allows for the creation of branching decision trees. Students are scored based on where they end up.
 
-![adventure screen]({{BASE_PATH}}/assets/img/widget_guides_adventure.png "adventure screen")
+![adventure screen]({{ site.baseurl }}/assets/img/widget_guides_adventure.png "adventure screen")
 
 0. Narrative text or question
 0. Response selection
@@ -23,7 +23,7 @@ Each destination, or point on the decision tree, is represented by a screen such
 
 The hotspot screen is the one significant exception to the Adventure widget's layout. Hover your cursor over the image to identify and select a hotspot, based on the (optional) instructions provided. The proceeding destination may depend upon the hotspot you select.
 
-![adventure screen hotspot]({{BASE_PATH}}/assets/img/widget_guides_adventure2.png "adventure screen hotspot")
+![adventure screen hotspot]({{ site.baseurl }}/assets/img/widget_guides_adventure2.png "adventure screen hotspot")
 
 0. Optional instructions
 0. Hotspot image

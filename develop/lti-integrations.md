@@ -4,7 +4,7 @@ title: LTI Integration Overview
 tagline: How Materia works as an LTI tool.
 class: developers
 ---
-{% include JB/setup %}
+
 
 # LTI Integrations #
 
@@ -32,7 +32,7 @@ A students' role is so streamlined that they will probably not realize they are 
 
 ## Selecting a Widget as an Instructor ##
 
-![Selecting a widget from within another system via a LTI integration]({{BASE_PATH}}/assets/img/lti-select-thumb.png)
+![Selecting a widget from within another system via a LTI integration]({{ site.baseurl }}/assets/img/lti-select-thumb.png)
 
 The above screen will be shown inside the LMS (usually within an iframe) when the instructor views the assignment.  The instructor then needs to choose a widget to link this LMS resource. This linking process is how Materia knows which widget to display to students, and must be completed every time Materia is used as an LTI tool.
 

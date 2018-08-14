@@ -4,12 +4,12 @@ title: Matching Guide
 tagline: Details about using the Matching widget
 class: students
 ---
-{% include JB/setup %}
+
 
 # Overview #
 Students must match one set of words or phrases to a corresponding word, phrase, or definition.
 
-![matching screen]({{BASE_PATH}}/assets/img/widget_guides_matching.jpg "matching screen")
+![matching screen]({{ site.baseurl }}/assets/img/widget_guides_matching.jpg "matching screen")
 
 0. Title of the widget
 0. Page control

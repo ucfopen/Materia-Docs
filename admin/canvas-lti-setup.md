@@ -4,7 +4,6 @@ title: Canvas LTI Setup
 tagline: Getting Materia to work seamlessly with Canvas
 class: admin
 ---
-{% include JB/setup %}
 
 # Installing Materia into Instructure's Canvas #
 

@@ -4,7 +4,7 @@ title: Platform Developer Guide
 tagline: Customizing and Extending the Materia Platform
 class: developers
 ---
-{% include JB/setup %}
+
 
 # Overview #
 
@@ -12,7 +12,7 @@ Materia is built on the <a href="http://fuelphp.com/">FuelPHP 1.5</a> framework.
 
 # Setup #
 
-First you'll need to get Materia installed and setup.  Select <a href="{{BASE_PATH}}/admin/deploying-materia.html">Deploying Materia</a> to get started.
+First you'll need to get Materia installed and setup.  Select <a href="{{ site.baseurl }}/admin/deploying-materia.html">Deploying Materia</a> to get started.
 
 # Packages #
 

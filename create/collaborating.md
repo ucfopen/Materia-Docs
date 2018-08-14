@@ -4,7 +4,7 @@ title: Collaborating with Others
 tagline: Build, share, and manage
 class: instructors
 ---
-{% include JB/setup %}
+
 
 # Sharing Widgets with Others #
 
@@ -15,7 +15,7 @@ Sharing widgets will allow you to collaborate with others to build your widget, 
 To share a widget, select it on the *My Widgets* page and click *Collaborate*.
 
 <figure>
-	<img src="{{BASE_PATH}}/assets/img/collaboration_button.png" />
+	<img src="{{ site.baseurl }}/assets/img/collaboration_button.png" alt="Screen shot of widget collaboration button" />
 </figure>
 
 ## Searching for Users ##
@@ -25,7 +25,7 @@ To find users type their name or email address into the *Add People* input box a
 <aside>Note that you can only share with users that are current instructors in Materia.</aside>
 
 <figure>
-	<img src="{{BASE_PATH}}/assets/img/collab_window.png" />
+	<img src="{{ site.baseurl }}/assets/img/collab_window.png" alt="Screen shot of widget collaboration dialog" />
 	<figcaption>
 		The collaboration dialog lets you search for colleagues and set their permissions.
 	</figcaption>

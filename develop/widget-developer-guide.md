@@ -4,7 +4,7 @@ title: Widget Developer Guide
 tagline: Create your own widgets!
 class: developers
 ---
-{% include JB/setup %}
+
 
 # Developing Widgets for the Materia Platform
 
@@ -12,7 +12,7 @@ Materia is built to be customizable and infinitely expandable.  Since it is mere
 
 # Prerequisites
 
-* A Running <a href="{{BASE_PATH}}/develop/deploying-materia.html">Materia Dev Server</a>
+* A Running <a href="{{ site.baseurl }}/develop/deploying-materia.html">Materia Dev Server</a>
 
 
 <aside>
@@ -410,7 +410,7 @@ A full qSet containing one Multiple Choice question.  This question has two poss
 			{ /* question 2 */ },
 			{ /* question 3 */ }
 		]
-		
+
 	}
 }</code></pre>
 
@@ -515,7 +515,7 @@ Keep an array of assets that aren't associated with the questions at all (ie. th
 }</code></pre>
 
 <aside>
-Assets can be placed just about anywhere arbitrarily, but we advise you keep them linked with the data that makes the most sense.  If the image is part of the answer, place it in the options of each individual answer.  If the asset is not tied to a question at all, save it outside the scope of that question. 
+Assets can be placed just about anywhere arbitrarily, but we advise you keep them linked with the data that makes the most sense.  If the image is part of the answer, place it in the options of each individual answer.  If the asset is not tied to a question at all, save it outside the scope of that question.
 </aside>
 
 # Compiling with Gulp
