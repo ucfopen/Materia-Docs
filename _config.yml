@@ -22,9 +22,28 @@ author :
 baseurl: "/Materia-Docs"
 url: "https://ucfopen.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-markdown: kramdown
-
 google_analytics_id : 'UA-16482230-3'
+
+collections:
+  administrators:
+    output: true
+    permalink: /admin/:name.html
+  authors:
+    output: true
+    permalink: /create/:name.html
+  players:
+    output: true
+    permalink: /play/:name.html
+  developers:
+    output: true
+    permalink: /develop/:name.html
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
 
 exclude:
   - Rakefile

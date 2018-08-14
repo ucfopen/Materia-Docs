@@ -37,7 +37,7 @@ sup {
 }
 
 .pompous-text h1{
-	
+
 	font-size: 50px;
 	line-height: 45px;
 	letter-spacing: -1px;
@@ -258,35 +258,47 @@ header .navbar .nav {
 	min-height: 360px;
 }
 
+footer a,
+footer a:link,
+footer a:visited,
+footer a:active
+{
+	color: white;
+	text-decoration: underline;
+}
+
+footer a:hover{
+	color: rgba(255,255,255,.8);
+}
+
 footer
 {
 	background: #5e5e5e;
 	margin-top: 4em;
 	min-height: 337px;
 	color: white;
-	
+	font-size: 9pt;
+	font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", "Verdana", sans;
+	color: white;
 }
 
-footer .col1
+footer p
+{
+	color: white;
+}
+
+footer .about
 {
 	padding-top: 20px;
 	width: 50%;
 	float: left;
 }
 
-footer .col1 h1
+footer .about h1
 {
 	font-size: 36pt;
 	font-weight: 100;
 	color: #838383;
-}
-
-footer .col1 p
-{
-	font-size: 9pt;
-	font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", "Verdana", sans;
-	margin-bottom: 3em;
-	text-align: justify;
 }
 
 footer .trademark
@@ -299,7 +311,7 @@ footer .trademark
 	margin-top: -16px;
 }
 
-footer .col2
+footer .links
 {
 	float: right !important;
 	background: url('../img/kogneato.png') no-repeat right top;
@@ -309,7 +321,7 @@ footer .col2
 	width: 40%;
 }
 
-footer .col2 ul
+footer .links ul
 {
 	text-align: right;
 	list-style-type: none;
@@ -319,18 +331,18 @@ footer .col2 ul
 	margin-left: 0;
 }
 
-footer .col2 ul li
+footer .links ul li
 {
 	line-height: 25px;
 }
 
-footer .col2 ul li a
+footer .links ul li a
 {
 	color: white;
 	text-decoration: underline;
 }
 
-footer .col2 ul li a:hover
+footer .links ul li a:hover
 {
 	opacity: .7;
 }
@@ -440,19 +452,19 @@ i
 		min-height: 390px;
 	}
 
-	footer .col1
+	footer .about
 	{
 		width: 65%;
 	}
 
-	footer .col2
+	footer .links
 	{
 		width: 35%;
 		background: none;
 		min-height: 1px !important;
 	}
 
-	footer .col2 ul
+	footer .links ul
 	{
 		margin-right: 0;
 	}
@@ -540,13 +552,13 @@ i
 		padding: 20px;
 	}
 
-	footer .col1
+	footer .about
 	{
 		width: 100%;
 		padding-top: 0;
 	}
 
-	footer .col2
+	footer .links
 	{
 		width: 100%;
 		background: none;
@@ -556,7 +568,7 @@ i
 		min-height: 1px !important;
 	}
 
-	footer .col2 ul
+	footer .links ul
 	{
 		margin-right: 0;
 		text-align: left;

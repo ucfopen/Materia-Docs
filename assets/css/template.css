@@ -1,9 +1,4 @@
 html, body {
-	background: #eeeeee url('../img/climpek-clear.png');
-	font-family: 'Lato', helvetica, arial,serif;
-	color: #5a5a5a;
-	font-size: 11pt;
-	height: 100%;
 	line-height: 1.5em;
 }
 h1, h2, h3, h4
@@ -78,6 +73,7 @@ sup {
 	top:0em;
 }
 
+blockquote,
 aside {
 	font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", "Verdana", sans;
 	font-size: 11pt;
@@ -221,7 +217,7 @@ header .navbar .nav {
 
 .page-wrapper {
 	min-height: 100%;
-	margin: 0 auto -120px;
+	margin: 0 auto;
 }
 
 .page-content {
@@ -433,31 +429,7 @@ code .space
   background-image:none;
 }
 
-footer, .push {
-	height: 120px;
-}
 
-footer
-{
-	background: #5e5e5e;
-	height: 120px;
-	color: white;
-}
-
-footer .legal
-{
-	margin-top: 20px;
-}
-
-footer .trademark
-{
-	font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", "Verdana", sans;
-	color: #838383;
-	font-size: 8pt;
-	display: block;
-	margin-bottom: 20px;
-	margin-top: -16px;
-}
 
 /**Custom menu hover colors**/
 #student-menu li > a:hover
@@ -519,7 +491,7 @@ h2 {
 
 /* Large */
 @media (min-width: 980px) {
-	.container,
+	.page-wrapper .container,
 	.navbar-static-top .container,
 	.navbar-fixed-top .container,
 	.navbar-fixed-bottom .container {
@@ -535,7 +507,7 @@ h2 {
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 979px) {
-	
+
 }
 
 /* Phone */
@@ -545,16 +517,4 @@ h2 {
 		padding: 30px 20px 0 20px;
 	}
 
-	footer {
-		margin: -20px -20px 0 -20px;
-	}
-
-	footer .trademark {
-		margin-bottom: 0;
-	}
-
-	footer > .container {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
 }

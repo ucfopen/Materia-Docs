@@ -15,23 +15,10 @@
 								Player Guide<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="{{ site.baseurl }}/play/getting-started.html">Getting Started</a></li>
-								<li class="divider"></li>
-								<li><a href="{{ site.baseurl }}/play/finding-assignments.html">Finding Assignments</a></li>
-								<li><a href="{{ site.baseurl }}/play/viewing-scores.html">Viewing Scores</a></li>
-								<li><a href="{{ site.baseurl }}/play/profile-settings.html">Profile Settings</a></li>
-								<li class="divider"></li>
-								<li><a href="{{ site.baseurl }}/play/widget-adventure.html">Adventure</a></li>
-								<li><a href="{{ site.baseurl }}/play/widget-crossword.html">Crossword</a></li>
-								<li><a href="{{ site.baseurl }}/play/widget-enigma.html">Enigma</a></li>
-								<li><a href="{{ site.baseurl }}/play/widget-flash-cards.html">Flash Cards</a></li>
-								<li><a href="{{ site.baseurl }}/play/widget-hangman.html">Hangman</a></li>
-								<li><a href="{{ site.baseurl }}/play/widget-labeling.html">Labeling</a></li>
-								<li><a href="{{ site.baseurl }}/play/widget-last-chance-cadet.html">Last Chance Cadet</a></li>
-								<li><a href="{{ site.baseurl }}/play/widget-matching.html">Matching</a></li>
-								<li><a href="{{ site.baseurl }}/play/widget-sequencer.html">Sequencer</a></li>
-								<li><a href="{{ site.baseurl }}/play/widget-timeline.html">Timeline</a></li>
-								<li><a href="{{ site.baseurl }}/play/widget-word-search.html">Word Search</a></li>
+								{% assign menu_pages = site.players | sort: 'title' %}
+								{% for p in menu_pages %}
+									<li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
+								{% endfor %}
 							</ul>
 						</li>
 						<li class="dropdown" id="instructors-menu">
@@ -39,24 +26,10 @@
 								Author Guide<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="{{ site.baseurl }}/create/getting-started.html">Getting Started</a></li>
-								<li class="divider"></li>
-								<li><a href="{{ site.baseurl }}/create/assigning-widgets.html">Assigning Widgets</a></li>
-								<li><a href="{{ site.baseurl }}/create/collaborating.html">Collaborating with Others</a></li>
-								<li><a href="{{ site.baseurl }}/create/scores-and-data.html">Scores and Data</a></li>
-								<li><a href="{{ site.baseurl }}/create/embedding-in-canvas.html">Embedding in Canvas</a></li>
-								<li class="divider"></li>
-								<li><a href="{{ site.baseurl }}/create/widget-adventure.html">Adventure</a></li>
-								<li><a href="{{ site.baseurl }}/create/widget-crossword.html">Crossword</a></li>
-								<li><a href="{{ site.baseurl }}/create/widget-enigma.html">Enigma</a></li>
-								<li><a href="{{ site.baseurl }}/create/widget-flash-cards.html">Flash Cards</a></li>
-								<li><a href="{{ site.baseurl }}/create/widget-hangman.html">Hangman</a></li>
-								<li><a href="{{ site.baseurl }}/create/widget-labeling.html">Labeling</a></li>
-								<li><a href="{{ site.baseurl }}/create/widget-last-chance-cadet.html">Last Chance Cadet</a></li>
-								<li><a href="{{ site.baseurl }}/create/widget-matching.html">Matching</a></li>
-								<li><a href="{{ site.baseurl }}/create/widget-sequencer.html">Sequencer</a></li>
-								<li><a href="{{ site.baseurl }}/create/widget-timeline.html">Timeline</a></li>
-								<li><a href="{{ site.baseurl }}/create/widget-word-search.html">Word Search</a></li>
+								{% assign menu_pages = site.authors | sort: 'title' %}
+								{% for p in menu_pages %}
+									<li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
+								{% endfor %}
 							</ul>
 						</li>
 						<li class="dropdown" id="admin-menu">
@@ -64,13 +37,10 @@
 								Administrators	<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="{{ site.baseurl }}/admin/server-requirements.html">Server Requirements</a></li>
-								<li><a href="{{ site.baseurl }}/admin/deploying-materia.html">Deploying Materia</a></li>
-								<li><a href="{{ site.baseurl }}/admin/canvas-lti-setup.html">Canvas LTI Setup</a></li>
-								<li><a href="{{ site.baseurl }}/admin/installing-widgets.html">Installing Widgets</a></li>
-								<li class="divider"></li>
-								<li><a href="{{ site.baseurl }}/admin/reading-the-logs.html">Reading The Logs</a></li>
-								<li><a href="{{ site.baseurl }}/admin/administrative-commands.html">Administrative Commands</a></li>
+								{% assign menu_pages = site.administrators | sort: 'title' %}
+								{% for p in menu_pages %}
+									<li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
+								{% endfor %}
 							</ul>
 						</li>
 						<li class="dropdown" id="developers-menu">
@@ -78,17 +48,10 @@
 								Developers	<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="{{ site.baseurl }}/develop/widget-developer-guide.html">Widget Developer Guide</a></li>
-								<li><a href="{{ site.baseurl }}/develop/widget-community.html">Widget Dev Community</a></li>
-								<li class="divider"></li>
-								<li><a href="{{ site.baseurl }}/develop/platform-developer-guide.html">Platform Developer Guide</a></li>
-								<li><a href="{{ site.baseurl }}/develop/platform-community.html">Platform Dev Community</a></li>
-								<li><a href="{{ site.baseurl }}/develop/lti-integrations.html">LTI Integration Info</a></li>
-								<li><a href="{{ site.baseurl }}/develop/lti-client-extensions.html">Embedded Client Integration</a></li>
-								<li class="divider"></li>
-								<li><a href="{{ site.baseurl }}/develop/contributing-code.html">Contributing Code</a></li>
-								<li><a href="{{ site.baseurl }}/develop/style-guide.html">Code Style Guide</a></li>
-								<li><a href="{{ site.baseurl }}/develop/question-structures.html">Question Data Structures</a></li>
+								{% assign menu_pages = site.developers | sort: 'title' %}
+								{% for p in menu_pages %}
+									<li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
+								{% endfor %}
 							</ul>
 						</li>
 					</ul>
