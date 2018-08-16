@@ -1,54 +1,86 @@
 ---
-
-title: Deploying Materia
+title: Domain Name Requirements
 tagline: For development &amp; production
 class: admin
 ---
 
-# Development - Docker Install
+# Domain Setup
 
-We have a Docker container which automates the process of getting a working Materia installed on your development machine.
+Materia is designed to run from **two domains** for security and speed.  The main domain is where the php application is running, and one for the static assets like widgets, javascript, and css.
 
-The container, install instructions and software requirements can be found [in this repository](https://clu.cdl.ucf.edu/materia/materia-docker).
+This separation is important to create a browser restricted sandbox for the widgets to run inside. It keeps widget code (not to mention user content) from having script access to the main application except through a restricted api.
 
-# Production - Server Install
+We know in some environments that this may be tedious, so it is possible to use a single domain.
 
-Our Docker container is not ready for production use. For now you'll want to setup your server with the requirements defined [here]({{ site.baseurl }}/admin/server-requirements.html).
+> We highly reccomend using 2 domains
 
-# Domain Setup #
+## Two Domains with a CDN (Best)
 
-Materia is designed to run from two domains.  One for the web application, and one for the static assets.  This separation is important create a restricted sandbox for the widget engines to run inside.  It also helps us speed up Materia.  We know in testing environments that this may be tedious.  It is possible to host the static sites from the same domain on a non standard port, or just host everything from one domain on port 80.  Fortunately, Materia's configuration will allow all of these with some creative manipulation of the `materia.urls` config options.
+You'll need to set up a CDN, but users will get super fast downloads and your widgets will be properly sandboxed.
 
-## Different domain
+> Your Apache/Nginx config will only have to listen to one domain.  The CDN should be configured to load uncached assets directly from your app server.
+
+```php
+<?php
+return [
+	'urls' => [
+		// where is the css/js
+		'static' => 'https://fff.mycdn.com/',
+		 // where are the widget files
+		'engines'  => 'https://fff.mycdn.com/widgets/',
+	]
+];
+```
+
+## Two Domains (Recommended)
 
 This is how we recommend running in production.
 
-	// where is the css/js
-	'static'  => 'https://static.mymateria.example/',
-	 // where are the widget files
-	'engines' => 'https://static.mymateria.example/widgets/',
-	// allows static domain to talk to materia
-	'static'  => 'https://static.mymateria.example/',
+> Two domains will require some custom Apache/Nginx configuration. The 'static files' section in the [Apache Virtual Host Example](apache-virtual-host-configuration.html) would need to be configured to respond to the second domain.
+
+```php
+<?php
+return [
+	'urls' => [
+		// where is the css/js
+		'static' => 'https://static.mymateria.school.edu/',
+		 // where are the widget files
+		'engines'  => 'https://static.mymateria.school.edu/widgets/',
+	]
+];
+```
+
+## One Domain, different Ports (Not Bad)
+
+You can still initiate sandboxing by using a non-standard port on the same domain. Here, we'll use port 8080.
+
+> Two domains will require some custom Apache/Nginx configuration. The 'static files' section in the [Apache Virtual Host Example](apache-virtual-host-configuration.html) would need to be configured to respond to the port you choose.
+
+```php
+<?php
+return [
+	'urls' => [
+		// where is the css/js
+		'static' => 'https://mymateria.school.edu:8080/',
+		 // where are the widget files
+		'engines'  => 'https://mymateria.school.edu:8080/widgets/',
+	]
+];
+```
+
+## One Domain (Not Recommended)
+
+This is the easiest setup, just using one domain to host everything.  It's not wise, but it will work.
 
 
-## Same domain, different port
-
-The example below will dynamically add port :8080 to the current domain.
-
-	// where is the css/js
-	'static' => preg_replace('/(https?:\/\/.+?)(\:[0-9]*){0,1}(\/.*)/', '${1}:8080${3}', \Uri::create()),
-	 // where are the widget files
-	'engines' => preg_replace('/(https?:\/\/.+?)(\:[0-9]*){0,1}(\/.*)/', '${1}:8008${3}', \Uri::create('widget/')),
-	// allows static domain to talk to Materia
-	'static_crossdomain' => preg_replace('/(https?:\/\/.+?)(\:[0-9]*){0,1}(\/.*)/', '${1}:8008${3}', \Uri::create()),
-
-## Same domain, same port
-
-We'll need to move some files around to host static stuff from the same domain.  Either symlink `/static` so it's available at `/public/static` or move the directory all together, then use the settings below:
-
-	// where is the css/js
-	'static'  => \Uri::create('static/'),
-	 // where are the widget files
-	'engines' => \Uri::create('static/widget/'),
-	// allows static domain to talk to Materia
-	'static'  => \Uri::create('static/'),
+```php
+<?php
+return [
+	'urls' => [
+		// where is the css/js
+		'static' => 'https://mymateria.school.edu/',
+		 // where are the widget files
+		'engines'  => 'https://mymateria.school.edu/widgets/',
+	]
+];
+```

@@ -52,13 +52,12 @@ table th
 	border: 1px solid #cfcfcf;
 }
 
-code
+
+code:not(.hljs)
 {
-	border: none;
-	background: none;
-	font-size: 10pt;
 	color: #941794;
-	padding: 0;
+	padding: .3em .6em;
+	white-space: nowrap;
 }
 
 p

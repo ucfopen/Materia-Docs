@@ -1,5 +1,4 @@
 ---
-
 title: Server Requirements
 tagline: What's needed to get Materia running
 class: admin
