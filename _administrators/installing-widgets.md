@@ -4,27 +4,41 @@ tagline: for your copy of Materia
 class: admin
 ---
 
+# Installing Widget Packages
 
-# Installing the widget packages #
+Materia widgets are distributed in the form of a .wigt file.  These files contain all the code, assets, and data needed to install a widget. To learn more about how widgets are built, check out the [Widget Developer Guide](widget-developer-guilde.html).
 
-A basic Materia installation comes with a root `/packages` directory which contains all the `.wigt` packages.  Use the widget install task to install all widgets in this `/packages` directory:
+## Installing Widgets from the Admin Panel
+
+Materia's admin panel allows administrators to upload new widgets.  Log in as an administrator, and navigate to the Admin Widget Page (materia.your_school.edu/admin/widget). Uploading a widget is as easy as clicking upload and selecting the .wigt file from your computer.
+
+{% include figure.html
+	url="admin/widget-admin-panel.png"
+	alt="Screen Capture showing the Widget Admin Panel"
+%}
+
+Note that the admin panel currently assumes you're upgrading a widget if an existing widget with the same `clean_name` exists.
+
+## Installing Widgets from the Command Line
+
+You'll need terminal access to the server. From the root Materia directory, you'll be able to run a number of [Task Commands](administrative-commands.html) to install, upgrade, and inspect widgets.
+
+Running `widget:install` will unpack the widget, place its assets where they need to be, and register the widget in the database of availible widgets.  All of the widget's settings are set automatically by the widget's install.yaml configuration, though they can be altered using the Admin panel.
+
+### Example Install Task
 
 ``` shell
-$ php oil r widget:install --auto-upgrade
+$ php oil refine --skip-upgrade widget:install path/to/materia-widget.wigt
 ```
 
-This will install any new widgets as well as widgets that have been changed and will skip over widgets that are already installed.
+> Remember, you may need to set the `FUEL_ENV` environment variable (mentioned [here](administrative-commands.html)) to make sure oil loads the correct configuration files.
 
-## Installing widget(s) outside of the packages directory ##
+### Install Task Options
 
-If you'd like you can install one or more widgets that you specify by running
+### `--skip-upgrade`
 
-``` shell
-$ php oil r widget:install myWidget.wigt
-```
+When installing a widget, Materia look up existing widgets using the same `clean_name` and assumes you want to replace it.  This is normally fine, but name conflicts can occur.  We reccomend using the `--skip-upgrade` option when installing a *new* widget to add a level of safety.
 
-> For more information on all the options provided by the widget task run `php oil r widget:install --help`
+### `--replace-id=<WIDGET_ID>`
 
-# Installing widgets from source #
-
-Please read the [Developer's Guide]({{ site.baseurl }}/develop/widget-developer-guide.html) for more information on installing widgets from source.
+When  upgrading a widget, the clean_name matching can, again, have a few pitfalls.  To specify the exact widget you'd like to upgrade, the id of the widget to be upgraded can be passed as an option.

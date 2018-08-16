@@ -1,0 +1,23 @@
+{% comment %}
+	This block takes the url, splits off the extension, and inserts a '-thumbnail' suffix
+{% endcomment %}
+{% if include.no_thumb == 'true' %}
+	{% assign url_thumbnail = include.url  %}
+{% else %}
+	{% assign url_parts = include.url | split: '.' %}
+	{% assign extension = url_parts | last %}
+	{% assign extension = extension | prepend: '.' %}
+	{% assign url_basename = include.url | replace: extension, ''  %}
+	{% assign url_thumbnail = url_basename | append: '-thumbnail' | append: extension  %}
+	{% assign fancy_box_class = 'fancy'  %}
+{% endif %}
+<figure>
+	{% if include.no_thumb != 'true' %}
+	<a href="{{ site.baseurl }}/assets/img/{{ include.url }}" class="fancybox">
+	{% endif %}
+		<img src="{{ site.baseurl }}/assets/img/{{ url_thumbnail }}" alt="{{ include.alt | strip_html }}">
+	{% if include.no_thumb != 'true' %}
+	</a>
+	{% endif %}
+	<figcaption>{{ include.alt }}</figcaption>
+</figure>

@@ -6,7 +6,7 @@ class: instructors
 ---
 
 
-## Overview ##
+## Overview
 
 Choose Your Own Adventure is a powerful widget that allows for the creation of branching decision trees. Students are scored based on where they end up.
 
@@ -14,21 +14,29 @@ While building your Adventure widget, keep in mind: with great power comes great
 
 Each point on the tree, known as a *destination* or *node*, represents a screen and possible interaction.
 
-![adventure creator screen]({{ site.baseurl }}/assets/img/create_widget_adventure_start.png "adventure creator screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_start.png"
+	alt="A blank Adventure widget creator screen"
+%}
 
 0. Title of the widget
 0. A blank destination
 0. Zoom controls
 
-## Details ##
+## Details
 
-### Creating a New Destination ###
+### Creating a New Destination
 
 Click a blank destination and select **"Edit"** to choose a destination type.
 
-![adventure creator selection]({{ site.baseurl }}/assets/img/create_widget_adventure_selection.png "adventure creator selection")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_selection.png"
+	alt="Choosing a question type screen"
+%}
 
-### Destination Types ###
+### Destination Types
 
 Each destination can be one of five different types:
 
@@ -42,7 +50,11 @@ Each destination can be one of five different types:
 
 Each destination type is identified by an icon. An example tree is shown below:
 
-![adventure creator tree]({{ site.baseurl }}/assets/img/create_widget_adventure_tree.png "adventure creator tree")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_tree.png"
+	alt="Adventure Story Path Tree"
+%}
 
 0. Narrative
 0. Multiple Choice
@@ -51,9 +63,13 @@ Each destination type is identified by an icon. An example tree is shown below:
 0. Ending
 0. Blank (New) Destination
 
-### Creating a Multiple Choice Destination ###
+### Creating a Multiple Choice Destination
 
-![adventure creator mc]({{ site.baseurl }}/assets/img/create_widget_adventure_screen_mc.png "adventure creator mc")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_screen_mc.png"
+	alt="Creating a Multiple Choice Question"
+%}
 
 0. Question text field
 0. Add an image to accompany the question
@@ -64,11 +80,16 @@ Each destination type is identified by an icon. An example tree is shown below:
 0. Add an additional answer
 0. Randomize the answer order
 
-### Creating a Short Answer Destination ###
+### Creating a Short Answer Destination
 
 The Short Answer screen is very similar to the Multiple Choice screen, with the exception of how it handles answers. Users enter a response based on the question text or image.
 
-![adventure creator shortanswer]({{ site.baseurl }}/assets/img/create_widget_adventure_screen_sa.png "adventure creator shortanswer")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_screen_sa.png"
+	alt="Creating a Short Answer Question"
+%}
+
 
 0. Question text field
 0. Add an image to accompany the question
@@ -83,11 +104,15 @@ The Short Answer screen is very similar to the Multiple Choice screen, with the 
 > The widget will attempt to match the user's response to all possible answers provided across all answer sets. If no match is made, the <em>Unmatched Answers</em> choice is selected.
 
 
-### Adding Short Answers ###
+### Adding Short Answers
 
 In the "Add possible answer" input box, you can enter a word or phrase to be matched against what the user will enter in the Short Answer input box when playing the widget. Type Enter or select "Add Match" to add it to the answer set. To remove a possible answer from the answer set, simply click on it.
 
-![adventure creator shortanswer answers]({{ site.baseurl }}/assets/img/create_widget_adventure_screen_sa_answers.png "adventure creator shortanswer answers")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_screen_sa_answers.png"
+	alt="Adding Short Answer Question Answers"
+%}
 
 0. Add a new possible answer
 0. Set of additional possible answers
@@ -96,11 +121,15 @@ In the "Add possible answer" input box, you can enter a word or phrase to be mat
 
 **Note:** Single words or simple phrases are best for Short Answer responses. While the matches are not case sensitive, spaces and punctuation count.
 
-### Creating a Hotspot Destination ###
+### Creating a Hotspot Destination
 
 The Hotspot creation screen provides tools to highlight and label parts of an image. Depending on the hotspot the user selects, they will be taken to a specified destination.
 
-![adventure creator hotspot]({{ site.baseurl }}/assets/img/create_widget_adventure_screen_hotspot.png "adventure creator hotspot")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_screen_hotspot.png"
+	alt="Creating a Hot Spot question"
+%}
 
 0. Optional instructions associated with the hotspot image
 0. The hotspot image
@@ -113,17 +142,25 @@ The Hotspot creation screen provides tools to highlight and label parts of an im
 
 > Elliptical and rectangular hotspots have a drag handle on the lower-right; you can use it to resize the hotspot once placed.
 
-### Drawing a Polygon Hotspot ###
+### Drawing a Polygon Hotspot
 
 To draw a polygon, select the **+Polygon Hotspot** button. Click anywhere on the image to begin drawing the polygon. Once the first point is placed, each additional click on the image will add a new side to the polygon. Once you've drawn the polygon to your satisfaction, click near the very first point to "close" the polygon and create the hotspot.
 
-![adventure creator hotspot]({{ site.baseurl }}/assets/img/create_widget_adventure_screen_hotspot_polygon.png "adventure creator hotspot polygon")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_screen_hotspot_polygon.png"
+	alt="Drawing a hotspot polygon click area for a question"
+%}
 
-### Hotspots ###
+### Hotspots
 
 Once a hotspot is drawn on the image, selecting it brings up the hotspot dialog. To relocate the hotspot, click and drag it.
 
-![adventure creator hotspot dialog]({{ site.baseurl }}/assets/img/create_widget_adventure_screen_hotspot_dialog.png "adventure creator hotspot dialog")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_screen_hotspot_dialog.png"
+	alt="Hotspot answer settings"
+%}
 
 0. The optional mouse-over label to accompany this hotspot
 0. Optional feedback to associate with this hotspot
@@ -131,7 +168,7 @@ Once a hotspot is drawn on the image, selecting it brings up the hotspot dialog.
 0. Change the vertical arrangement of the hotspot (relative to other hotspots that overlap)
 0. The destination this hotspot will point to
 
-### Hotspot Visibility ###
+### Hotspot Visibility
 
 Selecting "Edit Visibility" lets you change the default visibility of hotspots. The options are:
 
@@ -139,21 +176,29 @@ Selecting "Edit Visibility" lets you change the default visibility of hotspots. 
 0. Reveal hotspots on mouseover
 0. Don't show hotspots (the cursor will still change to indictate a part of the image can be selected)
 
-### Creating a Narrative Destination ###
+### Creating a Narrative Destination
 
 Narrative screens do not have any sort of interaction, but rather provide transitional text or images between one destination and another.
 
-![adventure creator narrative]({{ site.baseurl }}/assets/img/create_widget_adventure_screen_narr.png "adventure creator narrative")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_screen_narr.png"
+	alt="Creating a Narrative Stop in Adventure"
+%}
 
 0. Narrative text field
 0. Add an image to accompany the narrative
 0. The destination this narrative will point to
 
-### Creating an End Destination ###
+### Creating an End Destination
 
 Endings are functionally identical to Narrative Destinations. Instead of selecting a destination to point to, endings provide a final score and end the widget.
 
-![adventure creator end]({{ site.baseurl }}/assets/img/create_widget_adventure_screen_end.png "adventure creator end")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_screen_end.png"
+	alt="Creating an ending stop node in Adventure"
+%}
 
 0. Ending text field
 0. Add an image to accompany the ending text
@@ -161,17 +206,21 @@ Endings are functionally identical to Narrative Destinations. Instead of selecti
 
 > Remember that regardless of the path a user takes through your widget, every path must terminate in an end point. Take care in the design of your widget to ensure every route ends in a sensible and logical manner.
 
-### Adding Images to Destinations ###
+### Adding Images to Destinations
 
 For any destination type, selecting the **Add Media** button changes the layout of the destination to associate an image with the destination's text. You can upload images from your computer, or select an image you've previously uploaded to Materia. Once you've selected an image, you can use the **Swap with Question** button below the image to switch the arrangement of the image and question text. Narrative and End Point destinations allow you to choose between vertical as well as horizontal arrangements.
 
-## Advanced Decision Tree Design ##
+## Advanced Decision Tree Design
 
-### Options for Selecting a Destination ###
+### Options for Selecting a Destination
 
 With the exception of End Points, every answer for every destination in your tree will point to another destination. By default, when creating a new answer, Adventure will create a new, blank destination to which that answer will point. You can change where the answer points to by selecting the answer's destination button.
 
-![adventure creator destination selection]({{ site.baseurl }}/assets/img/create_widget_adventure_destination_selection.png "adventure creator destination selection")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_destination_selection.png"
+	alt="Selecting a destination for a node answer"
+%}
 
 0. Clicking this destination button brings up the dialog to select the destination type
 0. The destination is a new, blank node (this is the default)
@@ -180,7 +229,11 @@ With the exception of End Points, every answer for every destination in your tre
 
 Depending on which of these three types is selected, the tree will change to indicate where the answer will point.
 
-![adventure creator link types]({{ site.baseurl }}/assets/img/create_widget_adventure_link_types.png "adventure creator link types")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_link_types.png"
+	alt="An example tree with distinations drawn for each node"
+%}
 
 0. Indicates the parent's answer points to the child destination (this is the default)
 0. Indicates the parent's answer points to another destination on the tree that isn't a child of the parent
@@ -188,17 +241,21 @@ Depending on which of these three types is selected, the tree will change to ind
 
 > NOTE: Keep in mind that changing the destination of an answer may remove child destinations. For example, if your answer originally pointed to destination B, and destination B had its own answers with child destinations, changing the target destination of that answer would remove destination B and any children.
 
-### Adding In-Between Destinations ###
+### Adding In-Between Destinations
 
 It's possible to add a new destination along a link in between two existing destinations. Simply hover your cursor over the midpoint of the link and select the "+" icon that appears.
 
 In the example below, an in-between destination, **I**, was added between **A** and **B**:
 
-![adventure creator in between node]({{ site.baseurl }}/assets/img/create_widget_adventure_in_between_node.png "adventure creator in between node")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_in_between_node.png"
+	alt="Example Node Tree showing a new in-between node (Node 'I') added between steps"
+%}
 
 Note that a link exists between I and B, despite B being blank. When editing destination I, upon selecting a destination type, the first answer will automatically point to destination B.
 
-### Resetting, Converting, and Copying Destinations ###
+### Resetting, Converting, and Copying Destinations
 
 When you select a destination, a small dialog provides a number of options in addition to simply editing it. Namely, **Reset**, **Convert**, and **Copy**.
 
@@ -213,11 +270,19 @@ There are a few things to keep in mind when copying a destination:
 0. Making changes to the copied sub-tree will not affect the original. If you copy destination B, and the copy becomes destination N, making changes to destination N will not affect B.
 0. Answers that point to their default child destinations will point to the copied child destination, not the original, *with the exception of answers that point to an existing destination, represented by a dashed line.* These will point to their *original targets*, even if that target was copied as well. As an example, consider the tree below:
 
-![adventure creator before copying a destination]({{ site.baseurl }}/assets/img/create_widget_adventure_before_copy.png "adventure creator before copying a destination")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_before_copy.png"
+	alt="Example Node Tree before copy Node 'A' to destinateion 'F'"
+%}
 
 For this tree, we will make a copy of **destination A**, targeting **destination F** as the destination to be replaced.
 
-![adventure creator after copying a destination]({{ site.baseurl }}/assets/img/create_widget_adventure_after_copy.png "adventure creator after copying a destination")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_adventure_after_copy.png"
+	alt="Example Node Tree after copying Node 'A' to destinateion 'F'"
+%}
 
 Note that destination F has become a copy of destination A, *including destination all of destination A's child destinations.* B, C, D, F, and G have become I, K, J, L, and M, respectively. Their answers point to the respective copies of the originals, with the exception of destination B's answer that originally pointed to destination F. The copied answer for destination I will continue to point to the original target, F.
 

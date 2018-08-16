@@ -37,6 +37,8 @@ collections:
   developers:
     output: true
     permalink: /develop/:name.html
+  users:
+    output: false
 
 defaults:
   -

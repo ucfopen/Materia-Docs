@@ -1,18 +1,19 @@
 ---
-
 title: Timeline Guide
 tagline: Details about using the Timeline widget
 class: students
 ---
-
-
-# Overview #
+# Overview
 
 Allows students to visually arrange items in a chronological manner.
 
-## Timeline View ##
+## Timeline View
 
-![timeline main screen]({{ site.baseurl }}/assets/img/widget_guides_timeline.png "timeline main screen")
+{% include figure.html
+	no_thumb="true"
+	url="widget_guides_timeline.png"
+	alt="Annotated Timeline game screen"
+%}
 
 0. Title of the widget
 0. View Control
@@ -27,23 +28,27 @@ Allows students to visually arrange items in a chronological manner.
 0. Eras
 0. Scroll bar
 
-### Categories ###
+### Categories
 
 Events may be separated into different categories. These categories are color coded and have their own timeline bar.</p>
 
-### Eras ###
+### Eras
 
 The timeline may also be distinguished by eras. The example above shows viewing the start of the Napoleonic Era. Eras are similarly color-coded.</p>
 
-## List View ##
+## List View
 
-![timeline list screen]({{ site.baseurl }}/assets/img/widget_guides_timeline2.png "timeline list screen")
+{% include figure.html
+	no_thumb="true"
+	url="widget_guides_timeline2.png"
+	alt="Annotated Timeline list view screen"
+%}
 
 0. Title of event
 0. Associated categories and eras of the event
 0. Event description
 0. Event date
 
-### Details ###
+### Details
 
 This alternative view shows events one after another. Any category and era information is conveyed in the **associated categories and eras of the event** section.

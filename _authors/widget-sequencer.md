@@ -6,12 +6,17 @@ class: instructors
 ---
 
 
-# Sequencer #
+# Sequencer
 Students must order a random set of words or phrases into the correct order.
 
-![sequencer creator screen]({{ site.baseurl }}/assets/img/create_widget_sequencer.png "sequencer creator screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_sequencer.png"
+	alt="Annotated Sequencer widget creation screen"
+%}
 
-## Overview ##
+
+## Overview
 
 0. Title of the widget
 0. Sequence Row

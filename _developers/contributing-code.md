@@ -6,22 +6,22 @@ class: developers
 ---
 
 
-# Mindset #
+# Mindset
 
 We open sourced Materia so that the world can use this great tool we've invested so much time into.  We thoroughly encourage community contributions, but keep in mind we still have a vision for where Materia is headed.  From time to time great ideas just won't fit with the goals of Materia and we will have to exclude them. If this happens to be some of your work, don't take our rejection as a negative response. We respect and recognize the effort put forth by all contributors. We have nothing but gratitude for you guys/gals.
 
-# Code Formatting and Style #
+# Code Formatting and Style
 
 Materia follows a our [Style Guide](style-guide.html) religiously. Follow it.
 
-# Stay Connected #
+# Stay Connected
 Check out [Platform Community]({{ site.baseurl }}/develop/platform-community.html) for more information on getting in touch and getting help from other developers.
 
-# Git Work-flow #
+# Git Work-flow
 
 Materia follows the **Fork &amp; Pull Request** model of shared development, so any code that you contribute will be done via a pull request on Github. If you're not familiar with these topics then take a few minutes to read [Using Pull Requests](https://help.github.com/articles/using-pull-requests).
 
-## Quick Do's and Don't's ##
+## Quick Do's and Don't's
 
 * **Don't develop directly on master branches.** Always create a development branch specific to your task or issue.  The master branch is considered sacred, and can only be updated by the project managers.  When your development is complete, issue a pull request.
 
@@ -35,7 +35,7 @@ Materia follows the **Fork &amp; Pull Request** model of shared development, so 
 
 * **Review the files you're committing.** You should carefully review the files you have modified and added before staging them and committing them to your repo. It is usually a bad idea to use "git add .". Carefully add only the files that should be in the repository.
 
-## Step by Step Guide ##
+## Step by Step Guide
 
 0. Clone the GitHub Repository
 0. Create new branch for your issue
@@ -48,19 +48,19 @@ Materia follows the **Fork &amp; Pull Request** model of shared development, so 
 0. Commit (referencing the issue number) and push to the remote
 0. Submit a Pull Request
 
-## Cloning the Repository ##
+## Cloning the Repository
 
 ```shell
 $ git clone git@github.com:ucfcdl/repository-name.git
 ```
 
-## Creating your Branch ##
+## Creating your Branch
 
 ```shell
 $ git checkout -b issue/55-feature-name
 ```
 
-## Pushing your Branch ##
+## Pushing your Branch
 
 On the first push, you'll want to use -u to make this a tracked branch.
 
@@ -74,7 +74,7 @@ From that point on you'll have a tracked branch, which is automatically linked w
 $ git push
 ```
 
-## Your branch: Merge or rebase to get updates ##
+## Your branch: Merge or rebase to get updates
 
 ```shell
 $ git fetch origin
@@ -91,7 +91,7 @@ $ git fetch origin
 $ git merge origin/dev/ifrit
 ```
 
-## Closing your Issue Branch: Squash Merge ##
+## Closing your Issue Branch: Squash Merge
 
 We don't care about the little details, so we'll squash all of your incremental commits into a single commit that describes all the changes.  You could have rebased or merged anything you like into your issue branch prior to this step.  Here's the workflow we'll go through to collect your contributions.
 
@@ -109,7 +109,7 @@ $ git commit
 $ git push
 ```
 
-## Commit Messages ##
+## Commit Messages
 
 The first line must be short, sweet, and encompassing.  Think of it as the title to your commit.  Add details about your changes to the following lines in the commit message
 

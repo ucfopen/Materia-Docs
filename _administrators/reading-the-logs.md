@@ -5,18 +5,18 @@ class: admin
 ---
 
 
-# Reading Materia's Log Files #
+# Reading Materia's Log Files
 
 ## Location
 Materia uses the standard logging functionality built into FuelPHP.  Logs are written to the `/fuel/app/logs/YYYY/MM/` directory.  We do however have several files to keep some logging easier to process.
 
 > FuelPHP offers several options to control logging, view them [in the FuelPHP log documentation](http://fuelphp.com/docs/classes/log.html).
 
-## General Logs ##
+## General Logs
 
 **&lt;DAY&gt;.php**: General errors and debug statements are written here.  The Materia debugging function `trace()` will also write to this file.
 
-## Login Authentication ##
+## Login Authentication
 
 **&lt;DAY&gt;-login.php**: Every login attempt is registered here. These are structured in a CSV format with the following columns:
 
@@ -25,7 +25,7 @@ Materia uses the standard logging functionality built into FuelPHP.  Logs are wr
 3. Success
 4. Unix Timestamp
 
-## LTI logging ##
+## LTI logging
 
 **&lt;DAY&gt;-lti.php**: Logs from lti messages sent or received.
 

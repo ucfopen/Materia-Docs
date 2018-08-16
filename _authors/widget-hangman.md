@@ -6,11 +6,15 @@ class: instructors
 ---
 
 
-## Overview ##
+## Overview
 
 Students are provided with a clue and must guess the word or phrase within a certain amount of letters.
 
-![hangman creator screen]({{ site.baseurl }}/assets/img/create_widget_hangman.png "hangman creator screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_hangman.png"
+	alt="Annotated Hangman widget creation screen"
+%}
 
 0. Title of the widget
 0. Word Row

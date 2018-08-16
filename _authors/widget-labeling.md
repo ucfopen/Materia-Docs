@@ -6,13 +6,18 @@ class: instructors
 ---
 
 
-# Labeling #
+# Labeling
 
 A quiz tool which requires students to correctly identify certain parts of an image by placing labels.
 
-![labeling creator screen]({{ site.baseurl }}/assets/img/create_widget_labeling.png "labeling creator screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_labeling.png"
+	alt="Annotated Labeling widget creation screen"
+%}
 
-## Overview ##
+
+## Overview
 
 0. Title of the widget
 0. Image Controls

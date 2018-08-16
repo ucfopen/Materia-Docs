@@ -6,27 +6,36 @@ class: instructors
 ---
 
 
-## Overview ##
+## Overview
 
 Crossword is a quiz tool that uses words and clues to randomly generate a crossword puzzle.
 
-![crossword creator screen]({{ site.baseurl }}/assets/img/create_widget_crossword.png "crossword creator screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_crossword.png"
+	alt="Annotated screen shot of the Crossword widgit creator."
+%}
+
 
 0. Title of the widget
 0. Word List
 0. Preview and Options
 
-## Details ##
+## Details
 
-### Word List ###
+### Word List
 
 To create a crossword puzzle, the widget needs a list of words, clues for those words, and any optional hints that you wish to provide to the students.
 
-### Preview and Options ###
+### Preview and Options
 
-![puzzle preview window]({{ site.baseurl }}/assets/img/crossword_detail.png "puzzle preview window")
+{% include figure.html
+	no_thumb="true"
+	url="crossword_detail.png"
+	alt="Crossword puzzle preview"
+%}
 
-#### Generate New Puzzle ####
+#### Generate New Puzzle
 
 Once a series of words has been entered into the Word List, click the *Generate New Puzzle* button to see a preview of your puzzle.
 
@@ -34,7 +43,7 @@ The *Generate New Puzzle* button will cycle through all available combinations w
 
 If a word in the Word List cannot be connected by letter to another word, it is omitted from the puzzle.
 
-#### Puzzle Options ####
+#### Puzzle Options
 
 The free words option allows students to receive that number of pre-completed words at the start of the game.
 

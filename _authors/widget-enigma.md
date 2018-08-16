@@ -6,11 +6,15 @@ class: students
 ---
 
 
-## Overview ##
+## Overview
 
 Enigma is a Jeopardy-like study or quiz tool. Questions are separated into categories.
 
-![enigma creator screen]({{ site.baseurl }}/assets/img/create_widget_enigma.png "enigma creator screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_enigma.png"
+	alt="Annotated Enigma widget creation screen"
+%}
 
 0. Title of the widget
 0. Randomize Answer Order
@@ -21,15 +25,19 @@ Enigma is a Jeopardy-like study or quiz tool. Questions are separated into categ
 0. Add New Question
 0. Add New Category
 
-## Details ##
+## Details
 
-### Categories ###
+### Categories
 
 Categories can be used to group questions according to similarities in their content or purpose.  Each category can have up to six questions.
 
-### Questions ###
+### Questions
 
-![enigma question screen]({{ site.baseurl }}/assets/img/create_widget_enigma_question.png "enigma question screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_enigma_question.png"
+	alt="Annotated Enigma question creation screen."
+%}
 
 0. Question Text
 0. Answer Text
@@ -39,7 +47,7 @@ Categories can be used to group questions according to similarities in their con
 0. Feedback Text for Selected Answer
 0. Add New Answer
 
-#### Answers ####
+#### Answers
 
 Each question can have many possible answers, but every question must have at least one correct answer with a value of 100%.
 
@@ -47,6 +55,6 @@ If the **Randomize Answer Order** check box in the main screen is checked, then 
 
 > Keep in mind that <strong>Randomize Answer Order</strong> will not affect the order of the questions, only the answers for each question.
 
-#### Feedback ####
+#### Feedback
 
 Feedback is purely optional, but may be used to provide helpful information for incorrect answers or additional details for correct answers.

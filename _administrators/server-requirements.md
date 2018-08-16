@@ -5,7 +5,7 @@ class: admin
 ---
 
 
-# Production Server #
+# Production Server
 
 The ideal server environment would look something like this.
 

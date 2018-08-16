@@ -89,11 +89,11 @@ Look at the comments in the example below which covers all of our PHP coding sty
 	// <-- Closing ?> tag should be omitted
 ```
 
-# Setting up PHP Code Sniffer #
+# Setting up PHP Code Sniffer
 
 PHP Code Sniffer will allow you to check your contributions for valid syntax while working on the Materia codebase.  Some editors, like Sublime Text, have plugins that can highlight Code Sniffer errors as you work.
 
-## Installing php5.4 on OSX ##
+## Installing php5.4 on OSX
 
 ### Install Homebrew
 

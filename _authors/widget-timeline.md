@@ -4,15 +4,17 @@ title: Timeline Guide
 tagline: Details about creating a Timeline widget
 class: instructors
 ---
+# Overview
 
-
-# Overview #
-
-## Timeline View ##
+## Timeline View
 
 A study tool that visually arranges items in a chronological manner.
 
-![timeline main screen]({{ site.baseurl }}/assets/img/create_widget_timeline.png "timeline main screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_timeline.png"
+	alt="Annotated Timeline widget creation screen"
+%}
 
 0. Timeline Options
 0. Title of Widget
@@ -21,9 +23,14 @@ A study tool that visually arranges items in a chronological manner.
 0. Categories
 0. Scroll bar
 
-## List View ##
+## List View
 
-![timeline list screen]({{ site.baseurl }}/assets/img/create_widget_timeline_list.png "timeline list screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_timeline_list.png"
+	alt="Annotated Timeline widget creation screen in list view."
+%}
+
 
 0. Era Name
 0. Event Title
@@ -31,15 +38,24 @@ A study tool that visually arranges items in a chronological manner.
 0. Event Description
 0. Event date
 
-## Options ##
+## Options
 
-### Add Event Window ###
+### Add Event Window
 
-![add event button]({{ site.baseurl }}/assets/img/create_widget_timeline_add_event.png "add event button")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_timeline_add_event.png"
+	alt="Add event button"
+%}
 
 The *Add Event Window* is used to create points on the timeline.
 
-![add event screen]({{ site.baseurl }}/assets/img/create_widget_timeline_add_event_window.png "add event screen")
+
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_timeline_add_event_window.png"
+	alt="Annotated new event dialog"
+%}
 
 0. Enter a Date and Event Title
 0. Create an end date for events spanning multiple dates
@@ -48,36 +64,65 @@ The *Add Event Window* is used to create points on the timeline.
 0. Add pictures attached to this event
 0. Select the *Add another event after this one* check box to instantly open another event creation window when this event is saved
 
-### Add Era ###
+### Add Era
 
-![add era button]({{ site.baseurl }}/assets/img/create_widget_timeline_define_era.png "add era button")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_timeline_define_era.png"
+	alt="New Era Button"
+%}
 
 An era is a period of time that has events within it.
 
-![add era screen]({{ site.baseurl }}/assets/img/create_widget_timeline_define_era_window.png "add era screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_timeline_define_era_window.png"
+	alt="New Era Dialog"
+%}
 
-### Add Categories ###
+### Add Categories
 
-![manage categories button]({{ site.baseurl }}/assets/img/create_widget_timeline_catagory.png "manage categories button")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_timeline_catagory.png"
+	alt="New Category Button"
+%}
 
 The category window is used to add new categories or manage events within existing categories.
 
-![manage categories screen]({{ site.baseurl }}/assets/img/create_widget_timeline_catagory_window.png "manage categories screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_timeline_catagory_window.png"
+	alt="Annotated Manage Categories Screen"
+%}
 
 0. The *General* default category will appear by default.
 0. Event boxes can be dragged between categories.
 0. Add a new category
 
-### Date Label Window ###
+### Date Label Window
 
-![date label]({{ site.baseurl }}/assets/img/create_widget_timeline_option_date.png "date label")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_timeline_option_date.png"
+	alt="Date Label Dialog"
+%}
 
 The Date Label Window allows you to change the scope of your timeline (years, months, or days) or to create your own custom scope.
 
-#### Standard View ####
+#### Standard View
 
-![standard scope selection screen]({{ site.baseurl }}/assets/img/create_widget_timeline_date.png "standard scope selection screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_timeline_date.png"
+	alt="Standard Scope Selection Screen"
+%}
 
-#### Custom View ####
+#### Custom View
 
-![custom scope selection screen]({{ site.baseurl }}/assets/img/create_widget_timeline_date_custom.png "custom scope selection screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_timeline_date_custom.png"
+	alt="Custom Scope Selection Screen"
+%}
+

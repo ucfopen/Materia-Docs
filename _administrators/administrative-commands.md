@@ -6,20 +6,23 @@ class: admin
 
 # Materia's CLI Management Commands
 
-Materia cli commands are executed using FuelPhp's **oil**. Oil commands look like:
+Materia CLI commands are executed using FuelPhp's **[Oil Utility](https://fuelphp.com/docs/packages/oil/intro.html)**. Oil is a script that resides in the **root directory of Materia**, so all oil commands should be run from there.
+
+
+## Executing a Materia Task
 
 ```shell
 $ php oil refine admin:show_engines
 ```
 
-To break that down a little:
+To break that down:
 * `php` is the php executable
-* `oil` is the Fuelphp task running script
-* `refine` tells oil we'll be running a task
-* `admin` tells oil we'll be running a method from [Admin Task Class](https://github.com/ucfcdl/Materia/blob/master/fuel/app/tasks/admin.php)
-* `show_engines` tells oil we'll be running the `show_engines` method from [Admin Task Class](https://github.com/ucfcdl/Materia/blob/master/fuel/app/tasks/admin.php)
+* `oil` is a Fuelphp [command line utility](https://fuelphp.com/docs/packages/oil/intro.html)
+* `refine` is an oil [utility for running tasks](https://fuelphp.com/docs/packages/oil/refine.html)
+* `admin` is the [Admin Task Class](https://github.com/ucfcdl/Materia/blob/master/fuel/app/tasks/admin.php) to use
+* `show_engines` is the method task from [Admin Task Class](https://github.com/ucfcdl/Materia/blob/master/fuel/app/tasks/admin.php)
 
-> You'll likely need to juggle which **FuelPHP environment** your commands run in as it dictates which configuration settings are loaded.  On a production server, you'll need to set an environment variable in your OS.  Typically we just set them inline, for example: `$ FUEL_ENV=production php oil refine admin:show_engines`
+> You'll likely need to juggle which **FuelPHP environment** your commands run in as it dictates which configuration settings are loaded. Typically you'll just set them inline, for example: `$ FUEL_ENV=production php oil refine admin:show_engines`, but they can be set in a more persistent way.
 
 ## Listing Task Class Commands
 
@@ -66,7 +69,7 @@ change_db_prefix
 | `widget:delete_instance` | This will remove all permissions for the specified widget then remove it from the database if possible. Single required argument: widget instance ID.<br/> **Args:** `widget:delete_instance <INSTANCE_ID>`
 | `widget:download_package` | Download a .wigt package to the server.<br/> **Args:** `widget:download_package <WIGT_FILE_URL>`
 | `widget:export_qset` | Export an existing qset in yaml format.<br/> **Args:** `widget:export_qset <INSTANCE_ID>`
-| `widget:install` | Install a .wigt package from a local path.<br/> **Args:** `widget:install [options] [<WIGT_FILE_PATH>...]` (see [options](#options-details-for-widgetinstall-task))
+| `widget:install` | Install a .wigt package from a local path. Learn more about [installing widgets](installing-widgets.html). <br/> **Args:** `widget:install [options] [<WIGT_FILE_PATH>...]` (see [options](#options-details-for-widgetinstall-task))
 | `widget:show_engines` | List all the widget engines that are installed
 | `widget:show_instance` | This will output all information about a widget instance to the screen.<br/> **Args:** `widget:show_instance <INSTANCE_ID>`
 | `widget:show_qset` | This will export the specified widget instance's question set to the Materia installs root directory as a yaml file.<br/> **Args:** `widget:show_qset <INSTANCE_ID>`

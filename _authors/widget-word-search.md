@@ -4,15 +4,17 @@ title: Word Search Guide
 tagline: Details about creating a Word Search widget
 class: instructors
 ---
-
-
-# Word Search #
+# Word Search
 
 A study tool where students must search a word puzzle for a predetermined set of words
 
-![word search creator screen]({{ site.baseurl }}/assets/img/create_widget_wordsearch.png "word search creator screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_wordsearch.png"
+	alt="Annotated Word Search widget creation screen"
+%}
 
-## Overview ##
+## Overview
 
 0. Title of the widget
 0. Word list

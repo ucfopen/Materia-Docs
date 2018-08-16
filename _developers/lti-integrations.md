@@ -1,49 +1,49 @@
 ---
-
 title: LTI Integration Overview
 tagline: How Materia works as an LTI tool.
 class: developers
 ---
-
-
-# LTI Integrations #
+# LTI Integrations
 
 Materia can be embedded into other systems that support [the LTI standard](http://www.imsglobal.org/toolsinteroperability2.cfm) for regular or graded external tools. This standard allows Materia to securely authenticate users and pass scores back to the external system.
 
-## LTI Roles ##
+## LTI Roles
 
 There are many [roles in the LTI standard](http://www.imsglobal.org/LTI/v1p1/ltiIMGv1p1.html#_Toc319560486). They are far too granular for Materia's purposes, so we group the roles together into two capabilities: Instructor and Student.  Instructors are given control of which widget the resource links to, while students are simply logged in and shown the chosen widget.
 
-### Instructor Role ###
+### Instructor Role
 
 Instructors are able to create widgets and link to them from a given resource in the LMS. (resource in this case refers to an assignment or content module).
 
 > This role is used when Materia receives one of these LTI roles: `Administrator`, `Instructor` or `ContentDeveloper`.
 
-### Student Role ###
+### Student Role
 
 A students' role is so streamlined that they will probably not realize they are using an external application. The LTI consumer will send along the user's information and resource id, which are used to log them in and locate the desired widget. Typically the student will just see the working widget embedded in the page.
 
 > This role is used when Materia receives one of these LTI roles: `Learner` or `Student`.
 
-## Selecting a Widget as an Instructor ##
+## Selecting a Widget as an Instructor
 
-![Selecting a widget from within another system via a LTI integration]({{ site.baseurl }}/assets/img/lti-select-thumb.png)
+{% include figure.html
+	url="lti-select.png"
+	alt="Selecting a widget from within another system via a LTI integration"
+%}
 
-The above screen will be shown inside the LMS (usually within an iframe) when the instructor views the assignment.  The instructor then needs to choose a widget to link this LMS resource. This linking process is how Materia knows which widget to display to students, and must be completed every time Materia is used as an LTI tool.
+The above screen will be shown in the LMS when the instructor is choosing an assignment to embed.  The instructor then needs to choose a widget to link this LMS resource. This linking process is how Materia knows which widget to display to students, and must be completed every time Materia is used as an LTI tool. Instructors should check out the [embedding widgets in Canvas guide](../create/embedding-in-canvas.html).
 
 > If the course containing the linked Materia Widget is copied or moved, the LMS may reset this selection because it assignes a new `lis_resourt_sourceid`.
 
 
-## Score Passback ##
+## Score Passback
 
 When a student views a page with the LTI widget embedded in it, information about how to send scores back to the consumer are sent to Materia.  Materia stores that info, and uses it to return score data once the student completes the widget. Materia uses the `lis_outcome_service_url` parameter to determine if it should send a score, and where to send it to.  Materia will use the [replaceResult](http://www.imsglobal.org/LTI/v1p1/ltiIMGv1p1.html#_Toc319560473) message which can allow multiple widget attempts to overwrite the previous scores.
 
-## LTI Configuration XML ##
+## LTI Configuration XML
 
 The configuration url is: `http://materia/lti`. The default configuration allows for grade passback, and designates a picker interface that your consumer will display to choose a widget to link to.
 
-## Materia LTI Launch Message ##
+## Materia LTI Launch Message
 
 You should send a post request to `http://materia/lti/assignment/` with the following parameters
 

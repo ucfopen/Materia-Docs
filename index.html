@@ -5,7 +5,7 @@ tagline: Using Materia as a Student
 ---
 		<div class="in-your-face">
 			<section class="container">
-				<img src="assets/img/demo.png" alt="Materia" title="Materia">
+				<img src="assets/img/materia-widget-catalog-header.png" alt="Materia" title="Materia">
 			</section>
 		</div>
 
@@ -73,27 +73,15 @@ tagline: Using Materia as a Student
 			</div>
 			<div class="row-fluid whos-using">
 				<ul class="thumbnails">
+					{% for user in site.users %}
 					<li class="span4">
 						<div class="thumbnail">
-							<img src="assets/img/ucf-250x150.png" alt="UCF Logo and tagline - Stands for Opportunity">
-							<h3>University of Central Florida</h3>
-							<p>Designed and maintained at UCF, Materia is used heavily in our online programs. Every instructor has access for use it in their online course. It seamlessly integrates with Canvas, Obojobo, and our university authentication system. Over 100,000 widget plays were logged in 2012 alone.</p>
+							<img src="{{ site.baseurl }}/assets/img/users/{{ user.img }}" alt="{{ user.alt }}">
+							<h3>{{ user.title }}</h3>
+							{{ user.content }}
 						</div>
 					</li>
-					<li class="span4">
-						<div class="thumbnail">
-							<img src="assets/img/popup-250x150.png" alt="Graphic of the POPUP logo on a computer">
-							<h3>Pilot Online Project in Undergraduate Psychology</h3>
-							<p>This project develops and incorporates online laboratory experiences adding value to scientific training in psychology and other fields. This project will enhance the teaching and learning effectiveness assessed on the basis of learning outcomes, motivation, career maturity, honesty, access, timely completion of degree and enrollment from under served groups.</p>
-						</div>
-					</li>
-					<li class="span4">
-						<div class="thumbnail">
-							<img src="assets/img/mooc-250x150.jpg" alt="Photo used on Canvas's course guid showing pages and Robert Cassanello's photo">
-							<h3>Open online courses</h3>
-							<p><a href="https://www.canvas.net/courses/writing-history">Robert Cassanello</a> is delivering a massively open online course (MOOC) with the Canvas Network to teach writing history in a groundbreaking new format. His course will use widgets delivered from a custom install of Materia running on cloud servers.</p>
-						</div>
-					</li>
+					{% endfor %}
 				</ul>
 			</div>
 		</section>

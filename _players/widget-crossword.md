@@ -1,16 +1,17 @@
 ---
-
 title: Crossword Guide
 tagline: Details about using the Crossword widget
 class: students
 ---
-
-
-# Overview #
+# Overview
 
 Crossword is a quiz tool that uses words and clues to randomly generate a crossword puzzle.
 
-![crossword screen]({{ site.baseurl }}/assets/img/widget_guides_crossword.jpg "crossword screen")
+{% include figure.html
+	no_thumb="true"
+	url="widget_guides_crossword.jpg"
+	alt="Annotated Crossword screen"
+%}
 
 0. Title of the widget
 0. Zoom in/out controls
@@ -23,9 +24,9 @@ Crossword is a quiz tool that uses words and clues to randomly generate a crossw
 0. Help: Keyboard controls
 0. Print puzzle
 
-## Details ##
+## Details
 
-### Clue Selected State ###
+### Clue Selected State
 
 After clicking on a clue in the clue list, two buttons appear underneath the selected clue.
 
@@ -33,6 +34,6 @@ After clicking on a clue in the clue list, two buttons appear underneath the sel
 
 Clicking the **Free Word** button will automatically fill in the word (if free words have been provided).
 
-### Submitting ###
+### Submitting
 
 Clicking **Finish** will submit your puzzle and take you to the score screen to review how you did.

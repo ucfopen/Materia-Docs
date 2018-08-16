@@ -6,11 +6,11 @@ class: developers
 ---
 
 
-# Materia Javascript Events #
+# Materia Javascript Events
 
 If you're embedding Materia into another application using LTI, there are a few javascript events that can help your parent application know more about what is happing in the Materia UI. These events are broadcast using [postMessage](https://developer.mozilla.org/en-US/docs/DOM/window.postMessage) so that your application can listen to them. Awesome, right?
 
-## Widget Display Screen ##
+## Widget Display Screen
 An event is fired when a widget is completed and the student is shown their score.  The object sent by the event has the following properties:
 
 * **type**: "materiaScoreRecorded"
@@ -47,7 +47,7 @@ Here is an example you would use to embed and listen to the widget selection scr
 </html>
 ```
 
-## Widget Selection Screen ##
+## Widget Selection Screen
 Take a look at the example below for embedding the selection screen into your application. The object sent by the event is a widget instance object.
 
 ```html

@@ -6,11 +6,15 @@ class: instructors
 ---
 
 
-## Matching ##
+## Matching
 
 Students must match one set of words or phrases to a corresponding word, phrase, or definition.
 
-![matching creator screen]({{ site.baseurl }}/assets/img/create_widget_matching.png "matching creator screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_matching.png"
+	alt="Annotated Matching widget creation screen"
+%}
 
 0. Title of the widget
 0. Terms to be matched

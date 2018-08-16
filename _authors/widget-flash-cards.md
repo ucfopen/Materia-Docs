@@ -6,11 +6,15 @@ class: instructors
 ---
 
 
-## Overview ##
+## Overview
 
 Flash Cards are study tools in which a virtual tutor shows a standard deck of flash cards.
 
-![flash cards creator screen]({{ site.baseurl }}/assets/img/create_widget_flash_cards.png "flash cards creator screen")
+{% include figure.html
+	no_thumb="true"
+	url="create_widget_flash_cards.png"
+	alt="Annotated Flash cards widget creation screen"
+%}
 
 0. Title of the widget
 0. Add a new Flash Card
