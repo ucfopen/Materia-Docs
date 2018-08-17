@@ -1,11 +1,9 @@
 ---
-
 title: LTI Client Side Extensions
 tagline: Embedding Materia in your Javascript App
 class: developers
+category: platform
 ---
-
-
 # Materia Javascript Events
 
 If you're embedding Materia into another application using LTI, there are a few javascript events that can help your parent application know more about what is happing in the Materia UI. These events are broadcast using [postMessage](https://developer.mozilla.org/en-US/docs/DOM/window.postMessage) so that your application can listen to them. Awesome, right?

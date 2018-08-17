@@ -1,11 +1,9 @@
 ---
-
 title: Collaborating with Others
 tagline: Build, share, and manage
 class: instructors
+category: platform
 ---
-
-
 # Sharing Widgets with Others
 
 Sharing widgets will allow you to collaborate with others to build your widget, distribute to students, and collect score results.

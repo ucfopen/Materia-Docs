@@ -1,11 +1,9 @@
 ---
-
 title: Embedding Widgets in Canvas
 tagline: Using Materia as an Instructor
 class: instructors
+category: platform
 ---
-
-
 # Overview
 Materia integrates into any LMS that supports LTI assignments. This page provides a step-by-step guide on using a Materia widget in your [Instructure Canvas](http://www.instructure.com/) course.
 

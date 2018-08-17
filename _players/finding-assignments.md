@@ -2,6 +2,7 @@
 title: Finding Assignments
 tagline: How to locate widgets assigned to you.
 class: students
+category: platform
 ---
 # Where Do I Find My Assignments?
 

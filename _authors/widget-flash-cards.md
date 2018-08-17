@@ -1,11 +1,9 @@
 ---
-
 title: Flash Cards Guide
 tagline: Details about creating a Flash Cards widget
 class: instructors
+category: wigets
 ---
-
-
 ## Overview
 
 Flash Cards are study tools in which a virtual tutor shows a standard deck of flash cards.

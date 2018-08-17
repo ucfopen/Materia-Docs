@@ -1,11 +1,9 @@
 ---
-
 title: Assigning Widgets
 tagline: Details about the flexible assignments in Materia
 class: instructors
+category: platform
 ---
-
-
 # Distributing a Widget to Students
 
 Materia provides several different methods for widget distribution. The first two are available on the *My Widgets* page, once a widget has been selected from the list. The third option provides the ability to link to a learning tools interoperability (LTI) interface (a standard way of integrating a specific application into a learning management system).

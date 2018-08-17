@@ -2,6 +2,7 @@
 title: Server Setup - Ubuntu and Apache
 tagline: How to set up a LAMP server for hosting Materia in Production
 class: admin
+category: server
 ---
 
 # Installing Materia on Ubuntu using Apache

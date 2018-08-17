@@ -2,6 +2,7 @@
 title: Server Setup - Apache Virtual Host
 tagline: A guide to configuring an Apache Virtual Host to work with Materia
 class: admin
+category: server
 ---
 
 # Production ready Apache configuration.

@@ -2,6 +2,7 @@
 title: Matching Guide
 tagline: Details about using the Matching widget
 class: students
+category: widget
 ---
 # Overview
 Students must match one set of words or phrases to a corresponding word, phrase, or definition.

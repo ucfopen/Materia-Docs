@@ -2,6 +2,7 @@
 title: Viewing Scores
 tagline: Getting the most out of your score feedback
 class: students
+category: platform
 ---
 # Score History
 

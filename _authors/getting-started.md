@@ -1,11 +1,9 @@
 ---
-
 title: Author's Guide
 tagline: Instructor's guide to using Materia in your course
 class: instructors
+category: first
 ---
-
-
 # Creating a New Widget
 The first step to using Materia in your course is to create a new widget with your own custom content. Each widget has a creator interface which allows you to easily customize it to your needs. Once created, the widget can be distributed and shared with students and other instructors.
 

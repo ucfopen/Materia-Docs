@@ -1,11 +1,9 @@
 ---
-
 title: Adventure Guide
 tagline: Details about using the Choose Your Own Adventure widget
 class: instructors
+category: wigets
 ---
-
-
 ## Overview
 
 Choose Your Own Adventure is a powerful widget that allows for the creation of branching decision trees. Students are scored based on where they end up.

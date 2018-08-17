@@ -2,6 +2,7 @@
 title: Labeling Guide
 tagline: Details about using the Labeling widget
 class: students
+category: widget
 ---
 # Overview
 

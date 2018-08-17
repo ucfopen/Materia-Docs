@@ -2,6 +2,7 @@
 title: Server Setup - Windows and Apache
 tagline: How to set up a Windows LAMP server for hosting Materia in Production
 class: admin
+category: server
 ---
 
 # Installing Materia on Windows

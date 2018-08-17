@@ -2,6 +2,7 @@
 title: Canvas LTI Setup
 tagline: Getting Materia to work seamlessly with Canvas
 class: admin
+category: administrative
 ---
 
 # Installing Materia into Instructure's Canvas LMS

@@ -2,6 +2,7 @@
 title: LTI Integration Overview
 tagline: How Materia works as an LTI tool.
 class: developers
+category: platform
 ---
 # LTI Integrations
 

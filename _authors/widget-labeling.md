@@ -1,11 +1,9 @@
 ---
-
 title: Labeling Guide
 tagline: Details about creating a Labeling widget
 class: instructors
+category: wigets
 ---
-
-
 # Labeling
 
 A quiz tool which requires students to correctly identify certain parts of an image by placing labels.

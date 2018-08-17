@@ -1,0 +1,10 @@
+{% assign groups = include.collection | group_by: 'category' | sort: 'name' %}
+{% for g in groups %}
+	{% if forloop.index > 1 %}
+		<li class="divider"></li>
+	{% endif %}
+	{% assign pages = g.items | sort: 'title' %}
+	{% for p in pages %}
+		<li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
+	{% endfor %}
+{% endfor %}

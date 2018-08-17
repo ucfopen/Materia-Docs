@@ -15,10 +15,7 @@
 								Player Guide<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								{% assign menu_pages = site.players | sort: 'title' %}
-								{% for p in menu_pages %}
-									<li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
-								{% endfor %}
+								{% include menu_list.html collection=site.players %}
 							</ul>
 						</li>
 						<li class="dropdown" id="instructors-menu">
@@ -26,10 +23,7 @@
 								Author Guide<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								{% assign menu_pages = site.authors | sort: 'title' %}
-								{% for p in menu_pages %}
-									<li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
-								{% endfor %}
+								{% include menu_list.html collection=site.authors %}
 							</ul>
 						</li>
 						<li class="dropdown" id="admin-menu">
@@ -37,10 +31,7 @@
 								Administrators	<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								{% assign menu_pages = site.administrators | sort: 'title' %}
-								{% for p in menu_pages %}
-									<li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
-								{% endfor %}
+								{% include menu_list.html collection=site.administrators %}
 							</ul>
 						</li>
 						<li class="dropdown" id="developers-menu">
@@ -48,10 +39,7 @@
 								Developers	<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								{% assign menu_pages = site.developers | sort: 'title' %}
-								{% for p in menu_pages %}
-									<li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
-								{% endfor %}
+								{% include menu_list.html collection=site.developers %}
 							</ul>
 						</li>
 					</ul>

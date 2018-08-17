@@ -2,6 +2,7 @@
 title: Flash Cards Guide
 tagline: Details about using the Flash Cards widget
 class: students
+category: widget
 ---
 # Overview
 

@@ -1,8 +1,8 @@
 ---
-
-title: Code Style Guide
+title: Style Guide
 tagline: Formatting guide for contributing code
 class: developers
+category: platform
 ---
 
 

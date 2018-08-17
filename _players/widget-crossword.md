@@ -2,6 +2,7 @@
 title: Crossword Guide
 tagline: Details about using the Crossword widget
 class: students
+category: widget
 ---
 # Overview
 

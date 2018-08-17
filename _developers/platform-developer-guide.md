@@ -1,11 +1,9 @@
 ---
-
-title: Platform Developer Guide
+title: Developing Materia Server
 tagline: Customizing and Extending the Materia Platform
 class: developers
+category: platform
 ---
-
-
 # Overview
 
 Materia is built on the <a href="http://fuelphp.com/">FuelPHP 1.5</a> framework.

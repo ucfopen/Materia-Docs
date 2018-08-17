@@ -2,6 +2,7 @@
 title: Administrative Commands
 tagline: Making use of Fuel tasks to automate Materia administration
 class: admin
+category: administrative
 ---
 
 # Materia's CLI Management Commands

@@ -1,11 +1,9 @@
 ---
-
-title: Widget Developer Guide
+title: Developing Widgets
 tagline: Create your own widgets!
 class: developers
+category: widgets
 ---
-
-
 # Developing Widgets for the Materia Platform
 
 Materia is built to be customizable and infinitely expandable.  Since it is merely a platform for serving and distributing widgets, more can be added.  Widgets are packaged into a single file and easily installed with a single command. This page describes the widget development process and tools required to create a widget package that can be installed in any Materia distribution.  The following guide will walk you through the steps required to build or customize the existing widgets.

@@ -1,11 +1,9 @@
 ---
-
 title: Question Structures
 tagline: Standardized question structures for use in Materia
 class: developers
+category: widgets
 ---
-
-
 # About Materia's Question Sets
 
 Materia stores all customized widget data in Question Sets.  A Question Set is an arbitrary data structure that widget developers use to organize any data needed to store, display and customize widget content.  We intentionally removed all restrictions on this data structure to allow widgets freedom in design and implementation.

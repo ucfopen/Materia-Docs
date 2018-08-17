@@ -1,11 +1,9 @@
 ---
-
 title: Crossword Guide
 tagline: Details about using the Crossword widget
 class: instructors
+category: wigets
 ---
-
-
 ## Overview
 
 Crossword is a quiz tool that uses words and clues to randomly generate a crossword puzzle.

@@ -21,3 +21,8 @@
 
 - Run `bundle exec rake build`
 
+## Document Conventions
+
+### Menu Sorting
+
+The menus sort pages by alphabetically by category, then alphabetically within that category.

@@ -1,11 +1,9 @@
 ---
-
 title: Hangman Guide
 tagline: Details about creating a Hangman widget
 class: instructors
+category: wigets
 ---
-
-
 ## Overview
 
 Students are provided with a clue and must guess the word or phrase within a certain amount of letters.

@@ -1,11 +1,9 @@
 ---
-
 title: Enigma Guide
 tagline: Details about using the Enigma widget
 class: students
+category: wigets
 ---
-
-
 ## Overview
 
 Enigma is a Jeopardy-like study or quiz tool. Questions are separated into categories.

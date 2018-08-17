@@ -1,11 +1,9 @@
 ---
-
-title: Contributing Code
+title: Github & Contributing Code
 tagline: How to contribute to Materia
 class: developers
+category: platform
 ---
-
-
 # Mindset
 
 We open sourced Materia so that the world can use this great tool we've invested so much time into.  We thoroughly encourage community contributions, but keep in mind we still have a vision for where Materia is headed.  From time to time great ideas just won't fit with the goals of Materia and we will have to exclude them. If this happens to be some of your work, don't take our rejection as a negative response. We respect and recognize the effort put forth by all contributors. We have nothing but gratitude for you guys/gals.

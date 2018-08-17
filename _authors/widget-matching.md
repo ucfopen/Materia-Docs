@@ -1,11 +1,9 @@
 ---
-
 title: Matching Guide
 tagline: Details about creating a Matching widget
 class: instructors
+category: wigets
 ---
-
-
 ## Matching
 
 Students must match one set of words or phrases to a corresponding word, phrase, or definition.

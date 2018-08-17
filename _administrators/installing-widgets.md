@@ -2,6 +2,7 @@
 title: Installing Widgets
 tagline: for your copy of Materia
 class: admin
+category: administrative
 ---
 
 # Installing Widget Packages
