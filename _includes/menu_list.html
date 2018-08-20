@@ -5,6 +5,6 @@
 	{% endif %}
 	{% assign pages = g.items | sort: 'title' %}
 	{% for p in pages %}
-		<li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
+		<li><a href="{{ site.baseurl }}{{ p.url }}">{% if p.menu_title %}{{ p.menu_title}}{% else %}{{ p.title }}{% endif %}</a></li>
 	{% endfor %}
 {% endfor %}

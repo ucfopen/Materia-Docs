@@ -1,73 +1,92 @@
 ---
-title: Developing Materia Server
+title: Materia Development Server
 tagline: Customizing and Extending the Materia Platform
 class: developers
 category: platform
 ---
 # Overview
 
-Materia is built on the <a href="http://fuelphp.com/">FuelPHP 1.5</a> framework.
+[ucfopen/Materia-Docker](https://github.com/ucfopen/Materia-Docker) is the fastest way to get started *developing* and *testing* Materia Server. It's a collection of scripts and configuration files needed to orchestrate a local development Docker environment.
 
-# Setup
+Our developers use this setup to run tests, develop new features, and to qa widgets.  It has containers available for all optional hosting features in Materia.
 
-First you'll need to get Materia installed and setup.  Select <a href="{{ site.baseurl }}/admin/deploying-materia.html">Deploying Materia</a> to get started.
+To get started, clone Materia-Docker into a directory and execute `./run_first.sh`.  The README from Materia-Docker will get you up and running in less then 10 minutes.
 
-# Packages
+# Application Architecture
 
-Below is a summary of the FuelPHP packages used by Materia:
+Materia has led a long life, changing iteratively as it ages. Although the FuelPHP framework is a Rails-like MVC, the entire code base is not yet taking full advantage of it. We do desire to head in that direction, but features and stability fixes have driven it's direction.  We welcome pull requests!
 
-* **auth**: Handles user authentication
-* **[casset](https://github.com/canton7/fuelphp-casset)**: Manages client-side dependences (such as loading stylesheets &amp; javascript libraries)
-* **email**: Needed since the notification system can optionally send email notices
-* **materia**: The primary package that provides the functionality for Materia
-* **oil**: Used for database migration and command-line management tasks
-* **orm**: Abstracts the database and provides tools &amp; features to create queries
-* **parser**: Allows views to use other template parsers (such as Markdown, Smarty, etc)
-* **plupload**: Provides media upload functionality
-* **rocketduck**: RocketDuck is a custom framework that supplies additional functionality needed for Materia
+## Directory Structure
 
-## Materia package
+```shell
+Materia
+├── fuel
+│   ├── app
+│   │   ├── classes
+│   │   │   ├── controller      # all routes call a controller method
+│   │   │   ├── materia         # much of materia's non-fuelphp logic
+│   │   │   ├── model
+│   │   │   ├── service         # services to create skinnier models
+│   │   │   ├── trait           # make use of Traits as much as possible: DRY
+│   │   │   └── view
+│   │   ├── config              # majority of configuration files here
+│   │   ├── logs                # application log files
+│   │   ├── media               # uploaded media content from widgets
+│   │   ├── migrations
+│   │   ├── modules
+│   │   │   └── lti
+│   │   │       ├── classes
+│   │   │       ├── config      # don't forget, lti configuration files are in here
+│   │   │       ├── migrations  # the lti module has it's own migrations
+│   │   │       └── tests
+│   │   ├── tasks               # this is where all the cli task code is
+│   │   ├── themes              # Most of our views (templates) are here
+│   │   └── tmp
+│   ├── core                    # fuelphp core package
+│   └── packages
+│       ├── ltiauth             # auth module for lti use
+│       └── materiaauth         # base materia auth module
+├── githooks                    # githooks for testing and linting
+└── public                      # the only publicly hosted files
+    ├── css
+    ├── img
+    ├── js
+    └── widget                  # all widget engines get installed here
+```
 
-`classes/api/v1.php` is the primary API which the majority of the code utilizes. The API functions then interact with the many static managers in `classes` (such as `Perm_Manager` to manage permissions, and so on).
-
-# Architecture
-
-Materia is not completely converted to follow the MVC architecture that FuelPHP provides. Some models exist in `/fuel/app/classes/model`, however other functionality is separated into the various managers in the Materia package. Views and controllers, however, are used. Views are in `/fuel/app/views` and controllers are in `/fuel/app/classes/controller`.
-
-> Work is being done to migrate to utilizing Models - currently scheduled for the Odin (1.3) release.
 
 # Configuration
 
-The following configuration files are in `/fuel/app/config/`
+Materia completely relies on [FuelPHP's configuration mechanism](https://fuelphp.com/docs/classes/config.html), which can be a little complex.  The crux of it is, FuelPhp merges multiple config files together, starting with the base configs and over-writing variables from more specific configurations.
 
-* The primary config is `config.php` which contains general settings such as caching options, timezone settings, error logging options and so on. Read <a href="http://fuelphp.com/docs/general/configuration.html">FuelPHP's documentation on configuration</a> for more information.
-* Database configuration is defined in `db.php` (and `development/db.php` for the development environment, which overrides any settings in `db.php`)
-* Materia configuration settings are defined in `materia.php` (and `development/materia.php` for the development environment, which overrides any settings in `materia.php`)
+FuelPHP allows for configuration files for each "environment".  This means production, development, test, and staging all have their own settings that merge with the base configuration.
+
+Materia attempts to consolidate the default configuration files are in `/fuel/app/config/`, however different modules and packages may contain their own configuration files.  It's suggested that you peruse that directory to familiarize yourself.
 
 # Permissions system
 
 ## Object Permissions
 
-Users have permissions to specific widgets.  There are two permission levels defined in Materia:
+Users have permissions to specific widget instances.  There are two permission levels defined in Materia:
 
-* Full: the user has full control over the widget, options, and data.
-* View Scores: the user only has permissions to collect score information.
+* **Full**: the user has full control over the instance, options, and data.
+* **View Scores**: the user only has permissions to collect score information.
 
 ## Roles
 
 Materia has a very simple three-role system:
 
-* Admin (role name - super_user): Can see and administer the entire system.
-* Instructor (role name - basic_author): Can see and administer their own widgets.
-* Student: Can play widgets but not create them.
+* **Admin** (role name - super_user): Can manage all instances, users, and install widget engines.
+* **Instructor** (role name - basic_author): Can see and manage their own instances.
+* **Student**: Can only create [guest widget instances](../create/getting-started.html#guest-widget-instances)
 
 # User Authentication Modules
 
-Mateira uses FuelPhp's Auth package to handle basic authentication. This package allows for easy and modular integration with external user data.  View FuelPhp's documentation for details about [writing your own authentication drivers](http://fuelphp.com/docs/packages/auth/drivers.html)
+Materia uses FuelPhp's Auth package to handle basic authentication. This package allows for easy and modular integration with external user data.  View FuelPhp's documentation for details about [writing your own authentication drivers](http://fuelphp.com/docs/packages/auth/drivers.html)
 
 # Unit Tests
 
-Materia uses FuelPhp's built in unit test functionality.  We have built unit tests for the entire Materia API as well as for each score module. The tests are easily run using oil:
+Materia uses FuelPhp's built in unit tests that rely on PHPUnit.  We have built unit tests for the entire Materia API as well as for each score module. The tests are easily run using oil:
 
 ```shell
 $ php oil test

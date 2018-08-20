@@ -1,5 +1,6 @@
 ---
-title: "Player's Guide"
+title: Player's Guide
+menu_title: Getting Started
 tagline: A quick start guide for students
 class: students
 category: first

@@ -1,5 +1,6 @@
 ---
 title: Author's Guide
+menu_title: Getting Started
 tagline: Instructor's guide to using Materia in your course
 class: instructors
 category: first
@@ -77,3 +78,14 @@ All creators share the same options once your widget is ready to go.
 	url="publish-preview-save-draft-buttons.jpg"
 	alt="The Publish, Preview, and Save Draft buttons help you build and edit your widgets."
 %}
+
+## Guest Widget Instances
+
+Guest widgets serve 2 main functions:
+
+1. All play data is completly anoynomous, even if the player is logged in.
+2. Players are not required to log in.
+
+These features are important for several use cases.  If you wish to publically share a widget instance without requiring users to authenticate, a guest instance allows it.  For instance, the demo widget instances linked from the catalog are all guest widgets.
+
+In Materia, students have the ability to create widgets. This opens up some new assignment oppurtunities for faculty, however, it does create some problems pertaining to student data and privacy.  This is why Materia forces all widgets created by students into Guest Mode.  This helps avoid possible [FERPA](https://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html) issues relating to student data and scores.
