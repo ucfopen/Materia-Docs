@@ -33,6 +33,8 @@ A students' role is so streamlined that they will probably not realize they are 
 
 The above screen will be shown in the LMS when the instructor is choosing an assignment to embed.  The instructor then needs to choose a widget to link this LMS resource. This linking process is how Materia knows which widget to display to students, and must be completed every time Materia is used as an LTI tool. Instructors should check out the [embedding widgets in Canvas guide](../create/embedding-in-canvas.html).
 
+> The picker page emits a [PostMessage event for 3rd party integration](integration-events.html#widget-selection-event).
+
 > If the course containing the linked Materia Widget is copied or moved, the LMS may reset this selection because it assignes a new `lis_resourt_sourceid`.
 
 
