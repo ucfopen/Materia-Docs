@@ -184,7 +184,7 @@ aside h1 {
 	font-weight: 900;
 	font-size: 42pt;
 	text-shadow: 0 1px 0 rgba(0,0,0,.4);
-	margin: 10px 0 0 0;
+	margin: 10px 0 4px 0;
 }
 
 .graphical-heading h2 {
@@ -513,7 +513,11 @@ h2 {
 @media (max-width: 767px) {
 	.graphical-heading {
 		margin: -20px -20px 0 -20px;
-		padding: 30px 20px 0 20px;
+		padding: 10px 10px 0 10px;
+	}
+
+	.graphical-heading h1 {
+		font-size: 30pt;
 	}
 
 }

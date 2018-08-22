@@ -10,7 +10,7 @@ Enigma is a Jeopardy-like study or quiz tool. Questions are separated into categ
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_enigma.png"
+	url="widgets/create_widget_enigma.png"
 	alt="Annotated Enigma widget creation screen"
 %}
 
@@ -33,7 +33,7 @@ Categories can be used to group questions according to similarities in their con
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_enigma_question.png"
+	url="widgets/create_widget_enigma_question.png"
 	alt="Annotated Enigma question creation screen."
 %}
 

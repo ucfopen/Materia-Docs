@@ -10,7 +10,7 @@ A study tool where students must search a word puzzle for a predetermined set of
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_wordsearch.png"
+	url="widgets/create_widget_wordsearch.png"
 	alt="Annotated Word Search widget creation screen"
 %}
 

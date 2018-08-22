@@ -10,7 +10,7 @@ Crossword is a quiz tool that uses words and clues to randomly generate a crossw
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_crossword.jpg"
+	url="widgets/widget_guides_crossword.jpg"
 	alt="Annotated Crossword screen"
 %}
 

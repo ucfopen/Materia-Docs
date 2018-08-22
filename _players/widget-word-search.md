@@ -10,7 +10,7 @@ Students must search a word puzzle for a predetermined set of words
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_wordsearch.jpg"
+	url="widgets/widget_guides_wordsearch.jpg"
 	alt="Annotated Word Search game screen"
 %}
 

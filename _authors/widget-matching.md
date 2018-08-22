@@ -10,7 +10,7 @@ Students must match one set of words or phrases to a corresponding word, phrase,
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_matching.png"
+	url="widgets/create_widget_matching.png"
 	alt="Annotated Matching widget creation screen"
 %}
 

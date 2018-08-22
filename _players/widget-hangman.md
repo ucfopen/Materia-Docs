@@ -10,7 +10,7 @@ Students are provided with a clue and must guess the word or phrase within a cer
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_hangman.jpg"
+	url="widgets/widget_guides_hangman.jpg"
 	alt="Annotated Hangman game screen"
 %}
 

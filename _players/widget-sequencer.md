@@ -10,7 +10,7 @@ Students must order a random set of words or phrases in the correct order.
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_sequencer.jpg"
+	url="widgets/widget_guides_sequencer.jpg"
 	alt="Screen shot of the main sequencer interface"
 %}
 
@@ -25,7 +25,7 @@ Students must order a random set of words or phrases in the correct order.
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_sequencer_incorrect.jpg"
+	url="widgets/widget_guides_sequencer_incorrect.jpg"
 	alt="Example of a failing sequence submission"
 %}
 

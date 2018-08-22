@@ -10,7 +10,7 @@ Labeling is a quiz tool which requires students to correctly identify certain pa
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_labeling.jpg"
+	url="widgets/widget_guides_labeling.jpg"
 	alt="Annotated Labeling game screen"
 %}
 

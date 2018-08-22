@@ -12,7 +12,7 @@ Allows students to visually arrange items in a chronological manner.
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_timeline.png"
+	url="widgets/widget_guides_timeline.png"
 	alt="Annotated Timeline game screen"
 %}
 
@@ -41,7 +41,7 @@ The timeline may also be distinguished by eras. The example above shows viewing 
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_timeline2.png"
+	url="widgets/widget_guides_timeline2.png"
 	alt="Annotated Timeline list view screen"
 %}
 

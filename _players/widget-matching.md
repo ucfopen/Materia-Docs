@@ -9,7 +9,7 @@ Students must match one set of words or phrases to a corresponding word, phrase,
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_matching.jpg"
+	url="widgets/widget_guides_matching.jpg"
 	alt="Annotated Matching game screen"
 %}
 

@@ -14,7 +14,7 @@ Each point on the tree, known as a *destination* or *node*, represents a screen 
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_start.png"
+	url="widgets/create_widget_adventure_start.png"
 	alt="A blank Adventure widget creator screen"
 %}
 
@@ -30,7 +30,7 @@ Click a blank destination and select **"Edit"** to choose a destination type.
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_selection.png"
+	url="widgets/create_widget_adventure_selection.png"
 	alt="Choosing a question type screen"
 %}
 
@@ -50,7 +50,7 @@ Each destination type is identified by an icon. An example tree is shown below:
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_tree.png"
+	url="widgets/create_widget_adventure_tree.png"
 	alt="Adventure Story Path Tree"
 %}
 
@@ -65,7 +65,7 @@ Each destination type is identified by an icon. An example tree is shown below:
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_screen_mc.png"
+	url="widgets/create_widget_adventure_screen_mc.png"
 	alt="Creating a Multiple Choice Question"
 %}
 
@@ -84,7 +84,7 @@ The Short Answer screen is very similar to the Multiple Choice screen, with the 
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_screen_sa.png"
+	url="widgets/create_widget_adventure_screen_sa.png"
 	alt="Creating a Short Answer Question"
 %}
 
@@ -108,7 +108,7 @@ In the "Add possible answer" input box, you can enter a word or phrase to be mat
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_screen_sa_answers.png"
+	url="widgets/create_widget_adventure_screen_sa_answers.png"
 	alt="Adding Short Answer Question Answers"
 %}
 
@@ -125,7 +125,7 @@ The Hotspot creation screen provides tools to highlight and label parts of an im
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_screen_hotspot.png"
+	url="widgets/create_widget_adventure_screen_hotspot.png"
 	alt="Creating a Hot Spot question"
 %}
 
@@ -146,7 +146,7 @@ To draw a polygon, select the **+Polygon Hotspot** button. Click anywhere on the
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_screen_hotspot_polygon.png"
+	url="widgets/create_widget_adventure_screen_hotspot_polygon.png"
 	alt="Drawing a hotspot polygon click area for a question"
 %}
 
@@ -156,7 +156,7 @@ Once a hotspot is drawn on the image, selecting it brings up the hotspot dialog.
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_screen_hotspot_dialog.png"
+	url="widgets/create_widget_adventure_screen_hotspot_dialog.png"
 	alt="Hotspot answer settings"
 %}
 
@@ -180,7 +180,7 @@ Narrative screens do not have any sort of interaction, but rather provide transi
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_screen_narr.png"
+	url="widgets/create_widget_adventure_screen_narr.png"
 	alt="Creating a Narrative Stop in Adventure"
 %}
 
@@ -194,7 +194,7 @@ Endings are functionally identical to Narrative Destinations. Instead of selecti
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_screen_end.png"
+	url="widgets/create_widget_adventure_screen_end.png"
 	alt="Creating an ending stop node in Adventure"
 %}
 
@@ -216,7 +216,7 @@ With the exception of End Points, every answer for every destination in your tre
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_destination_selection.png"
+	url="widgets/create_widget_adventure_destination_selection.png"
 	alt="Selecting a destination for a node answer"
 %}
 
@@ -229,7 +229,7 @@ Depending on which of these three types is selected, the tree will change to ind
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_link_types.png"
+	url="widgets/create_widget_adventure_link_types.png"
 	alt="An example tree with distinations drawn for each node"
 %}
 
@@ -247,7 +247,7 @@ In the example below, an in-between destination, **I**, was added between **A** 
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_in_between_node.png"
+	url="widgets/create_widget_adventure_in_between_node.png"
 	alt="Example Node Tree showing a new in-between node (Node 'I') added between steps"
 %}
 
@@ -270,7 +270,7 @@ There are a few things to keep in mind when copying a destination:
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_before_copy.png"
+	url="widgets/create_widget_adventure_before_copy.png"
 	alt="Example Node Tree before copy Node 'A' to destinateion 'F'"
 %}
 
@@ -278,7 +278,7 @@ For this tree, we will make a copy of **destination A**, targeting **destination
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_adventure_after_copy.png"
+	url="widgets/create_widget_adventure_after_copy.png"
 	alt="Example Node Tree after copying Node 'A' to destinateion 'F'"
 %}
 

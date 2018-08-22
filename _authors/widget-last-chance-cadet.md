@@ -10,7 +10,7 @@ Students must match the correct set of terms. The goal here is to match a ship t
 
 {% include figure.html
 	no_thumb='true'
-	url="create_widget_lastchancecadet.png"
+	url="widgets/create_widget_lastchancecadet.png"
 	alt="Annotated view of the Last Chance Cadet Widget Creator"
 %}
 

@@ -10,7 +10,7 @@ A quiz tool which requires students to correctly identify certain parts of an im
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_labeling.png"
+	url="widgets/create_widget_labeling.png"
 	alt="Annotated Labeling widget creation screen"
 %}
 

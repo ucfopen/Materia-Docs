@@ -10,7 +10,7 @@ Flash Cards is a study tool in which a virtual tutor shows students a deck of fl
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_flashcards.png"
+	url="widgets/widget_guides_flashcards.png"
 	alt="Annotated Flash Cards screen"
 %}
 

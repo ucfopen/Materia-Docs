@@ -10,7 +10,7 @@ Flash Cards are study tools in which a virtual tutor shows a standard deck of fl
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_flash_cards.png"
+	url="widgets/create_widget_flash_cards.png"
 	alt="Annotated Flash cards widget creation screen"
 %}
 

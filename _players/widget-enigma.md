@@ -12,7 +12,7 @@ Enigma is a Jeopardy-like study and quiz tool. Question are separated into categ
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_enigma.png"
+	url="widgets/widget_guides_enigma.png"
 	alt="Annotated Enigma screen"
 %}
 
@@ -27,7 +27,7 @@ Enigma is a Jeopardy-like study and quiz tool. Question are separated into categ
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_enigma_question_screen.png"
+	url="widgets/widget_guides_enigma_question_screen.png"
 	alt="Annotated Enigma Question screen"
 %}
 

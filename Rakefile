@@ -20,3 +20,8 @@ task :test do
   }
   HTMLProofer.check_directory("./_test", options).run
 end
+
+
+task :png_crush do
+  sh "find assets/img -type f -name '*.png' -exec pngcrush -ow -brute {} \;"
+end

@@ -6,7 +6,7 @@ category: platform
 ---
 # Materia Javascript Events
 
-Materia broadcasts events to the page they are embedded in.  These can help your parent application know more about what is happing inside the Materia UI. These events are broadcast using standard [postMessage](https://developer.mozilla.org/en-US/docs/DOM/window.postMessage) events.
+Materia widgets broadcasts events to the page they are embedded in.  These can help your parent application know more about what is happing inside the Materia UI. These events are broadcast using standard [postMessage](https://developer.mozilla.org/en-US/docs/DOM/window.postMessage) events.
 
 ## Score Recorded Event `materiaScoreRecorded`
 

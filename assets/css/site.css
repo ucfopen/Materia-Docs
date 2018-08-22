@@ -1,5 +1,5 @@
 html, body {
-	background: #eeeeee url('../img/climpek-clear.png');
+	background: #f9f9f9 url('../img/climpek-clear.png');
 	font-family: 'Lato', helvetica, arial,serif;
 	color: #5a5a5a;
 	font-size:16px;
@@ -188,7 +188,7 @@ header .navbar .nav {
 {
 	height: 313px;
 	margin: 0 auto;
-	background: url('../img/desk.png') no-repeat right center;
+	background: url('../img/desk.jpg') no-repeat right center;
 	padding-right: 138px;
 }
 
@@ -203,7 +203,7 @@ header .navbar .nav {
 {
 	color: gray;
 	margin-bottom: 1em;
-	font-size: 45px;
+	font-size: 40px;
 }
 
 .learning-experience .pompous-text p
@@ -437,7 +437,7 @@ i
 	{
 		font-weight: bold;
 		margin-top; 0;
-		font-size: 28px;
+		font-size: 22px;
 		margin-bottom: .5em;
 	}
 
@@ -478,6 +478,7 @@ i
 /* Phone */
 @media (max-width: 767px) {
 	.in-your-face {
+		padding: 5px 0 0;
 		margin: -20px -20px 0 -20px;
 	}
 

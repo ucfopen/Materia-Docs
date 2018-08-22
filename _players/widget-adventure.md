@@ -10,7 +10,7 @@ Choose Your Own Adventure is a powerful widget that allows for the creation of b
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_adventure.png"
+	url="widgets/widget_guides_adventure.png"
 	alt="Annotated Question screen"
 %}
 
@@ -27,7 +27,7 @@ The hotspot screen is the one significant exception to the Adventure widget's la
 
 {% include figure.html
 	no_thumb="true"
-	url="widget_guides_adventure2.png"
+	url="widgets/widget_guides_adventure2.png"
 	alt="Annotated hot spot question screen"
 %}
 

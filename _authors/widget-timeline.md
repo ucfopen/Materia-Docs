@@ -12,7 +12,7 @@ A study tool that visually arranges items in a chronological manner.
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_timeline.png"
+	url="widgets/create_widget_timeline.png"
 	alt="Annotated Timeline widget creation screen"
 %}
 
@@ -27,7 +27,7 @@ A study tool that visually arranges items in a chronological manner.
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_timeline_list.png"
+	url="widgets/create_widget_timeline_list.png"
 	alt="Annotated Timeline widget creation screen in list view."
 %}
 
@@ -44,7 +44,7 @@ A study tool that visually arranges items in a chronological manner.
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_timeline_add_event.png"
+	url="widgets/create_widget_timeline_add_event.png"
 	alt="Add event button"
 %}
 
@@ -53,7 +53,7 @@ The *Add Event Window* is used to create points on the timeline.
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_timeline_add_event_window.png"
+	url="widgets/create_widget_timeline_add_event_window.png"
 	alt="Annotated new event dialog"
 %}
 
@@ -68,7 +68,7 @@ The *Add Event Window* is used to create points on the timeline.
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_timeline_define_era.png"
+	url="widgets/create_widget_timeline_define_era.png"
 	alt="New Era Button"
 %}
 
@@ -76,7 +76,7 @@ An era is a period of time that has events within it.
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_timeline_define_era_window.png"
+	url="widgets/create_widget_timeline_define_era_window.png"
 	alt="New Era Dialog"
 %}
 
@@ -84,7 +84,7 @@ An era is a period of time that has events within it.
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_timeline_catagory.png"
+	url="widgets/create_widget_timeline_catagory.png"
 	alt="New Category Button"
 %}
 
@@ -92,7 +92,7 @@ The category window is used to add new categories or manage events within existi
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_timeline_catagory_window.png"
+	url="widgets/create_widget_timeline_catagory_window.png"
 	alt="Annotated Manage Categories Screen"
 %}
 
@@ -104,7 +104,7 @@ The category window is used to add new categories or manage events within existi
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_timeline_option_date.png"
+	url="widgets/create_widget_timeline_option_date.png"
 	alt="Date Label Dialog"
 %}
 
@@ -114,7 +114,7 @@ The Date Label Window allows you to change the scope of your timeline (years, mo
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_timeline_date.png"
+	url="widgets/create_widget_timeline_date.png"
 	alt="Standard Scope Selection Screen"
 %}
 
@@ -122,7 +122,7 @@ The Date Label Window allows you to change the scope of your timeline (years, mo
 
 {% include figure.html
 	no_thumb="true"
-	url="create_widget_timeline_date_custom.png"
+	url="widgets/create_widget_timeline_date_custom.png"
 	alt="Custom Scope Selection Screen"
 %}
 
