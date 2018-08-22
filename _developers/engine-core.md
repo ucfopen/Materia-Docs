@@ -74,7 +74,7 @@ Accepts no arguments.
 
 ## Materia.Engine.sendStorage
 
-Do not use directly, UseSee Materia.Storage.Manager
+Do not use directly, See [materia.scoremanager.js](score-manager.html)
 
 
 ## Materia.Engine.disableResizeInterval
@@ -82,12 +82,18 @@ Do not use directly, UseSee Materia.Storage.Manager
 | Arguments | Required | Description
 |-
 
+> @TODO
+
 ## Materia.Engine.setHeight
 
 | Arguments | Required | Description
 |-
 
+> @TODO
+
 ## Materia.Engine.escapeScriptTags
 
 | Arguments | Required | Description
 |-
+
+> @TODO

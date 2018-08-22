@@ -6,3 +6,12 @@ class: developers
 category: widgets api
 ---
 # Materia Score Core
+
+The following methods are available for submitting score logs related to events that occur in your widget:
+
+* **addGlobalScoreFeedback**
+* **submitFinalScoreFromClient**
+* **submitInteractionForScoring**
+* **submitQuestionForScoring**
+
+> @TODO
