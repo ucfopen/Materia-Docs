@@ -1,5 +1,5 @@
 ---
-title: Developing Widgets
+title: Developing Materia Widgets
 tagline: Create your own widgets!
 class: developers
 category: widgets

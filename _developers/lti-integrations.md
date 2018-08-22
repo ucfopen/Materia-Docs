@@ -48,25 +48,27 @@ The configuration url is: `http://materia/lti`. The default configuration allows
 
 ## Materia LTI Launch Message
 
-You should send a post request to `http://materia/lti/assignment/` with the following parameters
+LTI launch events must conform to the LTI standard. Below is a subset of the LTI paramaters that may be of note within Materia.
 
-| Param | Description |
+| Param | Required | Description |
 |---
-| `oauth_consumer_key` | **Required**. Matches the configuration's key. |
-| `oauth_nonce` | **Required**. An arbitrary number only used once. |
-| `oath_timestamp` | **Required**. A unix timestamp for when the signature was signed. |
-| `tool_consumer_instance_guid` | **Required**. Unique identifier of your consumer install. |
-| `tool_consumer_info_product_family_code` | **Required**. Type of consumer (eg: Canvas. Obojobo). Used to determine configuration settings. |
-| `resource_link_id` | **Required**. Unique id for this widget use. |
-| `roles` | **Required**. This role tells Materia to expect to show the selection screen. |
-| `launch_presentation_return_url` | Optional. Used by the picker interface to set the link to this widget in the consumer. |
-| `context_id` | Optional. ID of the course. |
-| `context_title` | Optional. Name of the course. |
-| `user_id` | Optional. User ID of the user performing the operation. |
-| `lis_outcome_service_url` | Optional. If set, Materia sends the final widget score to this url. See Score Passback above. |
-| `lis_result_sourcedid` | Optional. ID sometimes required by the consumer to return scores. |
-| `lis_person_sourcedid` | Optional. Often used as the user ID to match in Materia's local data. |
-| `lis_person_name_family` | Optional. User's last name. |
-| `lis_person_name_given` | Optional. User's first name. |
-| `lis_person_contact_email_primary` | Optional. Useful if Materia is set up to create users on LTI handshakes. |
-| `custom_widget_instance_id` | Optional. Some systems (like Obojobo) know the ID of the widget it's requesting. |
+| `oauth_consumer_key` | **yes** | Matches the configuration's key. |
+| `oauth_nonce` | **yes** | An arbitrary number only used once. |
+| `oath_timestamp` | **yes** | A unix timestamp for when the signature was signed. |
+| `tool_consumer_instance_guid` | **yes** | Unique identifier of your consumer install. |
+| `tool_consumer_info_product_family_code` | **yes** | Type of consumer (eg: Canvas. Obojobo). Used to determine configuration settings. |
+| `resource_link_id` | **yes** | Unique id for this widget use. |
+| `roles` | **yes** | This role tells Materia to expect to show the selection screen. |
+| `launch_presentation_return_url` | no | Used by the picker interface to set the link to this widget in the consumer. |
+| `context_id` | no | ID of the course. |
+| `context_title` | no | Name of the course. |
+| `user_id` | no | User ID of the user performing the operation. |
+| `lis_outcome_service_url` | no | If set, Materia sends the final widget score to this url. See Score Passback above. |
+| `lis_result_sourcedid` | no | ID sometimes required by the consumer to return scores. |
+| `lis_person_sourcedid` | no | Often used as the user ID to match in Materia's local data. |
+| `lis_person_name_family` | no | User's last name. |
+| `lis_person_name_given` | no | User's first name. |
+| `lis_person_contact_email_primary` | no | Useful if Materia is set up to create users on LTI handshakes. |
+| `custom_widget_instance_id` | no | Some systems (like Obojobo) know the ID of the widget it's requesting. |
+
+> Note the Materia specific `custom_widget_instance_id` paramater allows the launch to specify the widget id

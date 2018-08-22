@@ -1,8 +1,8 @@
 ---
-title: ContribuStyle Guide
+title: Style Guide & Code Linting
 tagline: Formatting guide for contributing code
 class: developers
-category: platform
+category: contributing
 ---
 # Code style guide
 
