@@ -38,12 +38,9 @@ Materia follows a our [Style Guide](style-guide.html) religiously. Follow it.
 
 ## Writing Tests
 
+> TBD
+
 ## Submitting a Pull Request
 
-
-## Do's and Donts
-
-* Don't work directly on the main repository.  Always fork.
-* Please do squash your commits down to one commit per Pull request.
-* Always review the files you're committing. Use `git add -i` instead of `git add .`
+> TBD
 
