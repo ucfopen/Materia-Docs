@@ -15,7 +15,7 @@
 	{% if include.no_thumb != 'true' %}
 	<a href="{{ site.baseurl }}/assets/img/{{ include.url }}" class="fancybox">
 	{% endif %}
-		<img src="{{ site.baseurl }}/assets/img/{{ url_thumbnail }}" alt="{{ include.alt | strip_html }}">
+		<img class="{{ include.class_name }}" src="{{ site.baseurl }}/assets/img/{{ url_thumbnail }}" alt="{{ include.alt | strip_html }}">
 	{% if include.no_thumb != 'true' %}
 	</a>
 	{% endif %}

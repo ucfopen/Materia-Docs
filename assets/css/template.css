@@ -521,3 +521,9 @@ h2 {
 	}
 
 }
+
+figure img.materia-logo {
+	max-width: 250px;
+	padding: 12px;
+	background: #fff;
+}
