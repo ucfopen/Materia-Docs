@@ -8,20 +8,206 @@ category: widgets
 
 Materia stores all customized widget data in Question Sets.  A Question Set is an arbitrary data structure that widget developers use to organize any data needed to store, display and customize widget content.  We intentionally removed all restrictions on this data structure to allow widgets freedom in design and implementation.
 
-# Structured Question Data
+The qSet, at minimum, contains the following:
 
-Inherently Materia's widgets often contain some abstract notion of a question. To help users reuse existing work, and help our system understand how to interpret these "questions", we have developed a standard structure that is required for Materia to understand them natively.
+```json
+{
+	version: 1,
+	data: { ... }
+}
+```
 
-## Question Data Structure
+The `version` property allows you to version qSets. If you later modify your widget engine you could then support a newer type of qSet structure. The `data` property is simply an arbitrary object which you can define with the information you need.
 
-* **id**: _(String, length:32)_ The question's id. These will be assigned automatically on the server when saved.  Do not set this value when saving a new question.
-* **type**: _(String, length:255)_ The question type.  The type is used to indicate compatability with other widget engines so that they may import your your questions. Pretty awesome right!
-* **questions**: _(Array)_ Array of question objects.  This was originally set up to be an array for flexibility, but we've never been able to come up with a reason to have multiple questions
-	* **text**: _(String, length:MySQL MediumText)_ Each question must have this property, this is the text of the question itself.  It will be used on the score screen records for this question.
-* **answers**: _(Array)_ Array of answer objects.
-	* **id**: _(String, length:32)_ This answer's id.  These will be assigned automatically on the server when saved.  Do
-	* **text**: _(String, length: MySQL MediumText)_ Each answer must have this property, it is the text of this answer.  It is also used on the score screen records.
-	* **value**: _(Number, 0-100)_ The value that this answer will reward the student with when chosen or matched.
-	* **options**: _(Object)_ Optional. For arbitrary optional properties
-		* **feedback**: _(String)_ Optional. If present this property will be used to display feedback about this chosen answer.
-		* **insert your property here**: Add any property here to store data about this specific answer
+## Standard qSet Structures
+
+The qSet data property doesn't enforce a schema but Materia defines a standard structure that defines Multiple Choice and Single Answer questions. Conforming to this standard structure allows Materia to add questions to the question bank. Users can then use the 'import question' functionality to re-use questions created with your widget creator. If possible it is recommended to conform to this standard structure.
+
+### Question Template
+
+```javascript
+{
+	// tells Materia this is a question
+	materiaType: 'question',
+
+	// id assigned by server (never send a value unless you are re-using a question)
+	id: 0,
+
+	// type of question. builtin options: [QA, MC], custom allowed
+	type: 'QA',
+
+	// question data is an array of objects
+	// usually we only have one, each must have a *text* property
+	questions: [
+		{
+			text: "2 + 2 = ?",
+		}
+	],
+
+	// answer data is an array of objects
+	// each answer must have *text* and *value* properties
+	answers:[
+		{
+			text: "2",
+			value: 0
+
+			// Optional. Answer scoped properties, like feedback
+			options:{
+				feedback: "Try again!"
+			}
+		}
+	],
+
+	// Optional. Question scoped properties, like it's location on a map
+	options:{
+		x: 12,
+		y: 234
+	}
+
+}
+```
+
+### Multiple Choice Example
+
+A full qSet containing one Multiple Choice question.  This question has two possible answers, one worth 0 percent (wrong), and the other worth 100 percent (correct).
+
+```javascript
+{
+	version: 1,
+	data:
+	{
+		// this property's name is up to you
+		myQuestions: [
+			{
+				/* question 1 */
+				materiaType: 'question',
+				id: 0,
+				type: 'MC',
+				questions:
+				[
+					{text: "2 + 2 = ?"}
+				],
+				answers:
+				[
+					{text: "2", value: 0},
+					{text: "4", value: 100},
+				]
+			},
+			{ /* question 2 */ },
+			{ /* question 3 */ }
+		]
+
+	}
+}
+```
+
+### Question/Answer Example
+
+A Question/Answer question.  This question has one correct answer.
+
+```javascript
+{
+	materiaType: 'question',
+	id: 0,
+	type: 'QA',
+	questions:
+	[
+		{text: "2 + 2 = ?"}
+	],
+	answers:
+	[
+		{text: "4", value: 100}
+	]
+}
+```
+
+> You can define additional data in your qSet and still conform to the standard structure as long as you provide the fields as shown in the example above.  For example, it's common to add an 'options' object either in the data object or in question or answer objects.
+
+
+## Asset Structure
+
+```javascript
+{
+	materiaType: 'asset', // tells Materia this is an asset
+	id: 'cd83Ss', // id assigned to asset by the server (never send empty)
+
+	// Optional. Asset scoped properties, like a title
+	// Applies to **this** asset in **this** qset (does not transfer to other widgets)
+	options: {
+		title : 'Rocket Duck'
+	}
+}
+```
+
+### Assets in a Question
+
+Assets within the scope of the entire question (ie. a song that plays during the question).
+
+```javascript
+{
+	materiaType: 'question',
+	id: 0,
+	type: 'QA',
+	questions: [ {text: "Who composed this song?"} ],
+	answers: [ {text: "Daft Punk", value: 100} ],
+	options: {
+		// Asset saved in currentQuestion.options.audio
+		audio:{
+			materiaType: 'asset',
+			id: 'R28ld3'
+		}
+	}
+}
+```
+
+Assets within the scope of the question's answers (ie. multiple choice where you choose a matching image).
+
+```javascript
+{
+	materiaType: 'question',
+	id: 0,
+	type: 'MC',
+	questions: [ {text: "Which of the images is a duck?"} ],
+	answers:
+	[
+		{
+			text: "",
+			value: 100,
+			// Asset saved in currentQuestion.answers[0].options.asset
+			options: { asset:{ materiaType: 'asset', id: 'cd83Ss' } }
+		},
+		{
+			text: "",
+			value: 0,
+			options: { asset:{ materiaType: 'asset', id: 'xd3rvR' } }
+		}
+
+	]
+}
+```
+
+Keep an array of assets that aren't associated with the questions at all (ie. theme backgrounds).
+
+```javascript
+{
+	version: 1,
+	data:
+	{
+		question:
+		{
+			materiaType: 'question',
+			id: 0,
+			type: 'QA',
+			questions: [ {text: "2 + 2 = ?"} ],
+			answers: [ {text: "4", value: 100} ]
+		},
+		backgrounds: [
+			// Asset saved in qSet.backgrounds[0]
+			{ materiaType: 'asset', id: 'cdd3fs' },
+			{ materiaType: 'asset', id: '0pdejF' }
+		]
+	}
+}
+```
+
+> Assets can be placed just about anywhere arbitrarily, but we advise you keep them linked with the data that makes the most sense.  If the image is part of the answer, place it in the options of each individual answer.  If the asset is not tied to a question at all, save it outside the scope of that question.

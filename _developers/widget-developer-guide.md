@@ -4,56 +4,155 @@ tagline: Create your own widgets!
 class: developers
 category: widgets
 ---
-# Developing Widgets for the Materia Platform
+# Developing Widgets for Materia
 
-Materia is built to be customizable and infinitely expandable.  Since it is merely a platform for serving and distributing widgets, more can be added.  Widgets are packaged into a single file and easily installed with a single command. This page describes the widget development process and tools required to create a widget package that can be installed in any Materia distribution.  The following guide will walk you through the steps required to build or customize the existing widgets.
+It's easiest to imagine Materia as an app store for small educational apps. It's the server that hosts and manages those individual apps (or **widgets** in Materia speak) in one centralized, integrated platform.
 
-# Prerequisites
+Widgets are packaged into a single file and easily installed with a single command. This page describes the widget development process and tools required to create a widget package that can be installed in any Materia distribution.
 
-* A Running <a href="{{ site.baseurl }}/develop/deploying-materia.html">Materia Dev Server</a>
+## What Language are Widgets Written In?
 
-> Materia widgets are written in HTML5 to be compliant and supported on all platforms, making the lives of students, faculty, and developers a bliss.
+Most widgets are built with HTML, CSS, and Javascript.  However, just about anything viewable in a browser that talks to Javascript will work.  This guide will focus on building Javascript widgets.  If you're using a something more exotic, this will still be useful to understand how to wrap your fancy gadgets into a Materia widget.
 
-# The Anatomy of a Widget
+## Development Environment
 
-A widget is a little application that depends on the Materia platform for authentication, authorization, analytics, and distribution.
+The [Mateira Widget Development Kit](materia-widget-development-kit.html) provides the best environment to build and test widgets.  It's a combination of an Express.js server, a splach of javascript borrowed from the Materia Server, and a little bit of webpack to glue it all together.  Check out the MDK page to get setup and running.
 
-The simplest widgets can be simply static web pages; however Materia is designed to do so much more. You can create:
+## The Anatomy of a Widget
 
-* **Custom Creators** that allow you to design the interface users interact with to customize widgets.
-* **Question Sets** to store widget customizations and content.  Creators can be used to input customizable content for widgets into a data structure we call Question Sets or, qSets.  This custom data holds questions, content, and settings for each instructor's customized widget.
-* **Scorable** widgets that can be used to determine a student's performance.  A 0-100% score is saved by the widget and is verified on the server using a **Score Module** built for each widget.
-* **Statistical Storage** that allows widgets to save custom statistical data (such as reaction times or click coordinates) by using Materia's storage API. This is a great tool for statistical analysis and experiments.
+A widget is a little packaged application that adheres to a few basic requirements.  It has full control over what happens within it's iframe, with a simple api to get data and save scores to the server. The simplest widgets can be simply static web pages.
 
-## The Structure of a Widget
+## The Player
 
-Widgets are made up of several files that get compressed into a single `.wigt` package for easy distribution.
-A widget package (`.wigt`) is comprised of the following directories:
+A widget player is just an html page.  You can place whatever you like on the page like graphics, Javascript, Flash, Unity, whatever.  To load content and save scores, you'll need to load a javascript file, `materia.enginecore.js`.  The Engine Core abstracts communicating with Materia into a simple API.
+
+Here's an empty player.html file:
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A Basic Widget Player</title>
+		<script src="materia.enginecore.js"></script>
+	</head>
+	<body>
+		<script>
+			Materia.Engine.start({
+				start: (instance, qset, qsetVersion) => {
+					// process the qset and start your app
+				}
+			})
+		</script>
+	</body>
+</html>
+```
+
+> See the [Materia Engine Core API](engine-core.html) for details on all of it's magical super powers.
+
+### A Typical Sequence of Events in The Player
+
+1. Call `Materia.Engine.start({...})` to signal that your widget has loaded.
+2. The Engine Core will load instance content from the server and pass it to your `start` callback.
+3. Process the instance and qset data from the server and do whatever amazing things your widget does.
+4. As the user progresses, send logs, scores, and data to the server.
+5. Finish by calling `Materia.Engine.end()`, Materia will show the score screen.
+
+
+## The Creator
+
+A creator, like [The Player](#the-player), is just an HTML page with your assets and code.  Just like the player, there is a helper script to talk to the Materia API: `materia.creatorcore.js`.
+
+A creator is totally optional, but if you want to allow users to create customized content for widgets, you'll need one.
+
+Here's an empty creator.html file, it's got a few special properties you'll want to define:
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A Basic Widget Creator</title>
+		<script src="materia.creatorcore.js"></script>
+	</head>
+	<body>
+		<script>
+			let _title = ''
+			let _qset = {}
+
+			Materia.CreatorCore.start({
+				initNewWidget: (widget, baseUrl, mediaUrl) => {
+					// user is creating a new widget
+					// display your custom input interface
+				},
+				initExistingWidget: (widget, title, qset, qsetVersion, baseUrl, mediaUrl) => {
+					// user is editing an existing widget
+					_title = title
+					_qset = qset
+				},
+				onSaveClicked: (saveMode = 'save') => {
+					// user clicked save, convert our data into a qset and save it
+					Materia.CreatorCore.save(_title, _qset)
+				},
+				// onSaveComplete: (a,b,c,d) => {},
+				// onMediaImportCompelte: (media) => {},
+				// onQuestionImportComplete: (question) => {},
+			})
+		</script>
+	</body>
+</html>
+```
+
+> See the [Materia Creatore Core API](creator-core.html) for details on creating and updating widgets.
+
+## The Score Screen
+
+Materia provides a standard score screen that will be fine for displaying scores and answer feedback in most cases.
+
+However, for more advanced uses a custom score screen can be provided.  It's *just another* html page with some javascript, this time using `materia.scorecore.js` to talk to the API.
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A Basic Score Screen</title>
+		<script src="materia.scorecore.js"></script>
+	</head>
+	<body>
+		<script>
+			// hide the default results table
+			Materia.ScoreCore.hideResultsTable()
+			// start & register a callback
+			Materia.ScoreCore.start({
+				start: (instance, qset, scoreTable, isPreview, qsetVersion) => {
+					// build a custom score display here
+				}
+			})
+		</script>
+	</body>
+</html>
+```
+
+> See the [Materia Score Core API](score-core.html) for score screen api details.
+
+
+## Typical Source Repository Layout
 
 ```shell
-widget-name/
-		.build / _output/ # .wigt file is compiled into this directory
-		src / assets/ # optional directory to store assest for the demo
-		src / _icons/ # icons for display in Materia
-		src / _score/ # score module located here
-		src / _screen-shots/ # screen shots for the widget preview
-		src / player.html # the player, or game, content that is presented to the student
-		src / player.css # optional stylesheet for player-side application
-		src / player.js # optional business logic for player-side application
-		src / creator.html # the creator for the widget that is presented to faculty and staff
-		src / creator.css # optional stylesheet for creator-side application
-		src / creator.js # optional business logic for creator-side application
-		src / demo.json # builds a qset for the demo widget
-		src / install.yaml # describes how to install the widget
-		tests / test.js # unit test file for application
-		.eslintrc.json # linter configuration file for full unit testing
-		.gitignore # ensures files and directories are skipped during git pushes
-		gulpfile.js # build task runner instruction file
-		karma-full-conf.js # full test configuration file -- naming depends on test framework used
-		karma-conf.js # short test configuration file -- naming depends on test framework used
-		package.json # metadata file for npm packages
-		README
+├── /src
+│   ├── /_icons              # REQUIRED - unique icon in multiple sizes
+│   ├── /_screen-shots       # REQUIRED - screen shots for widget detail page
+│   ├── /_score              # REQUIRED - server side score checking code
+│   ├── /assets              # js, css, you know, assets
+│   ├── player.html          # REQUIRED - The Player
+│   ├── creator.html         # The Creator
+│   ├── scoreScreen.html     # Custom Score Screen
+│   ├── demo.json            # REQUIRED - A qset used for the demo instance
+│   └── install.yaml         # REQUIRED - Installation settings
+├── README.md
+├── package.json
+└── webpack.config.js
 ```
+
+> @TODO make sure a section exists for each of the required options above
 
 ## Installation Config: install.yaml
 
@@ -155,7 +254,7 @@ qset:
 
 If your demo has media assets, include them in the optional **assets** folder, and reference them in your demo.json file with `<%MEDIA="assets/1.jpg"%>`, `<%MEDIA="assets/2.jpg"%>`, and so on (replacing `1.jpg`, `2.jpg`, etc. with the name of your asset files). The install script will find any `MEDIA` tags, upload the assets, and replace the tags with the resulting asset IDs before creating and installing the demo.
 
-## Optional Score Module: ```_score-modules```
+## Optional Score Module: ```src/_score/score-module.php```
 
 You'll need both a score module and unit test file if your widget is scorable.  The `score_module.php` file is a php class which extends `Score_Module`.  Your score module should override the `checkAnswer` method.  Your implementation of this method should return a number of 0-100 representing the score for the given question response.  The `$log` object contains any data saved to the server by your widget (usually question or performance data).
 
@@ -191,388 +290,31 @@ This example uses `Score_Module's` `questions` property which contains a referen
 
 > Look at the <code>Score_Module</code> class for all of the properties available to you.
 
-### Score Module Unit Tests
+## Display Icons: `/src/_icons`
 
-The `test_score_module.php` file is a unit test which should extend FuelPHP's `TestCase` class.  This file typically should create a widget instance, create play logs, save those logs, then test to make sure your score module's `checkAnswer` function returns the correct score on each log.
+This folder should contain the icons for your widget. A total of four icons at various pixel sizes are required:
+* icon-60.png
+* icon-60x2.png
+* icon-92.png
+* icon-92x2.png
+* icon-275.png
+* icon-275x2.png
+* icon-394.png
+* icon-394x2.png
 
-```php
-<?php
-class Test_Score_Modules_MyWidget extends TestCase
-{
-	protected function setup()
-	{
-		Config::set('errors.throttle', 5000);
-		$_SERVER['REMOTE_ADDR'] = '127.0.0.1';
-
-		// load the admin task
-		require_once(PKGPATH.'/materia/tasks/admin.php');
-		\Fuel\Tasks\Admin::clear_cache(true);
-	}
-
-	protected function tearDown()
-	{
-		\RocketDuck\Auth_Manager::logout();
-	}
-
-	protected function _get_qset()
-	{
-		return json_decode('{ ... a valid qSet for your widget ... }');
-	}
-
-	protected function _asAuthor()
-	{
-		// create a new user and login as them
-		// (see Materia-Core-Widgets repository for details)
-	}
-
-	protected function _makeWidget()
-	{
-		// create a new widget instance with your qSet
-		// (see Materia-Core-Widgets repository for details)
-	}
-
-	protected function test_check_answer()
-	{
-		$inst = $this->_makeWidget();
-
-		$playSession = \Materia\Api::session_play_create($inst->id);
-		$qset = \Materia\Api::question_set_get($inst->id, $playSession);
-
-		$logs = [];
-
-		// generate a few logs to mimic actual interaction
-		$logs[] = json_decode('{
-			"text":"50",
-			"type":1004,
-			"value":"",
-			"item_id":"'.$qset->data['items'][0]['items'][0]['id'].'",
-			"game_time":10
-		}');
-		$logs[] = json_decode('{
-			"text":"ONE HUNDRED5",
-			"type":1004,
-			"value":"",
-			"item_id":"'.$qset->data['items'][0]['items'][1]['id'].'",
-			"game_time":10
-		}');
-		$logs[] = json_decode('{
-			"text":"",
-			"type":2,
-			"value":"",
-			"item_id":0,
-			"game_time":12
-		}');
-
-		$output = \Materia\Api::play_logs_save($playSession, $logs);
-
-		$scores = \Materia\Api::widget_instance_scores_get($inst->id);
-
-		$thisScore = \Materia\Api::widget_instance_play_scores_get($playSession);
-
-		$this->assertInternalType('array', $thisScore);
-		$this->assertEquals(25, $thisScore[0]['perc']);
-	}
-}
-```
-## Display Icons: _icons_
-
-This folder should contain the icons for your widget. A total of four icons at various pixel sizes should be provided: icon-60.png, icon-92.png, icon-275.png and icon-394.png, as well as their times two multiples icon-60x2.png, icon-92x2.png, icon-275x2.png and icon-394x2.
-
-## Overview Screen Shots: _screen-shots_
+## Overview Screen Shots: `/src/_screen-shots`
 
 This folder should contain screen shots and corresponding thumbnails for your widget.  These will be used in the detail page for your widget.
 
-> You will need to provide three screen shots.
+* 1-thumb.png
+* 1.png
+* 2-thumb.png
+* 2.png
+* 3-thumb.png
+* 3.png
 
-# Building Widget Code
 
-## Getting Started
+# Compiling with Webpack
 
-[Download](https://clu.cdl.ucf.edu/materia/template-widget/repository/archive.zip?ref=master) the Template Widget from Clu
-
-Extract this folder to `materia-docker/app/fuel/app/tmp/widget_packages/`
-
-This template has the bare minimum a widget requires to function, and often will require more to be considered useful. Use this as a place to start building your widget, while using the [Hello World Widget](https://clu.cdl.ucf.edu/materia/hello-world-widget/repository/archive.zip?ref=master) as an example of a simple, complete widget.
-
-> Be careful when editing files:
-> "devmateria/sandbox/" is where compiled widgets are installed from in the sandbox environment
-> Installed widget files are located at this directory level and can be edited at will.
-
-
-Edit `install.yaml` to your desired widget name, and rename the `template-widget` folder to match a dash separated, all lowercase version of the widget's name.
-
-The `player.html` is the code that is loaded into Materia for the student-facing game, whereas `creator.html` is loaded for the instructor to build the question data in each widget instance.
-
-Read through each and use them as a barebones example of how to develop your own widget
-
-## Materia.Score
-
-The following methods are available for submitting score logs related to events that occur in your widget:
-
-* **addGlobalScoreFeedback**
-* **submitFinalScoreFromClient**
-* **submitInteractionForScoring**
-* **submitQuestionForScoring**
-
-## Materia.Storage
-
-Implementation incomplete, check back again.
-
-# qSet Structure
-
-The qSet, at minimum, contains the following:
-
-```json
-{
-	version: 1,
-	data: { ... }
-}
-```
-
-The `version` property allows you to version qSets. If you later modify your widget engine you could then support a newer type of qSet structure. The `data` property is simply an arbitrary object which you can define with the information you need.
-
-## Standard qSet Structures
-
-The qSet data property doesn't enforce a schema but Materia defines a standard structure that defines Multiple Choice and Single Answer questions. Conforming to this standard structure allows Materia to add questions to the question bank. Users can then use the 'import question' functionality to re-use questions created with your widget creator. If possible it is recommended to conform to this standard structure.
-
-### Question Template
-
-```javascript
-{
-	// tells Materia this is a question
-	materiaType: 'question',
-
-	// id assigned by server (never send a value unless you are re-using a question)
-	id: 0,
-
-	// type of question. builtin options: [QA, MC], custom allowed
-	type: 'QA',
-
-	// question data is an array of objects
-	// usually we only have one, each must have a *text* property
-	questions: [
-		{
-			text: "2 + 2 = ?",
-		}
-	],
-
-	// answer data is an array of objects
-	// each answer must have *text* and *value* properties
-	answers:[
-		{
-			text: "2",
-			value: 0
-
-			// Optional. Answer scoped properties, like feedback
-			options:{
-				feedback: "Try again!"
-			}
-		}
-	],
-
-	// Optional. Question scoped properties, like it's location on a map
-	options:{
-		x: 12,
-		y: 234
-	}
-
-}
-```
-
-### Multiple Choice Example
-
-A full qSet containing one Multiple Choice question.  This question has two possible answers, one worth 0 percent (wrong), and the other worth 100 percent (correct).
-
-```javascript
-{
-	version: 1,
-	data:
-	{
-		// this property's name is up to you
-		myQuestions: [
-			{
-				/* question 1 */
-				materiaType: 'question',
-				id: 0,
-				type: 'MC',
-				questions:
-				[
-					{text: "2 + 2 = ?"}
-				],
-				answers:
-				[
-					{text: "2", value: 0},
-					{text: "4", value: 100},
-				]
-			},
-			{ /* question 2 */ },
-			{ /* question 3 */ }
-		]
-
-	}
-}
-```
-
-### Question/Answer Example
-
-A Question/Answer question.  This question has one correct answer.
-
-```javascript
-{
-	materiaType: 'question',
-	id: 0,
-	type: 'QA',
-	questions:
-	[
-		{text: "2 + 2 = ?"}
-	],
-	answers:
-	[
-		{text: "4", value: 100}
-	]
-}
-```
-
-> You can define additional data in your qSet and still conform to the standard structure as long as you provide the fields as shown in the example above.  For example, it's common to add an 'options' object either in the data object or in question or answer objects.
-
-
-## Asset Structure
-
-```javascript
-{
-	materiaType: 'asset', // tells Materia this is an asset
-	id: 'cd83Ss', // id assigned to asset by the server (never send empty)
-
-	// Optional. Asset scoped properties, like a title
-	// Applies to **this** asset in **this** qset (does not transfer to other widgets)
-	options: {
-		title : 'Rocket Duck'
-	}
-}
-```
-
-### Assets in a Question
-
-Assets within the scope of the entire question (ie. a song that plays during the question).
-
-```javascript
-{
-	materiaType: 'question',
-	id: 0,
-	type: 'QA',
-	questions: [ {text: "Who composed this song?"} ],
-	answers: [ {text: "Daft Punk", value: 100} ],
-	options: {
-		// Asset saved in currentQuestion.options.audio
-		audio:{
-			materiaType: 'asset',
-			id: 'R28ld3'
-		}
-	}
-}
-```
-
-Assets within the scope of the question's answers (ie. multiple choice where you choose a matching image).
-
-```javascript
-{
-	materiaType: 'question',
-	id: 0,
-	type: 'MC',
-	questions: [ {text: "Which of the images is a duck?"} ],
-	answers:
-	[
-		{
-			text: "",
-			value: 100,
-			// Asset saved in currentQuestion.answers[0].options.asset
-			options: { asset:{ materiaType: 'asset', id: 'cd83Ss' } }
-		},
-		{
-			text: "",
-			value: 0,
-			options: { asset:{ materiaType: 'asset', id: 'xd3rvR' } }
-		}
-
-	]
-}
-```
-
-Keep an array of assets that aren't associated with the questions at all (ie. theme backgrounds).
-
-```javascript
-{
-	version: 1,
-	data:
-	{
-		question:
-		{
-			materiaType: 'question',
-			id: 0,
-			type: 'QA',
-			questions: [ {text: "2 + 2 = ?"} ],
-			answers: [ {text: "4", value: 100} ]
-		},
-		backgrounds: [
-			// Asset saved in qSet.backgrounds[0]
-			{ materiaType: 'asset', id: 'cdd3fs' },
-			{ materiaType: 'asset', id: '0pdejF' }
-		]
-	}
-}
-```
-
-> Assets can be placed just about anywhere arbitrarily, but we advise you keep them linked with the data that makes the most sense.  If the image is part of the answer, place it in the options of each individual answer.  If the asset is not tied to a question at all, save it outside the scope of that question.
-
-# Compiling with Gulp
-
-Gulp automates the process of building and compiling the `.wigt` files. Most widgets use a custom configuration of Gulp as their compiler, but this is not required. As long as the command line `npm run build` (currently located under the `scripts` attribute in the `package.json` file) runs the chosen compiler on the widget to produce a `.wigt` file in the same format as the current Gulp system, it will be accepted.
-
-## Development sandbox
-
-To test your widget's player and creator live, make sure you've cloned Materia's development environment (aka DevMateria) at: git@clu.cdl.ucf.edu:materia/devmateria.git
-
-Open a terminal to `devmateria/` and run:
-
-`./start/`
-
-This will run the development environment, and can be accessed through the browser at `http://localhost:8080/`
-
-If you have the basics of the widget done properly (template-widget unchanged for example), you will see its image here along with a `Player` and `Creator` button.
-
-Press the `Player` button. On the newly loaded page, a left side panel will give you a series of options.
-
--The checkboxes, and subsequent rebuild button, allow you to choose whether or not to implement some of the more obfuscating tasks on your widget.
-
--The `Download to Materia` button will compile, package, and download the `.wigt` file to your designated download folder.
-
--The `Install to Materia` will install directly to your local Materia environment (if you have it running).
-
-Aside from these features, the environment to the right of this sidebar is the live version of your player-facing widget. If you back up and press the `Creator` button, or choose the `Creator` option in the left side panel, you would arrive at your creator-facing widget.
-
-The advantage to running in this environment is that all changes made will automatically refresh in the browser.
-
-### Caveats
-
-Because the widget is being run in a sandbox, only the demo qset can be used, scoring will not run, and widgets cannot be saved. To test that functionality, see the compiling section below.
-
-In the left side panel, a demo qset can be altered and loaded when inside the player-facing side of the widget to test unique questions, answers, et cetera.
-
-## Compiling for production
-
-To compile a .wigt package, either:
-
-1. Click `Download to Materia` from inside the development sandbox's player-facing side of the widget, or,
-
-2. Navigate to the root folder of your widget in the command line and run: `npm run build`
-
-This creates a .wigt file in the `.build/_output/` directory.
-
-To install directly into your local Materia, either:
-
-1. Click `Install to Materia` from inside the development sandbox's player-facing side of the widget, or,
-
-2. Drop the package made in the above steps into the directory `materia-docker/app/fuel/app/temp/widget_packages/`, navigate down to `materia-docker/`, and run `./install_widget.sh your-widgets-name.wigt`
-
-This is useful for testing scoring modules and creators.
+> @TODO
 
