@@ -12,60 +12,86 @@ Every widget needs an `install.yaml` file which describes the various settings t
 
 Here is an example install.yaml file from the Crossword widget:
 
-```
+```yaml
 ---
 general:
+  # REQUIRED. String. Name of this widget (spaces and dashes ok).
   name: Crossword
+
+  # REQUIRED. String. Not used.
   group: Materia
+
+  # REQUIRED. Int. Pixel height of the iframe. Use `0` for 100%
   height: 573
+
+  # REQUIRED. Int. Pixel width of the iframe. Use `0` for 100%
   width: 715
+
+  # REQUIRED. Boolean. Widget is shown in the highlight catalog.
   in_catalog: Yes
-  is_editable: Yes
+
+  # REQUIRED. Boolean. `No` hides the widget from all catalog views.
   is_playable: Yes
-  is_qset_encrypted: Yes
-  is_answer_encrypted: Yes
+
+  # REQUIRED. Boolean. Enables edit instance and save as draft buttons.
+  is_editable: Yes
+
+  # REQUIRED. Boolean. Does this widget store tabular data using the Storag Manager?
   is_storage_enabled: No
+
+  # REQUIRED. Int. Version of the Materia API this widget uses. Use `2`.
   api_version: 2
+
+  # REQUIRED. Boolean. Not used
+  is_qset_encrypted: Yes
+
+  # REQUIRED. Boolean. Not used
+  is_answer_encrypted: Yes
+
 files:
-  creator: creator.html
+  # REQUIRED. String. Name of the the player html file
   player: player.html
-  flash_version: 10
+
+  # OPTIONAL. String. Name of the creator html file.
+  creator: creator.html
+
+  # REQUIRED. Int. Flash player version required for the player and creator
+  flash_version: 0
+
 score:
+  # REQUIRED. Boolean. Does this widget score?
   is_scorable: Yes
+
+  # OPTIONAL. String. Name of the Class in the score module
   score_module: Crossword
+
+  # OPTIONAL - name of the custom score screen html file. Omit to use default score screen
+  score_screen: ScoreScreen.html
+
 meta_data:
+  # REQUIRED. List of Strings. What feature tags should be displayed on the widget detail page
   features:
-	- Customizable
-	- Scorable
-	- Mobile Friendly
+    - Customizable
+    - Scorable
+    - Mobile Friendly
+
+  # REQUIRED. List of Strings. What question types can be imported.
+  # Supported Options: `Question/Answer` and `Multiple Choice`.
   supported_data:
-	- Question/Answer
-  about: 'In Crossword, fill in the blank squares with: (a) words based on the clues provided in the text and/or (b) by the letters overlapping from other words.'
+    - Question/Answer
+
+  # REQUIRED. Paragraph. Long description displayd on the widget detail page.
+  about: >
+    In Crossword, fill in the blank squares
+    with (a) words based on the clues provided
+    in the text and/or (b) by the letters
+    overlapping from other words.
+
+  # REQUIRED. Paragraph. Short description shown in catalog.
   excerpt: >
-	A quiz tool that uses words and clues to
-	randomly generate a crossword puzzle.
+    A quiz tool that uses words and clues to
+    randomly generate a crossword puzzle.
 ```
-
-### General Settings
-
-* **name:** The displayed name of the widget
-* **group:** The group name for the widget.
-* **height:** The height of the widget in pixels. Use 0 if the widget should expand to the full height available.
-* **width:** The width of the widget in pixels. Use 0 if the widget should expand to the full width available.
-* **in_catalog:** 'Yes' if the widget should be publicly displayed on the widget catalog for creation and use. Generally, widgets not displayed in the catalog are specialized and lack a creator and are only available for creation through command line.
-* **is_editable:** Instances can't be saved as drafts if not editable.
-* **is_playable:** 'Yes' if widget instances can be played. 'No' to disable playing of instances. This is typically only used when developing a widget to prevent users from seeing an unfinished widget.
-* **is_qset_encrypted:** Tells Materia whether to return an encrypted qset, or unchanged.
-* **is_answer_encrypted:** Reserved for future use.
-* **is_storage_enabled:** 'Yes' if this widget uses the storage API features. 'No' otherwise.
-* **api_version:** Corresponds to which version of the widget instance object this widget expects. You should specify version 1 here.
-
-> Group is currently only for your organizational purposes. Later versions of Materia may use this property to help better organize the widget catalog.
-
-### Files Settings
-
-* **creator:** Location of the creator html file. Not required if <strong>is_editable</strong> is set to 'No.'
-* **player:** Location of the player html file.
 
 ### score
 
