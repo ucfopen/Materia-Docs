@@ -16,7 +16,7 @@ Most widgets are built with HTML, CSS, and Javascript.  However, just about anyt
 
 ## Development Environment
 
-The [Mateira Widget Development Kit](materia-widget-development-kit.html) provides the best environment to build and test widgets.  It's a combination of an Express.js server, a splach of javascript borrowed from the Materia Server, and a little bit of webpack to glue it all together.  Check out the MDK page to get setup and running.
+The [Mateira Widget Development Kit](materia-widget-development-kit.html) provides the best environment to build and test widgets.  It's a combination of an Express.js server, a splash of javascript borrowed from the Materia Server, and a little bit of webpack to glue it all together.  Check out the MDK page to get setup and running.
 
 ## What's a Widget
 
@@ -91,13 +91,14 @@ Here's an empty creator.html file, it's got a few special properties you'll want
 					_title = title
 					_qset = qset
 				},
-				onSaveClicked: (saveMode = 'save') => {
+				onSaveClicked: (mode = 'save') => {
+					// possible modes: 'publish', 'preview', 'save'
 					// user clicked save, convert our data into a qset and save it
 					Materia.CreatorCore.save(_title, _qset)
 				},
-				// onSaveComplete: (a,b,c,d) => {},
-				// onMediaImportCompelte: (media) => {},
-				// onQuestionImportComplete: (question) => {},
+				// onSaveComplete: (instanceName, widget, qset, qsetVersion) => {},
+				// onMediaImportComplete: (arrayOfMedia) => {},
+				// onQuestionImportComplete: (arrayOfQuestions) => {},
 			})
 		</script>
 	</body>

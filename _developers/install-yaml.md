@@ -36,7 +36,7 @@ general:
   # REQUIRED. Boolean. Enables edit instance and save as draft buttons.
   is_editable: Yes
 
-  # REQUIRED. Boolean. Does this widget store tabular data using the Storag Manager?
+  # REQUIRED. Boolean. Does this widget store tabular data using the Storage Manager?
   is_storage_enabled: No
 
   # REQUIRED. Int. Version of the Materia API this widget uses. Use `2`.
@@ -80,7 +80,7 @@ meta_data:
   supported_data:
     - Question/Answer
 
-  # REQUIRED. Paragraph. Long description displayd on the widget detail page.
+  # REQUIRED. Paragraph. Long description displayed on the widget detail page.
   about: >
     In Crossword, fill in the blank squares
     with (a) words based on the clues provided
@@ -92,23 +92,3 @@ meta_data:
     A quiz tool that uses words and clues to
     randomly generate a crossword puzzle.
 ```
-
-### score
-
-> Widgets that don't record scores still require a score module, though scoring logic may be omitted.
-
-* **is_scorable:** 'Yes' if the widget collects scores. 'No' otherwise.
-* **score_module:** Name of the score module class (in score_module.php).
-* **score_type:** (Deprecated) Specifies how a widget is graded. Accepted values are:
-	* SERVER - means grading will be handled by a Score Module on the server. **Preferred**
-	* CLIENT - means your widget will tell Materia what the widget score should be.
-	* SERVER-CLIENT - utilizes both methods.
-
-### meta_data
-
-* **features:** A list of features which will be presented in the widget catalog.
-	> While your widget can specify any number of features, Materia specifically looks for two defined features. If your widget is scorable you'll want to include <em>Scorable</em> here. If your widget includes a creator you'll want to include <em>Customizable</em>. These features allow users to filter the catalog page to find the widget they're looking for.
-* **supported_data:** A list of the types of data which this widget supports. This will be presented in the widget catalog.
-	>Similarly, Materia looks for a few specific features here: <em>Question/Answer</em> and/or <em>Multiple Choice</em>.
-* **about:** The text displayed on the widget detail page.
-* **excerpt:** The text displayed on the widget catalog page.

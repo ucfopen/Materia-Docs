@@ -13,12 +13,12 @@ To load content and save scores from a widget's player component, you'll need to
 
 Signals that your widget is done loading it's assets and passes a callback that will received widget instance data.
 
+Below is a table of the supported keys for start's argument object
+
 | Object Property | Required | Description
 |-
 | start | **yes** | A function that is called after the instance and qset data has loaded
-| manualResize | no | set to `false` automaticaly adjust the height of the widget based on [window.getComputedStyle](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle)
-
-> Note this is the only method that expects an object with properites
+| manualResize | no | set to `false` automatically adjust the height of the widget based on [window.getComputedStyle](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle)
 
 ### Example
 
@@ -46,9 +46,15 @@ Ask Materia to display a stylized Alert message.
 
 | Arguments | Required | Description
 |-
-| title | |
-| message | |
-| type | |
+| title | **yes** | Title of the alert window to be displayed
+| message | **yes** | Message to display in the alert
+| type | no | @TODO
+
+### Example
+
+```javascript
+Materia.Engine.alert('Alert Title', 'Alert Message')
+```
 
 ## Materia.Engine.getImageAssetUrl
 
@@ -79,21 +85,31 @@ Do not use directly, See [materia.scoremanager.js](score-manager.html)
 
 ## Materia.Engine.disableResizeInterval
 
-| Arguments | Required | Description
-|-
+Disables automatic resizing of the widget iframe. See [Materia.Engine.start](#materiaenginestart)
 
-> @TODO
+### Example
+
+```javascript
+Materia.Engine.disableResizeInterval()
+```
 
 ## Materia.Engine.setHeight
 
-| Arguments | Required | Description
-|-
+Manually set the pixel height of the widget.
 
-> @TODO
+### Example
+
+```javascript
+Materia.Engine.setHeight(200)
+```
 
 ## Materia.Engine.escapeScriptTags
 
-| Arguments | Required | Description
-|-
+Utility function for removing html tags tags from a string
 
-> @TODO
+### Example
+
+```javascript
+// returns `&lt;this should be fine&gt;`
+Materia.Engine.escapeScriptTags('<this should be fine>')
+```

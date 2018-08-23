@@ -88,7 +88,7 @@ Look at the comments in the example below which covers all of our PHP coding sty
 	// <-- Closing ?> tag should be omitted
 ```
 
-# PHP Code Sniffer Git Hook
+## PHP Code Sniffer Git Hook
 
 PHP Code Sniffer is installed with Composer and included in the dev dependencies of Materia Server.  TWe also install git hooks using composer's `post-install-cmd` script to run tests and run the sniffer.
 
