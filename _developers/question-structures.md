@@ -19,6 +19,12 @@ The qSet, at minimum, contains the following:
 
 The `version` property allows you to version qSets. If you later modify your widget engine you could then support a newer type of qSet structure. The `data` property is simply an arbitrary object which you can define with the information you need.
 
+## Demo.json
+
+Each [.wigt file](wigt-package.html) must be packaged with a demo.json containing a sample qSet.  This question set is used for the demo that users play to demo the widget once it's installed into Materia.
+
+> Note that media assets can be referenced in demo.json qsets. Just place an image in the src/assets folder and reference it in your demo.json using `<%MEDIA="assets/1.jpg"%>`. The installer will handle uploading the media and replace the tags with the resulting asset IDs.
+
 ## Standard qSet Structures
 
 The qSet data property doesn't enforce a schema but Materia defines a standard structure that defines Multiple Choice and Single Answer questions. Conforming to this standard structure allows Materia to add questions to the question bank. Users can then use the 'import question' functionality to re-use questions created with your widget creator. If possible it is recommended to conform to this standard structure.
@@ -124,7 +130,7 @@ A Question/Answer question.  This question has one correct answer.
 > You can define additional data in your qSet and still conform to the standard structure as long as you provide the fields as shown in the example above.  For example, it's common to add an 'options' object either in the data object or in question or answer objects.
 
 
-## Asset Structure
+## Media Asset Structure
 
 ```javascript
 {
