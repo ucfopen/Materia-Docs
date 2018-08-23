@@ -158,9 +158,9 @@ However, for more advanced uses a custom score screen can be provided.  It's *ju
 │   ├── /_score
 │   │   └── /<a href="score-module.html">score_module.php</a> # server side score checking
 │   ├── /assets               # js, css, assets for demo.json
-│   ├── player.html           # REQUIRED
-│   ├── creator.html
-│   ├── scoreScreen.html
+│   ├── <a href="widget-developer-guide.html#the-player">player.html</a>           # REQUIRED
+│   ├── <a href="widget-developer-guide.html#the-creator">creator.html</a>
+│   ├── <a href="widget-developer-guide.html#the-score-screen">scoreScreen.html</a>
 │   ├── <a href="question-structures.html#demojson">demo.json</a>             # REQUIRED - A qset used for the demo instance
 │   └── <a href="install-yaml.html">install.yaml</a>          # REQUIRED - Installation settings
 ├── README.md
