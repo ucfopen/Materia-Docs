@@ -3,6 +3,7 @@ title: Sequencer Guide
 tagline: Details about using the Sequencer widget
 class: students
 category: widget
+highlighter: no
 ---
 # Overview
 

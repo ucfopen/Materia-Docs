@@ -3,6 +3,7 @@ title: Assigning Widgets
 tagline: Details about the flexible assignments in Materia
 class: instructors
 category: platform
+highlighter: no
 ---
 # Distributing a Widget to Students
 

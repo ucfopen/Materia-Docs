@@ -3,6 +3,7 @@ title: WIGT Package Structure
 tagline: How a .wigt package is Structured
 class: developers
 category: widgets
+highlighter: no
 ---
 
 # Wigt Package Structure Specfics

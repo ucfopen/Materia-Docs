@@ -3,6 +3,7 @@ title: Collaborating with Others
 tagline: Build, share, and manage
 class: instructors
 category: platform
+highlighter: no
 ---
 # Sharing Widgets with Others
 

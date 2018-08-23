@@ -3,6 +3,7 @@ title: Timeline Guide
 tagline: Details about using the Timeline widget
 class: students
 category: widget
+highlighter: no
 ---
 # Overview
 

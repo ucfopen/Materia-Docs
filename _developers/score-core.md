@@ -4,6 +4,7 @@ menu_title: Widget API - Score Core
 tagline: Use the Score Core to Customize Widget Score Screens
 class: developers
 category: widgets api
+highlighter: no
 ---
 # Materia Score Core
 

@@ -3,6 +3,8 @@ title: Widget Install.yaml
 tagline: Widget Instal Configuration
 class: developers
 category: widgets
+highlighter_langs:
+  - yaml
 ---
 # Materia Widget Install Configuration
 

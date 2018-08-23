@@ -3,6 +3,7 @@ title: Hangman Guide
 tagline: Details about using the Hangman widget
 class: students
 category: widget
+highlighter: no
 ---
 # Overview
 

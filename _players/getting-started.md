@@ -4,6 +4,7 @@ menu_title: Getting Started
 tagline: A quick start guide for students
 class: students
 category: first
+highlighter: no
 ---
 # The Big Picture
 

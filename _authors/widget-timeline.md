@@ -3,6 +3,7 @@ title: Timeline Guide
 tagline: Details about creating a Timeline widget
 class: instructors
 category: wigets
+highlighter: no
 ---
 # Overview
 

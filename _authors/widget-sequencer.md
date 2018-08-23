@@ -3,6 +3,7 @@ title: Sequencer Guide
 tagline: Details about creating a Sequencer widget
 class: instructors
 category: wigets
+highlighter: no
 ---
 # Sequencer
 Students must order a random set of words or phrases into the correct order.

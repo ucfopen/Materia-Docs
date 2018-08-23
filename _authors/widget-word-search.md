@@ -3,6 +3,7 @@ title: Word Search Guide
 tagline: Details about creating a Word Search widget
 class: instructors
 category: wigets
+highlighter: no
 ---
 # Word Search
 

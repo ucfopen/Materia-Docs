@@ -3,6 +3,7 @@ title: Matching Guide
 tagline: Details about creating a Matching widget
 class: instructors
 category: wigets
+highlighter: no
 ---
 ## Matching
 

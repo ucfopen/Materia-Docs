@@ -3,6 +3,7 @@ title: Last Chance Cadet Guide
 tagline: Details about creating a Last Chance Cadet widget
 class: instructors
 category: wigets
+highlighter: no
 ---
 # Last Chance Cadet
 

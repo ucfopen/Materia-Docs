@@ -3,6 +3,7 @@ title: Hangman Guide
 tagline: Details about creating a Hangman widget
 class: instructors
 category: wigets
+highlighter: no
 ---
 ## Overview
 

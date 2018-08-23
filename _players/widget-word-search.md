@@ -3,6 +3,7 @@ title: Word Search Guide
 tagline: Details about using the Word Search widget
 class: students
 category: widget
+highlighter: no
 ---
 # Overview
 

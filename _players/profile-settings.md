@@ -3,6 +3,7 @@ title: Profile Settings
 tagline: Manage your notification and avatar settings.
 class: students
 category: platform
+highlighter: no
 ---
 # Settings Page
 

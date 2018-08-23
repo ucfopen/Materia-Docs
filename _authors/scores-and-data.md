@@ -3,6 +3,7 @@ title: Scores and Data
 tagline: Analyzing Your Student's Results
 class: instructors
 category: platform
+highlighter: no
 ---
 # Reviewing Widget Scores
 

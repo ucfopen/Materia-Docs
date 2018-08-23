@@ -3,6 +3,7 @@ title: Enigma Guide
 tagline: Details about using the Enigma widget
 class: students
 category: wigets
+highlighter: no
 ---
 ## Overview
 

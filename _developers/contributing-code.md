@@ -3,6 +3,7 @@ title: Contributing to Materia
 tagline: How to contribute to Materia
 class: developers
 category: contributing
+highlighter: no
 ---
 # Contribute!
 

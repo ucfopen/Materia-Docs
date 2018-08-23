@@ -3,6 +3,7 @@ title: Last Chance Cadet Guide
 tagline: Details about using the Last Chance Cadet widget
 class: students
 category: widget
+highlighter: no
 ---
 # Overview
 

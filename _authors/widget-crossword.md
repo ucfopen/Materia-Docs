@@ -3,6 +3,7 @@ title: Crossword Guide
 tagline: Details about using the Crossword widget
 class: instructors
 category: wigets
+highlighter: no
 ---
 ## Overview
 

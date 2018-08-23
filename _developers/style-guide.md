@@ -3,6 +3,7 @@ title: Style Guide & Code Linting
 tagline: Formatting guide for contributing code
 class: developers
 category: contributing
+highlighter: yes
 ---
 # Code style guide
 

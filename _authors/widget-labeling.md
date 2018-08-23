@@ -3,6 +3,7 @@ title: Labeling Guide
 tagline: Details about creating a Labeling widget
 class: instructors
 category: wigets
+highlighter: no
 ---
 # Labeling
 

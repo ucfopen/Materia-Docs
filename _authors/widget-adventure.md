@@ -3,6 +3,7 @@ title: Adventure Guide
 tagline: Details about using the Choose Your Own Adventure widget
 class: instructors
 category: wigets
+highlighter: no
 ---
 ## Overview
 

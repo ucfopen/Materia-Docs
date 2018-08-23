@@ -3,9 +3,8 @@ title: Server Requirements
 tagline: What's needed to get Materia running
 class: admin
 category: server
+highlighter: no
 ---
-
-
 # Production Server
 
 The ideal server environment would look something like this.

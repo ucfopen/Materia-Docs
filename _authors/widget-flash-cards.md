@@ -3,6 +3,7 @@ title: Flash Cards Guide
 tagline: Details about creating a Flash Cards widget
 class: instructors
 category: wigets
+highlighter: no
 ---
 ## Overview
 

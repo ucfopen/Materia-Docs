@@ -3,6 +3,7 @@ title: Server Setup - Docker for Development
 tagline: How to use Materia-Docker to run a development server
 class: admin
 category: server
+highlighter: no
 ---
 # Running a Development Docker Server
 
