@@ -12,13 +12,13 @@ A local running copy of the server is useful to develop, test, or demo Materia. 
 
 [ucfopen/Materia-Docker](https://github.com/ucfopen/Materia-Docker) is the fastest way to get a local copy of Materia Server running. It's a collection of scripts and configuration files needed to orchestrate a local development Docker environment.
 
-Our developers use this setup to run tests, develop new features, and to qa widgets.  It has containers available for all optional hosting features in Materia.
+Our developers use this setup to run tests, develop new features, and to QA widgets.  It has containers available for all optional hosting features in Materia.
 
-To get started, clone Materia-Docker into a directory and execute `./run_first.sh`.  The README from Materia-Docker will get you up and running in less then 10 minutes.
+To get started, clone `Materia-Docker` into a directory and execute `./run_first.sh`.  The README from Materia-Docker will get you up and running in less then 10 minutes.
 
 ## Application Server Architecture
 
-Materia has led a long life, changing iteratively as it ages. Although the FuelPHP framework is a Rails-like MVC, the entire code base is not yet taking full advantage of it. We do desire to head in that direction, but features and stability fixes have driven it's direction.  We welcome pull requests!
+Materia has led a long life, changing iteratively as it ages. Although the FuelPHP framework is a Rails-like MVC, the entire code base is not yet taking full advantage of it. We do desire to head in that direction, but features and stability fixes have driven its direction.  We welcome pull requests!
 
 ### Directory Structure
 
@@ -62,7 +62,7 @@ Materia
 
 ## Configuration
 
-Materia completely relies on [FuelPHP's configuration mechanism](https://fuelphp.com/docs/classes/config.html), which can be a little complex.  The crux of it is, FuelPhp merges multiple config files together, starting with the base configs and over-writing variables from more specific configurations.
+Materia completely relies on [FuelPHP's configuration mechanism](https://fuelphp.com/docs/classes/config.html), which can be a little complex.  The crux of it is, FuelPHP merges multiple config files together, starting with the base configs and over-writing variables from more specific configurations.
 
 FuelPHP allows for configuration files for each "environment".  This means production, development, test, and staging all have their own settings that merge with the base configuration.
 
@@ -71,14 +71,14 @@ Materia attempts to consolidate the default configuration files are in `/fuel/ap
 
 ## User Authentication Modules
 
-Materia uses FuelPhp's Auth package to handle basic authentication. This package allows for easy and modular integration with external user data.  View FuelPhp's documentation for details about [writing your own authentication drivers](http://fuelphp.com/docs/packages/auth/drivers.html)
+Materia uses FuelPHP's `Auth` package to handle basic authentication. This package allows for easy and modular integration with external user data.  View FuelPHP's documentation for details about [writing your own authentication drivers](http://fuelphp.com/docs/packages/auth/drivers.html).
 
 ### Object Permissions
 
 Users have permissions to specific widget instances.  There are two permission levels defined in Materia:
 
 * **Full**: the user has full control over the instance, options, and data.
-* **View Scores**: the user only has permissions to collect score information.
+* **View Scores**: the user only has permission to collect score information.
 
 ### Roles
 
@@ -86,7 +86,7 @@ Materia has a very simple three-role system:
 
 * **Admin** (role name - super_user): Can manage all instances, users, and install widget engines.
 * **Instructor** (role name - basic_author): Can see and manage their own instances.
-* **Student**: Can only create [guest widget instances](../create/getting-started.html#guest-widget-instances)
+* **Student**: Can only create [guest widget instances](../create/getting-started.html#guest-widget-instances).
 
 ## Widgets
 
@@ -105,25 +105,25 @@ Instances tie a widget engine to specific useage data like:
 * customized content and questions
 * uploaded media (for engines that support images or audio content)
 * instance settings like open and close dates
-* player's scores
+* players' scores
 
 ## API
 
 The majority of the Materia API is defined in a single api class.  This API is used by the client's Angular.js code to communicate with the server.
 
-> All new API development is expected to use FuelPHP's built in controlers more directly like the admin API has started to do.  It is expected to head in a more RESTFUL direction.
+> All new API development is expected to use FuelPHP's built-in controllers more directly like the admin API has started to do.  It is expected to head in a more RESTFUL direction.
 
 The older portions of the API were built with the following conventions:
 
-* Input validation is executed **first**, followed by authorization, then method specific code.
-* Method names **start** with nouns, the object or construct that is the subject of the api action.
+* Input validation is executed **first**, followed by authorization, then method-specific code.
+* Method names **start** with nouns, the object or construct that is the subject of the API action.
 * Method names **end** with a verb applied to the noun (widget_get, widget_instance_update, etc.).
 * In case of an error or problem, return a `Msg` object with details about the error to the client.
 
 
 ## Unit Tests
 
-Materia uses FuelPhp's built in unit tests that rely on PHPUnit.  We have built unit tests for the entire Materia API as well as for each score module. The tests are easily run using oil:
+Materia uses FuelPHP's built in unit tests that rely on PHPUnit.  We have built unit tests for the entire Materia API as well as for each score module. The tests are easily run using oil:
 
 ```shell
 $ php oil test

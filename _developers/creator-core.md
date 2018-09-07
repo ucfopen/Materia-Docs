@@ -13,7 +13,7 @@ The creator core is loaded via `materia.creatorcore.js` in a widget's creator ht
 
 Signal to Materia that the widget has loaded and pass it callback methods for various creator functions.  View the example for all supported callback method signatures.
 
-Below is a table of the supported keys for start's argument object
+Below is a table of the supported keys for start's argument object.
 
 | Object Property | Required | Description
 |-
@@ -69,7 +69,7 @@ Materia.CreatorCore.showMediaImporter(['mp3'])
 
 ## Materia.CreatorCore.directUploadMedia
 
-Send media data directly to the media uploader.  Use if the creator has it's own file picker or generates media programatically.
+Send media data directly to the media uploader.  Use if the creator has its own file picker or generates media programatically.
 
 | Argument | Required | Description
 |-
@@ -151,7 +151,7 @@ Materia.CreatorCore.setHeight(200)
 
 ## Materia.CreatorCore.escapeScriptTags
 
-Utility function for removing html tags tags from a string
+Utility function for removing html tags tags from a string.
 
 ### Example
 

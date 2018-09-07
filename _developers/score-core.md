@@ -31,7 +31,7 @@ In the figure below, the **results table** is the bottom table of questions, res
 
 {% include figure.html
 	url="score_screen.png"
-	alt="Score results summary for 'TV Show Trivia'"
+	alt="Score results summary for 'TV Show Trivia'."
 %}
 
 ### Example

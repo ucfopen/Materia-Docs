@@ -17,9 +17,9 @@ $ php oil refine admin:show_engines
 ```
 
 To break that down:
-* `php` is the php executable
-* `oil` is a Fuelphp [command line utility](https://fuelphp.com/docs/packages/oil/intro.html)
-* `refine` is an oil [utility for running tasks](https://fuelphp.com/docs/packages/oil/refine.html)
+* `php` is the PHP executable
+* `oil` is a FuelPHP [command line utility](https://fuelphp.com/docs/packages/oil/intro.html)
+* `refine` is an Oil [utility for running tasks](https://fuelphp.com/docs/packages/oil/refine.html)
 * `admin` is the [Admin Task Class](https://github.com/ucfcdl/Materia/blob/master/fuel/app/tasks/admin.php) to use
 * `show_engines` is the method task from [Admin Task Class](https://github.com/ucfcdl/Materia/blob/master/fuel/app/tasks/admin.php)
 
@@ -76,7 +76,7 @@ change_db_prefix
 | `widget:show_qset` | This will export the specified widget instance's question set to the Materia installs root directory as a yaml file.<br/> **Args:** `widget:show_qset <INSTANCE_ID>`
 
 ### Options details for `widget:install` Task
-* `--replace-id=<WIDGET_ID>`: Replace by id. Overrides default way that uses the widget's clean_name.
+* `--replace-id=<WIDGET_ID>`: Replace by `id`. Overrides default behavior, which uses the widget's `clean_name`.
 * `--skip-upgrade`: Does not upgrade a widget if one by the same name already exists.
 
 ### Initial Materia Install Task

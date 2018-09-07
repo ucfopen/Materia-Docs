@@ -53,7 +53,7 @@ This folder should contain a square icon for your widget.  The icon requires 4 s
 
 ## Screen Shots
 
-This folder should contain **three** screen shots (with thumbnails).  These will be used on the widget about page.
+This folder should contain **three** screen shots (with thumbnails).  These will be used on the widget's "about" page.
 
 {% include figure.html
 	url="widget_detail.png"

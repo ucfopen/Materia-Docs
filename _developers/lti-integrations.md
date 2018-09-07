@@ -15,13 +15,13 @@ There are many [roles in the LTI standard](http://www.imsglobal.org/LTI/v1p1/lti
 
 ### Instructor Role
 
-Instructors are able to create widgets and link to them from a given resource in the LMS. (resource in this case refers to an assignment or content module).
+Instructors are able to create widgets and link to them from a given resource in the LMS. "Resource" in this case refers to an assignment or content module.
 
 > This role is used when Materia receives one of these LTI roles: `Administrator`, `Instructor` or `ContentDeveloper`.
 
 ### Student Role
 
-A students' role is so streamlined that they will probably not realize they are using an external application. The LTI consumer will send along the user's information and resource id, which are used to log them in and locate the desired widget. Typically the student will just see the working widget embedded in the page.
+A student's role is so streamlined that they will probably not realize they are using an external application. The LTI consumer will send along the user's information and resource id, which are used to log them in and locate the desired widget. Typically the student will just see the working widget embedded in the page.
 
 > This role is used when Materia receives one of these LTI roles: `Learner` or `Student`.
 
@@ -29,10 +29,10 @@ A students' role is so streamlined that they will probably not realize they are 
 
 {% include figure.html
 	url="lti-select.png"
-	alt="Selecting a widget from within another system via a LTI integration"
+	alt="Selecting a widget from within another system via a LTI integration."
 %}
 
-The above screen will be shown in the LMS when the instructor is choosing an assignment to embed.  The instructor then needs to choose a widget to link this LMS resource. This linking process is how Materia knows which widget to display to students, and must be completed every time Materia is used as an LTI tool. Instructors should check out the [embedding widgets in Canvas guide](../create/embedding-in-canvas.html).
+The above screen will be shown in the LMS when the instructor is choosing an assignment to embed.  The instructor then needs to choose a widget to link to this LMS resource. This linking process is how Materia knows which widget to display to students, and must be completed every time Materia is used as an LTI tool. Instructors should check out the [embedding widgets in Canvas guide](../create/embedding-in-canvas.html).
 
 > The picker page emits a [PostMessage event for 3rd party integration](integration-events.html#widget-selection-event).
 
@@ -41,7 +41,7 @@ The above screen will be shown in the LMS when the instructor is choosing an ass
 
 ## Score Passback
 
-When a student views a page with the LTI widget embedded in it, information about how to send scores back to the consumer are sent to Materia.  Materia stores that info, and uses it to return score data once the student completes the widget. Materia uses the `lis_outcome_service_url` parameter to determine if it should send a score, and where to send it to.  Materia will use the [replaceResult](http://www.imsglobal.org/LTI/v1p1/ltiIMGv1p1.html#_Toc319560473) message which can allow multiple widget attempts to overwrite the previous scores.
+When a student views a page with the LTI widget embedded in it, information about how to send scores back to the consumer is sent to Materia.  Materia stores that info, and uses it to return score data once the student completes the widget. Materia uses the `lis_outcome_service_url` parameter to determine if it should send a score, and where to send it to.  Materia will use the [replaceResult](http://www.imsglobal.org/LTI/v1p1/ltiIMGv1p1.html#_Toc319560473) message which can allow multiple widget attempts to overwrite the previous scores.
 
 ## LTI Configuration XML
 
@@ -72,4 +72,4 @@ LTI launch events must conform to the LTI standard. Below is a subset of the LTI
 | `lis_person_contact_email_primary` | no | Useful if Materia is set up to create users on LTI handshakes. |
 | `custom_widget_instance_id` | no | Some systems (like Obojobo) know the ID of the widget it's requesting. |
 
-> Note the Materia specific `custom_widget_instance_id` paramater allows the launch to specify the widget id
+> Note the Materia specific `custom_widget_instance_id` paramater allows the launch to specify the widget id.

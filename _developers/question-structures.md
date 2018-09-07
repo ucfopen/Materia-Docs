@@ -6,7 +6,7 @@ category: widgets
 ---
 # About Materia's Question Sets
 
-Materia stores all customized widget data in Question Sets.  A Question Set is an arbitrary data structure that widget developers use to organize any data needed to store, display and customize widget content.  We intentionally removed all restrictions on this data structure to allow widgets freedom in design and implementation.
+Materia stores all customized widget data in Question Sets (qSets).  A Question Set is an arbitrary data structure that widget developers use to organize any data needed to store, display and customize widget content.  We intentionally removed all restrictions on this data structure to allow widgets freedom in design and implementation.
 
 The qSet, at minimum, contains the following:
 
@@ -75,7 +75,7 @@ The qSet data property doesn't enforce a schema but Materia defines a standard s
 
 ### Multiple Choice Example
 
-A full qSet containing one Multiple Choice question.  This question has two possible answers, one worth 0 percent (wrong), and the other worth 100 percent (correct).
+A full qSet containing one Multiple Choice question.  This question has two possible answers, one worth 0 percent (incorrect), and the other worth 100 percent (correct).
 
 ```javascript
 {
@@ -147,7 +147,7 @@ A Question/Answer question.  This question has one correct answer.
 
 ### Assets in a Question
 
-Assets within the scope of the entire question (ie. a song that plays during the question).
+Assets within the scope of the entire question (i.e. a song that plays during the question).
 
 ```javascript
 {
@@ -166,7 +166,7 @@ Assets within the scope of the entire question (ie. a song that plays during the
 }
 ```
 
-Assets within the scope of the question's answers (ie. multiple choice where you choose a matching image).
+Assets within the scope of the question's answers (i.e. multiple choice where you choose a matching image).
 
 ```javascript
 {
@@ -192,7 +192,7 @@ Assets within the scope of the question's answers (ie. multiple choice where you
 }
 ```
 
-Keep an array of assets that aren't associated with the questions at all (ie. theme backgrounds).
+Keep an array of assets that aren't associated with the questions at all (i.e. theme backgrounds).
 
 ```javascript
 {

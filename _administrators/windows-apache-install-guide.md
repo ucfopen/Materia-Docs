@@ -24,7 +24,7 @@ Some of the default security settings on a new 2012 server make getting the soft
 
 In the **Server Manager**, go to the **Dashboard tab**. It should be the default tab.
 
-Click **Configure this local server**
+Click **Configure this local server**.
 
 Click 'On' next to 'IE Enhanced Security Configuration' and turn it **off** - at least for administrators.
 
@@ -47,7 +47,7 @@ Materia releases will be compressed and packaged in `.tgz` files, for which you 
 
 ## Git for Windows
 
-Git is no longer required to download and install Materia, but the tools available in [Git for Windows](https://gitforwindows.org/) are still helpful for some of the other steps in the process - namely, Git Bash is a more readily usable terminal application over Command Prompt, and also enables the usage of an OpenSSL plugin for generating our own SSL certificates (more on that later).
+Git is no longer required to download and install Materia, but the tools available in [Git for Windows](https://gitforwindows.org/) are still helpful for some of the other steps in the process - specifically, Git Bash is a more readily usable terminal application over Command Prompt, and also enables the usage of an OpenSSL plugin for generating our own SSL certificates (more on that later).
 
 All of the default selections in the Git for Windows installer will suffice.
 
@@ -74,31 +74,31 @@ In the list, choose the following items from the list on the left to install by 
 
 **Applications** -> **MySQL Utilities** -> **MySQL Utilities** (currently 1.6) -> **MySQL Utilities** - X64
 
-Click 'Next'.
+Click `Next`.
 
-The MySQL Installer will indicate that there are uninstalled requirements, but it will take care of these for you once you click 'Execute'.
+The MySQL Installer will indicate that there are uninstalled requirements, but it will take care of these for you once you click `Execute`.
 
-Once the components are installed, clicking 'Next' should begin configuration of the MySQL server.
+Once the components are installed, clicking `Next` should begin configuration of the MySQL server.
 
-Select **Standalone MySQL Server / Classic MySQL Replication** and click 'Next'
+Select **Standalone MySQL Server / Classic MySQL Replication** and click `Next`.
 
-Leave everything alone on the first page, and click 'Next'.
+Leave everything alone on the first page, and click `Next`.
 
 In the Accounts and Roles page, set the root user password as desired. **Remember this password.**
 
-Click 'Next'.
+Click `Next`.
 
-Click 'Next' again.
+Click `Next` again.
 
-Click 'Next' again.
+Click `Next` again.
 
-Click 'Execute'.
+Click `Execute`.
 
-Once everything is done running, click 'Finish'.
+Once everything is done running, click `Finish`.
 
-Click 'Next'.
+Click `Next`.
 
-Click 'Finish'.
+Click `Finish`.
 
 ## Create Materia Database and User
 
@@ -119,7 +119,7 @@ IDENTIFIED BY 'YOUR_PASSWORD_HERE';
 GRANT ALL ON `materia`.* TO 'materia'@'%';
 ```
 
-Be sure to replace 'YOUR_PASSWORD_HERE' with a password of your choosing. **Remember this password!** You'll need it later!
+Be sure to replace `'YOUR_PASSWORD_HERE'` with a password of your choosing. **Remember this password!** You'll need it later!
 
 Click the leftmost 'Execute' (lightning bolt) button to run the above queries.
 
@@ -130,7 +130,7 @@ After the queries run, close the workbench.
 
 Go to [ApacheHaus](http://www.apachehaus.com/cgi-bin/download.plx) and download the latest package including OpenSSL
 
-Extract the 'Apache24' folder to the root of the C:/ drive (Result: **C:/Apache24**).
+Extract the `Apache24` folder to the root of the `C:/` drive (Result: **C:/Apache24**).
 
 In the command prompt (not PowerShell):
 
@@ -144,7 +144,7 @@ Verify that Apache is working by visiting [localhost](http://localhost) in your 
 
 ## Add XSendFile to Apache
 
-Download [mod_xsendfile](https://github.com/nmaier/mod_xsendfile), click 'Clone or Download' then 'Download ZIP'.
+Download [mod_xsendfile](https://github.com/nmaier/mod_xsendfile), click `Clone or Download` then `Download ZIP`.
 
 Extract the contents of the file.
 
@@ -171,20 +171,20 @@ httpd -k restart
 ## Add Apache to Path
 
 
-Go to Windows **Control Panel** -> **System and Security** -> **System**
+Go to Windows **Control Panel** -> **System and Security** -> **System**.
 
-Click **Advanced System Settings**
+Click **Advanced System Settings**.
 
-Click **Environment Variables**
+Click **Environment Variables**.
 
-Under 'System variables' find **Path**, then click 'Edit...'
+Under 'System variables' find **Path**, then click `Edit...`.
 
-Append `;C:\Apache24\bin` to the end of the 'Variable value' field and click 'OK'.
+Append `;C:\Apache24\bin` to the end of the 'Variable value' field and click `OK`.
 
 
 ## Install PHP and Extensions
 
-Download the appropriate [Thread Safe PHP 7.0 zip file](http://windows.php.net/download/)
+Download the appropriate [Thread Safe PHP 7.0 zip file](http://windows.php.net/download/).
 
 Extract the .zip file's contents to `C:/php`.
 
@@ -192,7 +192,7 @@ Rename to `C:/php/php.ini-production` to `C:/php/php.ini`, then open it in your 
 
 Change the line containing **extension_dir** and to `extension_dir = "C:\php\ext"`, note the lack of a semicolon at the front.
 
-Change the value of **session.save_path** to `C:\Temp`
+Change the value of **session.save_path** to `C:\Temp`.
 
 Locate and **remove** the semicolon at the beginning of each of the following lines:
 
@@ -207,13 +207,13 @@ Locate and **remove** the semicolon at the beginning of each of the following li
 
 Return to Windows **Control Panel** -> **System and Security** -> **System**
 
-Click **Advanced System Settings**
+Click **Advanced System Settings**.
 
-Click **Environment Variables**
+Click **Environment Variables**.
 
-Under 'System variables' find **Path**, then click 'Edit...'
+Under 'System variables' find **Path**, then click `Edit...`.
 
-Append `;C:\php` to the end of the 'Variable value' field and click 'OK'.
+Append `;C:\php` to the end of the 'Variable value' field and click `OK`.
 
 ## Add PHP module to Apache
 
@@ -229,7 +229,7 @@ PHPIniDir "C:/php"
 
 Find the area containing `<IfModule dir_module>`.
 
-Change `DirectoryIndex index.html` to `DirectoryIndex index.html index.php`
+Change `DirectoryIndex index.html` to `DirectoryIndex index.html index.php`.
 
 Save the file.
 
@@ -252,7 +252,7 @@ Create the following `index.php` file in `C:/Apache24/htdocs`.
 Now visit [http://localhost/index.php](http://localhost/index.php) to verify the php info page is functioning.
 
 
-## Create SSL Certs for HTTPS
+## Create SSL Certificate for HTTPS
 
 In Git Bash:
 
@@ -269,7 +269,7 @@ Provided the requested information at each prompt.
 
 Edit **C:/Apache24/conf/httpd.conf** again.
 
-Find a line reading '# Virtual Hosts'. Under this line, add
+Find a line reading '# Virtual Hosts'. Under this line, add:
 
 ```apache
 Include conf/extra/materia-vhosts.conf
@@ -277,7 +277,7 @@ Include conf/extra/materia-vhosts.conf
 
 Create and edit the file 'C:/Apache24/conf/extra/materia-vhosts.conf'.
 
-Follow [Materia Apache Virtual Host Configuration](https://github.com/ucfcdl/Materia/wiki/Apache-Virtual-Host-Configuration)
+Follow [Materia Apache Virtual Host Configuration](https://github.com/ucfcdl/Materia/wiki/Apache-Virtual-Host-Configuration).
 
 Substitue the following values:
 
@@ -288,9 +288,9 @@ Substitue the following values:
 
 ## Install Materia
 
-Look up the list of [Materia releases] (https://github.com/ucfcdl/Materia/releases) and download the .tgz package containing the latest Materia release.
+Look up the list of [Materia releases](https://github.com/ucfcdl/Materia/releases) and download the .tgz package containing the latest Materia release.
 
-Once downloaded, use 7-Zip to extract this package to 'C:/materia'.
+Once downloaded, use 7-Zip to extract this package to `C:/materia`.
 
 You will also need to create a couple of directories before running the installer, as it will expect them to exist:
 
@@ -304,7 +304,7 @@ mkdir public/widget/test
 
 ## Configure Materia
 
-Run the Materia Installer
+Run the Materia Installer.
 
 ```shell
 php oil refine install

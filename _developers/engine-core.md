@@ -11,9 +11,9 @@ To load content and save scores from a widget's player component, you'll need to
 
 ## Materia.Engine.start
 
-Signals that your widget is done loading it's assets and passes a callback that will received widget instance data.
+Signals that your widget is done loading its assets and passes a callback that will received widget instance data.
 
-Below is a table of the supported keys for start's argument object
+Below is a table of the supported keys for start's argument object.
 
 | Object Property | Required | Description
 |-
@@ -66,7 +66,7 @@ Convert a materia asset id into a url.
 
 ## Materia.Engine.end
 
-Mark the widget play as finished.  No more logs will be accepted after end is called.  By default, calling end will jump to the score screen.
+Mark the widget play as finished.  No more logs will be accepted after `end` is called.  By default, calling `end` will jump to the score screen.
 
 | Arguments | Required | Description
 |-

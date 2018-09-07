@@ -12,7 +12,7 @@ Score history is located in your Materia profile. To view your profile click on 
 {% include figure.html
 	no_thumb='true'
 	url="click_profile_link.png"
-	alt="Your name is displayed in the top left, along with your avatar (NewMedia Presenter shown above)"
+	alt="Your name is displayed at the top left, along with your avatar (NewMedia Presenter shown above)"
 %}
 
 {% include figure.html
@@ -24,24 +24,24 @@ Each time you visit or play a widget, you receive a new score.  The profile page
 
 # Score Summary Page
 
-The score summary page gives you a detailed view of the attempt for the associated widget. The following is an example score for with widget "TV Show Trivia"
+The score summary page gives you a detailed view of the attempt for the associated widget. The following is an example score for the widget "TV Show Trivia"
 
 {% include figure.html
 	url="score_screen.png"
 	alt="Score results summary for 'TV Show Trivia'"
 %}
 
-To view how your score compares to with other participants scores, click *Compare With Class*.
+To view how your score compares to with other participants' scores, click *Compare With Class*.
 
 {% include figure.html
 	url="score_screen_compare.png"
 	alt="Graph showing your peers scores."
 %}
 
-And if you have attempted the widget multiple times, you can view previous attempts by selecting one from the drop down menu which is displayed by hovering over *Prev. Attempts*.
+And if you have attempted the widget multiple times, you can view previous attempts by selecting one from the drop-down menu which is displayed by hovering over *Prev. Attempts*.
 
 {% include figure.html
 	url="score_screen_prev.png"
-	alt="View your previous attempts for this widgets by mousing over the top left of the score summary"
+	alt="View your previous attempts for this widget by mousing over the top left of the score summary"
 %}
 

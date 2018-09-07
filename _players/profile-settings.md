@@ -7,7 +7,7 @@ highlighter: no
 ---
 # Settings Page
 
-Settings can be accessed from the Materia profile page. First, open the profile page by first clicking on your name at the top left of the page, then click on the *settings* link in the left side under your large avatar.
+Settings can be accessed from the Materia profile page. First, open the profile page by first clicking on your name at the top left of the page, then click on the *Settings* link in the left side under your large avatar.
 
 {% include figure.html
 	url="settings_page.png"
@@ -20,4 +20,4 @@ By default, notifications are sent when a widget is shared with you. To disable 
 
 ## User Icon
 
-By default, [Gravatar](http://en.gravatar.com/) is used as the provider of user icons for Materia. Gravtar associates an email address to an image (or, a gravatar). To set up or change your Gravatar settings, visit their service at [Gravatar.com](http://en.gravatar.com/).
+By default, [Gravatar](http://en.gravatar.com/) is used as the provider of user icons for Materia. Gravatar associates an email address to an image (or, a gravatar). To set up or change your Gravatar settings, visit their service at [Gravatar.com](http://en.gravatar.com/).

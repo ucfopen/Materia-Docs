@@ -16,7 +16,7 @@ category: server
 
 ## Update Package List
 
-Make sure apt-get's repositories are up to date
+Make sure apt-get's repositories are up to date.
 
 ```shell
 $ sudo apt-get update
@@ -24,7 +24,7 @@ $ sudo apt-get update
 
 ## Install MySQL Server
 
-Install mysql and run it's secure setup.  In many production configurations, the mysql server will not be on the same server, so you may be able to skip these steps.
+Install `mysql` and run its secure setup.  In many production configurations, the MySQL server will not be on the same server, so you may be able to skip these steps.
 
 ```shell
 $ sudo apt-get install -y mysql-server
@@ -32,7 +32,7 @@ $ sudo service mysql start
 $ mysql_secure_installation
 ```
 
-Make sure the MySQL server starts on boot
+Make sure the MySQL server starts on boot.
 
 ```shell
 $ sudo update-rc.d mysql defaults
@@ -40,7 +40,7 @@ $ sudo update-rc.d mysql defaults
 
 ## Materia Database and User
 
-Log into the mysql database with your root user.
+Log into the MySQL database with your root user.
 
 ```shell
 $ mysql -h localhost -u root -p
@@ -51,21 +51,21 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql>
 ```
 
-Create a materia database.
+Create a `materia` database.
 
 ```shell
 mysql> create database materia;
 Query OK, 1 row affected (0.00 sec)
 ```
 
-Create a materia user. Make sure to create a secure password for it.
+Create a `materia` user. Make sure to create a secure password for it.
 
 ```shell
 mysql> create user 'materia' identified by '<YOUR_MATERIA_USER_PASSWORD>';
 Query OK, 1 row affected (0.00 sec)
 ```
 
-Grant the materia user access to the materia database.
+Grant the `materia` user access to the `materia` database.
 
 ```shell
 mysql> grant all privileges on materia.* to 'materia';
@@ -74,13 +74,13 @@ Query OK, 1 row affected (0.00 sec)
 mysql> exit
 ```
 
-Test your new user. This time use your materia user's password.
+Test your new user. This time use your `materia` user's password.
 
 ```shell
 $ mysql -h localhost -u materia -p
 ```
 
-And let's check to see if materia can read the database.
+And let's check to see if the `materia` user can read the database.
 
 ```shell
 mysql> use materia;
@@ -96,7 +96,7 @@ Keep your chosen username, database name, and password for later.
 
 ## Install Apache Server
 
-Install and start the server
+Install and start the server.
 
 ```shell
 $ sudo apt-get install -y \
@@ -117,14 +117,14 @@ $ sudo update-rc.d apache2 defaults
 
 ## Install Memcached
 
-Memcached is *not required* but **highly reccomended** for production use.
+Memcached is *not required* but **highly recommended** for production use.
 
 ```shell
 $ sudo apt-get install -y memcached
 $ sudo service memcached start
 ```
 
-Make sure Memcached starts on boot
+Make sure Memcached starts on boot.
 
 ```shell
 $ sudo update-rc.d memcached defaults
@@ -153,7 +153,7 @@ composer
 
 Materia relies on your system's locales, make sure you have the locales available.
 
-List all the locales on your system
+List all the locales on your system.
 
 ```shell
 $ locale -a
@@ -169,7 +169,7 @@ $ sudo locale-gen en_US en_US.UTF-8
 
 ## Install Node and NPM
 
-Node 6.x is needed to compile Materia's Javascript Assets
+Node 6.x is needed to compile Materia's Javascript Assets.
 
 ```shell
 $ sudo apt-get install curl
@@ -191,15 +191,15 @@ $ git config --global credential.helper 'cache --timeout=3600'
 
 ## Access to Private Materia GitHub
 
-Right now the Materia Github repositories are private, meaning you have to have credentials to access them.  Unfortunately this adds a few steps to the install.
+Right now the Materia Github repositories are private, meaning you have to have credentials to access them.  Unfortunately, this adds a few steps to the install.
 
-1. Make sure you have a Github user that can see [https://github.com/ucfcdl/Materia](https://github.com/ucfcdl/Materia)
-2. If you're using Github 2 factor authentiaction, [create an access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) to use as a password
+1. Make sure you have a Github user that can see [https://github.com/ucfcdl/Materia](https://github.com/ucfcdl/Materia).
+2. If you're using Github 2 factor authentication, [create an access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) to use as a password.
 
 
 ## Install Materia
 
-Use Git to clone Materia into a directory. We'll use `/var/www/materia`
+Use Git to clone Materia into a directory. We'll use `/var/www/materia`.
 
 ```shell
 $ git clone --branch v3.5.2 https://github.com/ucfcdl/Materia.git /var/www/materia
@@ -217,14 +217,14 @@ $ npm install --only=production
 > 1. in `/var/www/materia` run `git fetch`
 > 2. Run `npm install --only=production` again
 
-Compile Javascript and CSS
+Compile Javascript and CSS.
 
 ```shell
 # in /var/www/materia
 $ npm run postinstall
 ```
 
-Install Materia's PHP dependencies with Composer
+Install Materia's PHP dependencies with Composer.
 
 ```shell
 # in /var/www/materia
@@ -264,7 +264,7 @@ The only exception is the LTI configuration, which is located in `fuel/app/modul
 
 ## SSL CERTIFICATE
 
-If your network admin can provide production ready ssl certificates, use those.
+If your network admin can provide production-ready SSL certificates, use those.
 
 However, you may need to quickly create a temporary self-signed cert for the sake of testing.  If so, create one with this command.
 
@@ -274,7 +274,7 @@ $ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/m
 
 ## Apache Configuration
 
-Make sure the php and xsendfile modules are enabled.
+Make sure the PHP and XSendfile modules are enabled.
 
 ```shell
 $ sudo a2enmod rewrite php7.0 xsendfile ssl
@@ -295,19 +295,19 @@ Enable the new virtual hosts.
 $ sudo a2ensite materia
 ```
 
-Depending on what else you have running on the server, you may want to disable the default apache virtual host.
+Depending on what else you have running on the server, you may want to disable the default Apache virtual host.
 
 ```shell
 $ sudo a2dissite 000-default
 ```
 
-Reload Apache to accept all of your changes
+Reload Apache to accept all of your changes.
 
 ```shell
 $ sudo service apache2 reload
 ```
 
-Test the homepage
+Test the homepage.
 
 ```shell
 # If you have a domain set, use that instead of localhost
@@ -317,11 +317,9 @@ $ curl -ks https://localhost | grep "<title>"
 
 ## File Permissions
 
-The user that apache runs as will need permissions to write to some of the directories.
+The user that Apache runs as will need permissions to write to some of the directories.
 
 That user is typically `www-data`. The directories outlined in our [install configuration](https://github.com/ucfcdl/Materia/blob/issue/simplify-configs/fuel/packages/materia/config/install.php#L9) need to be writable by that user.
-
-
 
 ## Creating an Admin User
 
@@ -349,4 +347,4 @@ $ env FUEL_ENV=production php oil r admin:give_user_role ~materia_admin super_us
 
 You'll need some widgets!  Widget packages will be available for download or manually built from source if you have access to one.
 
-You can install widgets from the command line or from the Admin interface.
+You can install widgets from the command line or from the Admin interface. Learn more about [installing widgets](installing-widgets.html).

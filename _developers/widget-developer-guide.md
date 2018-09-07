@@ -12,15 +12,15 @@ Widgets are packaged into a single file and easily installed with a single comma
 
 ## What Language are Widgets Written In?
 
-Most widgets are built with HTML, CSS, and Javascript.  However, just about anything viewable in a browser that talks to Javascript will work.  This guide will focus on building Javascript widgets.  If you're using a something more exotic, this will still be useful to understand how to wrap your fancy gadgets into a Materia widget.
+Most widgets are built with HTML, CSS, and Javascript.  However, just about anything viewable in a browser that talks to Javascript will work.  This guide will focus on building Javascript widgets.  If you're using something more exotic, this will still be useful to understand how to wrap your fancy gadgets into a Materia widget.
 
 ## Development Environment
 
-The [Mateira Widget Development Kit](materia-widget-development-kit.html) provides the best environment to build and test widgets.  It's a combination of an Express.js server, a splash of javascript borrowed from the Materia Server, and a little bit of webpack to glue it all together.  Check out the MDK page to get setup and running.
+The [Materia Widget Development Kit](materia-widget-development-kit.html) provides the best environment to build and test widgets.  It's a combination of an Express.js server, a splash of javascript borrowed from the Materia Server, and a little bit of webpack to glue it all together.  Check out the MWDK page to get set up and running.
 
 ## What's a Widget
 
-A widget is a little packaged application that adheres to a few basic requirements.  It has full control over what happens within it's iframe, with a simple api to get data and save scores to the server. The simplest widgets can be simply static web pages.
+A widget is a little packaged application that adheres to a few basic requirements.  It has full control over what happens within it's iframe, with a simple API to get data and save scores to the server. The simplest widgets can be simply static web pages.
 
 ---
 
@@ -63,7 +63,7 @@ Here's an empty player.html file:
 
 ## The Creator
 
-A creator, like [The Player](#the-player), is just an HTML page with your assets and code.  Just like the player, there is a helper script to talk to the Materia API: `materia.creatorcore.js`.
+A creator, like [the player](#the-player), is just an HTML page with your assets and code.  Just like the player, there is a helper script to talk to the Materia API: `materia.creatorcore.js`.
 
 A creator is totally optional, but if you want to allow users to create customized content for widgets, you'll need one.
 
@@ -110,7 +110,7 @@ Here's an empty creator.html file, it's got a few special properties you'll want
 ### A Typical Sequence of Events in The Creator
 
 1. Call `Materia.CreatorCore.start({...})` to signal that your creator has loaded.
-2. The Creator Core will load content from the server and pass it one of your initWidget callbacks.
+2. The Creator Core will load content from the server and pass it one of your `initWidget` callbacks.
 3. Your creator processes the instance and qset data and lets the user customize the content.
 4. The user clicks Save
 5. Creator Core calls `onSaveClicked` where you build a qset and call `Materia.CreatorCore.save`
@@ -122,7 +122,7 @@ Here's an empty creator.html file, it's got a few special properties you'll want
 
 Materia provides a standard score screen that will be fine for displaying scores and answer feedback in most cases.
 
-However, for more advanced uses a custom score screen can be provided.  It's *just another* html page with some javascript, this time using `materia.scorecore.js` to talk to the API.
+However, for more advanced uses a custom score screen can be provided.  It's *just another* html page with some Javascript, this time using `materia.scorecore.js` to talk to the API.
 
 ```html
 <!DOCTYPE html>
@@ -146,7 +146,7 @@ However, for more advanced uses a custom score screen can be provided.  It's *ju
 </html>
 ```
 
-> See the [Materia Score Core API](score-core.html) for score screen api details.
+> See the [Materia Score Core API](score-core.html) for score screen API details.
 
 ---
 
