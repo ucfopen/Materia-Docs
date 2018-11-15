@@ -56,13 +56,17 @@ Ask Materia to display a stylized Alert message.
 Materia.Engine.alert('Alert Title', 'Alert Message')
 ```
 
-## Materia.Engine.getImageAssetUrl
+## Materia.Engine.getMediaUrl
 
 Convert a materia asset id into a url.
 
 | Arguments | Required | Description
 |-
 | mediaId | **yes** | Id of the media file to convert
+
+## Materia.Engine.getImageAssetUrl
+
+This function will be depricated in the future, use [Materia.Engine.getMediaUrl](#materiaenginegetmediaurl)`
 
 ## Materia.Engine.end
 
