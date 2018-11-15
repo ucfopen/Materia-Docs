@@ -69,3 +69,11 @@ Adjusts the height of the score screen in pixels.
 ```javascript
 Materia.ScoreCore.setHeight(350)
 ```
+
+## Materia.ScoreCore.getMediaUrl
+
+Convert a materia asset id into a url.
+
+| Arguments | Required | Description
+|-
+| mediaId | **yes** | Id of the media file to convert
