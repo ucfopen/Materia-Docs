@@ -66,7 +66,7 @@ Convert a materia asset id into a url.
 
 ## Materia.Engine.getImageAssetUrl
 
-This function will be depricated in the future, use [Materia.Engine.getMediaUrl](#materiaenginegetmediaurl)`
+This function will be depricated in the future, use [Materia.Engine.getMediaUrl](#materiaenginegetmediaurl)
 
 ## Materia.Engine.end
 
