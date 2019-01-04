@@ -13,15 +13,15 @@ Materia CLI commands are executed using FuelPhp's **[Oil Utility](https://fuelph
 ## Executing a Materia Task
 
 ```shell
-$ php oil refine admin:show_engines
+$ php oil refine widget:show_engines
 ```
 
 To break that down:
 * `php` is the php executable
 * `oil` is a Fuelphp [command line utility](https://fuelphp.com/docs/packages/oil/intro.html)
 * `refine` is an oil [utility for running tasks](https://fuelphp.com/docs/packages/oil/refine.html)
-* `admin` is the [Admin Task Class](https://github.com/ucfcdl/Materia/blob/master/fuel/app/tasks/admin.php) to use
-* `show_engines` is the method task from [Admin Task Class](https://github.com/ucfcdl/Materia/blob/master/fuel/app/tasks/admin.php)
+* `widget` is the [Widget Task Class](https://github.com/ucfopen/Materia/blob/master/fuel/app/tasks/widget.php) to use
+* `show_engines` is the method task from [Admin Task Class](https://github.com/ucfopen/Materia/blob/master/fuel/app/tasks/admin.php)
 
 > You'll likely need to juggle which **FuelPHP environment** your commands run in as it dictates which configuration settings are loaded. Typically you'll just set them inline, for example: `$ FUEL_ENV=production php oil refine admin:show_engines`, but they can be set in a more persistent way.
 

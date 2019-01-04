@@ -94,4 +94,4 @@ PHP Code Sniffer is installed with Composer and included in the dev dependencies
 
 Basically, if you install Materia Server normally using Composer, then you should be all set.
 
-For detailed information see our [Github PHPCS rules for Materia and FuelPHP](https://github.com/ucfcdl/fuelphp-phpcs)
+For detailed information see our [Github PHPCS rules for Materia and FuelPHP](https://github.com/ucfopen/fuelphp-phpcs)

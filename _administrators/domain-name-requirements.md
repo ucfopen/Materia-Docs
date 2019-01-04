@@ -2,7 +2,7 @@
 title: Domain Name Requirements
 tagline: For development &amp; production
 class: admin
-category: server
+category: [server, server_setup]
 ---
 
 # Domain Setup

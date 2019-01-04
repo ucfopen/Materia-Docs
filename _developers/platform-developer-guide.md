@@ -10,11 +10,7 @@ A local running copy of the server is useful to develop, test, or demo Materia. 
 
 ## Docker Development Environment
 
-[ucfopen/Materia-Docker](https://github.com/ucfopen/Materia-Docker) is the fastest way to get a local copy of Materia Server running. It's a collection of scripts and configuration files needed to orchestrate a local development Docker environment.
-
-Our developers use this setup to run tests, develop new features, and to qa widgets.  It has containers available for all optional hosting features in Materia.
-
-To get started, clone Materia-Docker into a directory and execute `./run_first.sh`.  The README from Materia-Docker will get you up and running in less then 10 minutes.
+Our dev team uses Docker for all server development. See [Server Setup - Docker for Development](../admin/server-docker-development.html) to get started.
 
 ## Application Server Architecture
 
