@@ -51,7 +51,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql>
 ```
 
-Create a materia database.
+Create a Materia database.
 
 ```shell
 mysql> create database materia;
@@ -65,7 +65,7 @@ mysql> create user 'materia' identified by '<YOUR_MATERIA_USER_PASSWORD>';
 Query OK, 1 row affected (0.00 sec)
 ```
 
-Grant the materia user access to the materia database.
+Grant the Materia user access to the materia database.
 
 ```shell
 mysql> grant all privileges on materia.* to 'materia';

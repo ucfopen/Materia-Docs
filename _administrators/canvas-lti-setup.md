@@ -51,7 +51,7 @@ return [
 			// ex:
 			// if 'local_identifier' is 'username'
 			// and lti launch data lis_person_sourceid = 'dave'
-			// materia will search the 'username' column for 'dave'
+			// Materia will search the 'username' column for 'dave'
 			//
 			// Another option is to use email (remember email's change):
 			// 'remote_identifier' = 'lis_person_contact_email_primary'
@@ -62,7 +62,7 @@ return [
 			'remote_identifier'     => 'lis_person_sourcedid',
 			'local_identifier'      => 'username',
 
-			// When true, materia will accept user data from the external system.
+			// When true, Materia will accept user data from the external system.
 			// This means it will create users we don't have and update their user
 			// data if it changes. It will NOT update any external roles
 			// (see 'use_launch_roles')

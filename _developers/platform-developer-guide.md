@@ -28,7 +28,7 @@ Materia
 │   ├── app
 │   │   ├── classes
 │   │   │   ├── controller      # all routes call a controller method
-│   │   │   ├── materia         # much of materia's non-fuelphp logic
+│   │   │   ├── materia         # much of Materia's non-fuelphp logic
 │   │   │   ├── model
 │   │   │   ├── service         # services to create skinnier models
 │   │   │   ├── trait           # make use of Traits as much as possible: DRY
@@ -49,7 +49,7 @@ Materia
 │   ├── core                    # fuelphp core package
 │   └── packages
 │       ├── ltiauth             # auth module for lti use
-│       └── materiaauth         # base materia auth module
+│       └── materiaauth         # base Materia auth module
 ├── githooks                    # githooks for testing and linting
 └── public                      # the only publicly hosted files
     ├── css

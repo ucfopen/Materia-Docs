@@ -69,7 +69,7 @@ Materia.CreatorCore.showMediaImporter(['mp3'])
 
 ## Materia.CreatorCore.getMediaUrl
 
-Convert a materia asset id into a url.
+Convert a Materia asset id into a url.
 
 | Arguments | Required | Description
 |-

@@ -58,7 +58,7 @@ Materia.Engine.alert('Alert Title', 'Alert Message')
 
 ## Materia.Engine.getMediaUrl
 
-Convert a materia asset id into a url.
+Convert a Materia asset id into a url.
 
 | Arguments | Required | Description
 |-

@@ -72,7 +72,7 @@ Materia.ScoreCore.setHeight(350)
 
 ## Materia.ScoreCore.getMediaUrl
 
-Convert a materia asset id into a url.
+Convert a Materia asset id into a url.
 
 | Arguments | Required | Description
 |-
