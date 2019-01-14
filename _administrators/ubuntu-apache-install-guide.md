@@ -189,14 +189,6 @@ $ git config --global credential.helper cache
 $ git config --global credential.helper 'cache --timeout=3600'
 ```
 
-## Access to Private Materia GitHub
-
-Right now the Materia Github repositories are private, meaning you have to have credentials to access them.  Unfortunately this adds a few steps to the install.
-
-1. Make sure you have a Github user that can see [https://github.com/ucfopen/Materia](https://github.com/ucfopen/Materia)
-2. If you're using Github 2 factor authentiaction, [create an access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) to use as a password
-
-
 ## Install Materia
 
 Use Git to clone Materia into a directory. We'll use `/var/www/materia`

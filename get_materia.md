@@ -7,7 +7,7 @@ highlighter: no
 ---
 # Materia on Github
 
-Materia is open source, so the server and many of the widgets can be found on [Github](https://github.com/ucfopen/Materia)
+Materia is open source, so the server and many of the widgets can be found on [Github](https://github.com/ucfopen/Materia).
 
 ## Server Setup Guides
 

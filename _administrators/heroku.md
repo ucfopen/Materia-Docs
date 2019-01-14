@@ -11,7 +11,7 @@ Heroku is the fastest way to try Materia. If you don't know what Heroku is, they
 
 ## Heroku Limitations
 
-Heroku will spontaneously destroy and create new application servers as needed. Files stored on disk after building the initial image will be lost in this process. Currently, Heroku Materia v4.0.0 is not able to install additional widgets unless you add them to the application config before deploying. See [Installing Widgets](#installing-widgets).
+Heroku will spontaneously destroy and create new application servers as needed. Files stored on disk after building the initial image will be lost in this process. Currently, Heroku Materia is not able to install additional widgets unless you add them to the application config before deploying. See [Installing Widgets](#installing-widgets).
 
 Because of the disk storage hurdles, Heroku Materia installs will store uploaded media in the database.  This will quickly use up the [free database storage plan](https://elements.heroku.com/addons/cleardb) limit of 5mb. The database storage can be increased for a fee from the Heroku dashboard.  Or, for a more scalable option, media can be stored on Amazon S3.
 
