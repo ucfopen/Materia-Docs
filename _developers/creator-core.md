@@ -67,6 +67,14 @@ Materia.CreatorCore.showMediaImporter(['jpg', 'gif', 'png'])
 Materia.CreatorCore.showMediaImporter(['mp3'])
 ```
 
+## Materia.CreatorCore.getMediaUrl
+
+Convert a Materia asset id into a url.
+
+| Arguments | Required | Description
+|-
+| mediaId | **yes** | Id of the media file to convert
+
 ## Materia.CreatorCore.directUploadMedia
 
 Send media data directly to the media uploader.  Use if the creator has it's own file picker or generates media programatically.
