@@ -20,7 +20,7 @@ Heroku's implementation of Memcached is not compatible with Materia (via the und
 
 ## Creating a New Heroku App
 
-Clicking the deploy to Heroku button below will begin building a server.  It'll install a few widgets and give you a public web address to begin playing with Materia.  The default build uses free assets, so it won't cost a thing. To get started, just click the deploy button below.
+Clicking the "Deploy to Heroku" button below will begin building a server.  It'll install a few widgets and give you a public web address to begin playing with Materia.  The default build uses free assets, so it won't cost a thing. To get started, just click the deploy button below.
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](http://bit.ly/get-materia-heroku)
 
