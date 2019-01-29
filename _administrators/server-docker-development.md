@@ -13,5 +13,5 @@ Our developers use this setup to run tests, develop new features, and to qa widg
 
 To get started, clone Materia, cd into the `docker` directory, and execute `./run_first.sh`.
 
-The [Materia Docker README](https://github.com/ucfopen/Materia/blob/master/docker/README.md) will get you up and running in less then 10 minutes.
+The [Materia Docker README](https://github.com/ucfopen/Materia/blob/master/docker/README.md) will get you up and running in less than 10 minutes.
 

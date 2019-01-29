@@ -68,7 +68,7 @@ Under the section for *Config Vars* you'll find the passwords for the default st
 
 ## Run Administration Commands
 
-To run any of the [administration commands]({{ site.baseurl }}/admin/administrative-commands.html) on your Heroku server, access the Run Console menu item from your Heroku Dashboard
+To run any of the [administration commands]({{ site.baseurl }}/admin/administrative-commands.html) on your Heroku server, access the Run Console menu item from your Heroku Dashboard.
 
 {% include figure.html
 	no_thumb="true"
