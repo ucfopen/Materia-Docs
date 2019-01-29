@@ -36,7 +36,7 @@ function onPostMessage(event)
 	}
 }
 
-// assuming widgetIframe is the DOM element of the materia iframe
+// assuming widgetIframe is the DOM element of the Materia iframe
 widgetIframe.addEventListener('message', onPostMessage, false);
 
 ```

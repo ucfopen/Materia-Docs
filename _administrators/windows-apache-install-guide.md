@@ -2,7 +2,7 @@
 title: Server Setup - Windows and Apache
 tagline: How to set up a Windows LAMP server for hosting Materia in Production
 class: admin
-category: server
+category: [server, server_setup]
 ---
 
 # Installing Materia on Windows
@@ -277,7 +277,7 @@ Include conf/extra/materia-vhosts.conf
 
 Create and edit the file 'C:/Apache24/conf/extra/materia-vhosts.conf'.
 
-Follow [Materia Apache Virtual Host Configuration](https://github.com/ucfcdl/Materia/wiki/Apache-Virtual-Host-Configuration).
+Follow [Materia Apache Virtual Host Configuration](https://github.com/ucfopen/Materia/wiki/Apache-Virtual-Host-Configuration).
 
 Substitue the following values:
 
@@ -288,7 +288,7 @@ Substitue the following values:
 
 ## Install Materia
 
-Look up the list of [Materia releases](https://github.com/ucfcdl/Materia/releases) and download the .tgz package containing the latest Materia release.
+Look up the list of [Materia releases] (https://github.com/ucfopen/Materia/releases) and download the .tgz package containing the latest Materia release.
 
 Once downloaded, use 7-Zip to extract this package to `C:/materia`.
 
@@ -348,7 +348,7 @@ When prompted to populate user roles, type `y`.
 
 When prompted to populate default semesters, type `y`.
 
-> NOTE: the semester generator is written for UCF, in which case you'll have to handle generating those yourself in the [Semester script](https://github.com/ucfcdl/Materia/blob/master/fuel/packages/materia/tasks/semester.php).
+> NOTE: the semester generator is written for UCF, in which case you'll have to handle generating those yourself in the [Semester script](https://github.com/ucfopen/Materia/blob/master/fuel/packages/materia/tasks/semester.php).
 
 When prompted to create default users, type `y`. This will print out a set of default users and the generated passwords for those users - keep track of these.
 
@@ -368,7 +368,7 @@ To prepare, in Git Bash, move into the C directory with `cd C:/`.
 
 Back up the current version of Materia by moving it to a different location with `mv materia materia-backup` or any other desired location - again, this is just a backup.
 
-Follow the [instructions listed above](#install-materia) to install Materia - again, get the latest .tgz package from [Materia releases](https://github.com/ucfcdl/Materia/releases) and extract it to `C:/materia`, overwriting the old files in the process. You won't need to run the install wizard again.
+Follow the [instructions listed above](#install-materia) to install Materia - again, get the latest .tgz package from [Materia releases](https://github.com/ucfopen/Materia/releases) and extract it to `C:/materia`, overwriting the old files in the process. You won't need to run the install wizard again.
 
 There are a few quick commands you'll need to run in order to copy some of the backed up material into the new files and prepare them for use:
 

@@ -2,7 +2,7 @@
 title: Server Requirements
 tagline: What's needed to get Materia running
 class: admin
-category: server
+category: [server, server_setup]
 highlighter: no
 ---
 # Production Server

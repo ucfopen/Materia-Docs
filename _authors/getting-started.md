@@ -22,7 +22,7 @@ The catalog page provides a list of available widgets, with filtration options o
 
 {% include figure.html
 	url="widget_catalog.png"
-	alt="Select a widget to create from the materia widget catalog."
+	alt="Select a widget to create from the Materia widget catalog."
 %}
 
 Selecting a widget brings you to the widget detail screen with screen shots of the widget in action, and links to play a demo or to build your own.

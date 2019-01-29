@@ -10,11 +10,7 @@ A local running copy of the server is useful to develop, test, or demo Materia. 
 
 ## Docker Development Environment
 
-[ucfopen/Materia-Docker](https://github.com/ucfopen/Materia-Docker) is the fastest way to get a local copy of Materia Server running. It's a collection of scripts and configuration files needed to orchestrate a local development Docker environment.
-
-Our developers use this setup to run tests, develop new features, and to QA widgets.  It has containers available for all optional hosting features in Materia.
-
-To get started, clone `Materia-Docker` into a directory and execute `./run_first.sh`.  The README from Materia-Docker will get you up and running in less then 10 minutes.
+Our dev team uses Docker for all server development. See [Server Setup - Docker for Development](../admin/server-docker-development.html) to get started.
 
 ## Application Server Architecture
 
@@ -28,7 +24,7 @@ Materia
 │   ├── app
 │   │   ├── classes
 │   │   │   ├── controller      # all routes call a controller method
-│   │   │   ├── materia         # much of materia's non-fuelphp logic
+│   │   │   ├── materia         # much of Materia's non-fuelphp logic
 │   │   │   ├── model
 │   │   │   ├── service         # services to create skinnier models
 │   │   │   ├── trait           # make use of Traits as much as possible: DRY
@@ -49,7 +45,7 @@ Materia
 │   ├── core                    # fuelphp core package
 │   └── packages
 │       ├── ltiauth             # auth module for lti use
-│       └── materiaauth         # base materia auth module
+│       └── materiaauth         # base Materia auth module
 ├── githooks                    # githooks for testing and linting
 └── public                      # the only publicly hosted files
     ├── css
