@@ -2,7 +2,7 @@
 title: Server Setup - Ubuntu and Apache
 tagline: How to set up a LAMP server for hosting Materia in Production
 class: admin
-category: server
+category: [server, server_setup]
 ---
 
 # Installing Materia on Ubuntu using Apache
@@ -189,20 +189,12 @@ $ git config --global credential.helper cache
 $ git config --global credential.helper 'cache --timeout=3600'
 ```
 
-## Access to Private Materia GitHub
-
-Right now the Materia Github repositories are private, meaning you have to have credentials to access them.  Unfortunately this adds a few steps to the install.
-
-1. Make sure you have a Github user that can see [https://github.com/ucfcdl/Materia](https://github.com/ucfcdl/Materia)
-2. If you're using Github 2 factor authentiaction, [create an access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) to use as a password
-
-
 ## Install Materia
 
 Use Git to clone Materia into a directory. We'll use `/var/www/materia`
 
 ```shell
-$ git clone --branch v3.5.2 https://github.com/ucfcdl/Materia.git /var/www/materia
+$ git clone --branch v3.5.2 https://github.com/ucfopen/Materia.git /var/www/materia
 ```
 
 Next we'll install Materia's Javascript dependencies using NPM.
@@ -283,7 +275,7 @@ $ sudo service apache2 restart
 
 We'll set up Materia using virtual hosts in Apache.  This should allow Materia to share a server with other applications if needed.
 
-Set up an Apache virtual host by copying the [**vhost configuration**](https://github.com/ucfcdl/Materia/wiki/Apache-Virtual-Host-Configuration) from our wiki.
+Set up an Apache virtual host by copying the [**vhost configuration**](https://github.com/ucfopen/Materia/wiki/Apache-Virtual-Host-Configuration) from our wiki.
 
 ```shell
 $ sudo nano /etc/apache2/sites-available/materia.conf
@@ -319,7 +311,7 @@ $ curl -ks https://localhost | grep "<title>"
 
 The user that apache runs as will need permissions to write to some of the directories.
 
-That user is typically `www-data`. The directories outlined in our [install configuration](https://github.com/ucfcdl/Materia/blob/issue/simplify-configs/fuel/packages/materia/config/install.php#L9) need to be writable by that user.
+That user is typically `www-data`. The directories outlined in our [install configuration](https://github.com/ucfopen/Materia/blob/issue/simplify-configs/fuel/packages/materia/config/install.php#L9) need to be writable by that user.
 
 
 
