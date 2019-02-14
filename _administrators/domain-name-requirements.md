@@ -7,13 +7,13 @@ category: [server, server_setup]
 
 # Domain Setup
 
-Materia is designed to run from **two domains** for security and speed.  The main domain is where the php application is running, and one for the static assets like widgets, javascript, and css.
+Materia is designed to run from **two domains** for security and speed.  The main domain is where the PHP application is running, and one for the static assets like widgets, javascript, and css.
 
 This separation is important to create a browser restricted sandbox for the widgets to run inside. It keeps widget code (not to mention user content) from having script access to the main application except through a restricted api.
 
 We know in some environments that this may be tedious, so it is possible to use a single domain.
 
-> We highly reccomend using 2 domains
+> We highly recommend using two domains.
 
 ## Two Domains with a CDN (Best)
 
@@ -51,7 +51,7 @@ return [
 ];
 ```
 
-## One Domain, different Ports (Not Bad)
+## One Domain, Different Ports (Not Bad)
 
 You can still initiate sandboxing by using a non-standard port on the same domain. Here, we'll use port 8080.
 
@@ -71,7 +71,7 @@ return [
 
 ## One Domain (Not Recommended)
 
-This is the easiest setup, just using one domain to host everything.  It's not wise, but it will work.
+This is the easiest setup, using just one domain to host everything.  It's not wise, but it will work.
 
 
 ```php

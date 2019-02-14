@@ -12,7 +12,7 @@ Materia is a platform used to deliver high quality interactive widgets for your 
 
 ## What is a Widget?
 
-It can be a game, a study tool, a simulation, almost anything really. A widget can be as simple as a study tool like flash cards or something more advanced such as a 3D simulation with complex story lines.  As a student you will be assigned widgets which you will have to complete.
+It can be a game, a study tool, a simulation, almost anything, really. A widget can be as simple as a study tool like flash cards or something more advanced such as a 3D simulation with complex storylines.  As a student you will be assigned widgets which you will have to complete.
 
 ## Who Creates Widgets?
 
@@ -20,9 +20,9 @@ Instructors from your institution can create widgets.  Your institution may allo
 
 # Playing Widgets
 
-## Play Link
+## Play URL
 
-All widgets have a unique Play Link or URL. Visiting the link in your browser will take you directly to the widget. You may be asked to log into Materia before using the widget if you are not logged in already.
+All widgets have a unique play URL. Visiting the link in your browser will take you directly to the widget. You may be asked to log into Materia before using the widget if you are not logged in already.
 
 ## Embedded Player
 

@@ -24,7 +24,9 @@ The first - and simplest - option for distributing a widget is to copy the URL p
 ## Embed Code
 The second option is to use the embed code by selecting the *use the embed code* link underneath the widget's URL. This provides you with a block of HTML code that you may copy and paste into an HTML or web page document. This will offer the widget directly in the page containing the embed code, saving students the step of following a link. Students can log in and complete the embedded widget as they would normally.
 
+By default, embedded widgets will attempt to initiate a play automatically - you can optionally disable this feature by unchecking the 'Autoplay' option or changing `?autoplay=true` to `?autoplay=false` in your embed code. This is a useful feature if you are embedding multiple widgets on the same page, as it will require students to explicitly start playing each one.
+
 ## LTI Interface
-A third option for sharing widgets is available for instructors using a Learning Management System that supports LTI (most do). For example, integrating your  widgets into Instructure's Canvas is covered in the [Embedding in Canvas](/embedding-in-canvas.html) section.
+A third option for sharing widgets is available for instructors using a Learning Management System that supports LTI (most do). For example, integrating your widgets into Instructure's Canvas is covered in the [Embedding in Canvas](/embedding-in-canvas.html) section.
 
 > LTI integrations may require some technical setup from your Materia administrators.

@@ -7,7 +7,7 @@ category: first
 highlighter: no
 ---
 # Creating a New Widget
-The first step to using Materia in your course is to create a new widget with your own custom content. Each widget has a creator interface which allows you to easily customize it to your needs. Once created, the widget can be distributed and shared with students and other instructors.
+The first step in using Materia in your course is to create a new widget with your own custom content. Each widget has a creation interface which allows you to easily customize it to your needs. Once created, the widget can be distributed and shared with students and other instructors.
 
 ## Selecting a Widget to Create
 Begin by logging in to Materia using the appropriate credentials, and selecting the *Widget Catalog* link at the top of the page.
@@ -18,7 +18,7 @@ Begin by logging in to Materia using the appropriate credentials, and selecting 
 	alt="Select the <strong>Widget Catalog</strong> link to view the widgets available for use."
 %}
 
-The catalog page provides a list of available widgets, with search options to filter them on the left. Mousing over a widget provides an overview of their features and supported data.
+The catalog page provides a list of available widgets, with filtration options on the left. Mousing over a widget provides an overview of their features and supported data.
 
 {% include figure.html
 	url="widget_catalog.png"
@@ -53,7 +53,7 @@ Below is an example of the *Hangman* widget creator.
 ## Developing Questions for your Widget
 In most cases, content for widgets is comprised of a *question* or *hint*, and an *answer* or *series of answers* for a given question. In this example, our Hangman widget has a question that is initially posed to the student and an answer that is considered the correct response. Some widgets, such as *Enigma* or *Choose your Own Adventure*, can have multiple responses to each question.
 
-Note that each creator typically has a text box in which to enter a new question, as well as a text box (or boxes) in which to enter an answer or multiple answers. Each creator also has options to add new questions or to remove existing ones. Some widgets allow media such as images to be used to supplement or replace questions.
+Note that each creator typically has a text box in which to enter a new question, as well as a text box (or boxes) in which to enter an answer or multiple answers. Each creator also has options to add new questions or to remove existing ones. Some widgets allow media such as images or audio to be used to supplement or replace questions.
 
 ## Importing Questions
 Individual questions you created for previous widgets may be imported into the creator using this feature. When selected, a pop-up dialog will open listing other questions you've created. Simply select any number of these and click the **Import Selected** button at the bottom.
@@ -84,9 +84,9 @@ All creators share the same options once your widget is ready to go.
 
 Guest widgets serve 2 main functions:
 
-1. All play data is completly anoynomous, even if the player is logged in.
+1. All play data is completely anonymous, even if the player is logged in.
 2. Players are not required to log in.
 
-These features are important for several use cases.  If you wish to publically share a widget instance without requiring users to authenticate, a guest instance allows it.  For instance, the demo widget instances linked from the catalog are all guest widgets.
+These features are important for several use cases.  If you wish to publicly share a widget instance without requiring users to authenticate, a guest instance allows it.  For instance, the demo widget instances linked from the catalog are all guest widgets.
 
-In Materia, students have the ability to create widgets. This opens up some new assignment oppurtunities for faculty, however, it does create some problems pertaining to student data and privacy.  This is why Materia forces all widgets created by students into Guest Mode.  This helps avoid possible [FERPA](https://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html) issues relating to student data and scores.
+In Materia, students have the ability to create widgets. This opens up some new assignment opportunities for faculty; however, it does create some problems pertaining to student data and privacy.  This is why Materia forces all widgets created by students into Guest Mode.  This helps avoid possible [FERPA](https://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html) issues relating to student data and scores.

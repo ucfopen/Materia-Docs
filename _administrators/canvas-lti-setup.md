@@ -15,7 +15,7 @@ The first step is to make sure Materia's LTI is configured. The [initial Materia
 
 **Do not edit** the example/base configuration is in `fuel/app/packages/modules/lti/config/lti.php`. Rather, edit or create an *environment* configuration file in `/fuel/app/packages/modules/lti/config/<ENVIRONMENT>/lti.php`.
 
-> Fuelphp uses environments to determine which configuration options to load.  For more information view the <a href="http://fuelphp.com/docs/general/environments.html#/env_config">Fuelphp Documentation</a>.  The environment will typically be either `production` or `development`.
+> FuelPHP uses environments to determine which configuration options to load.  For more information view the <a href="http://fuelphp.com/docs/general/environments.html#/env_config">Fuelphp Documentation</a>.  The environment will typically be either `production` or `development`.
 
 ### Name Your Materia Install
 

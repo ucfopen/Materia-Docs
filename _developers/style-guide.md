@@ -27,7 +27,7 @@ Look at the comments in the example below which covers all of our PHP coding sty
 		const DEFAULT_VALUE = 0;
 
 		// Alignment should be provided with spaces and each variable
-		// should be declared on it's own line:
+		// should be declared on its own line:
 		protected $x = 5;
 		protected $foo_bar = false; // <-- Variables should be in snake_case
 
@@ -90,7 +90,7 @@ Look at the comments in the example below which covers all of our PHP coding sty
 
 ## PHP Code Sniffer Git Hook
 
-PHP Code Sniffer is installed with Composer and included in the dev dependencies of Materia Server.  TWe also install git hooks using composer's `post-install-cmd` script to run tests and run the sniffer.
+PHP Code Sniffer is installed with Composer and included in the dev dependencies of Materia Server.  We also install git hooks using composer's `post-install-cmd` script to run tests and run the sniffer.
 
 Basically, if you install Materia Server normally using Composer, then you should be all set.
 

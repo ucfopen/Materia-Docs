@@ -8,7 +8,7 @@ highlighter_langs:
 ---
 # Materia Widget Install Configuration
 
-Every widget needs an `install.yaml` file which describes the various settings that will be put into your Materia database.
+Every widget needs an `install.yaml` file which describes the various settings that will be put into your Materia database to describe that widget.
 
 Here is an example install.yaml file from the Crossword widget:
 

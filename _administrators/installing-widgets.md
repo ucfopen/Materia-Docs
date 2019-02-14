@@ -38,8 +38,8 @@ $ php oil refine --skip-upgrade widget:install path/to/materia-widget.wigt
 
 ### `--skip-upgrade`
 
-When installing a widget, Materia look up existing widgets using the same `clean_name` and assumes you want to replace it.  This is normally fine, but name conflicts can occur.  We reccomend using the `--skip-upgrade` option when installing a *new* widget to add a level of safety.
+When installing a widget, Materia look up existing widgets using the same `clean_name` and assumes you want to replace it.  This is normally fine, but name conflicts can occur.  We recommend using the `--skip-upgrade` option when installing a *new* widget to add a level of safety.
 
 ### `--replace-id=<WIDGET_ID>`
 
-When  upgrading a widget, the clean_name matching can, again, have a few pitfalls.  To specify the exact widget you'd like to upgrade, the id of the widget to be upgraded can be passed as an option.
+When  upgrading a widget, the `clean_name` matching can, again, have a few pitfalls.  To specify the exact widget you'd like to upgrade, the id of the widget to be upgraded can be passed as an option.

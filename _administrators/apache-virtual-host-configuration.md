@@ -5,18 +5,18 @@ class: admin
 category: [server, server_setup]
 ---
 
-# Production ready Apache configuration.
+# Production ready Apache configuration
 
 ## Features
-* http redirects to https
-* FuelPhp Environment set to `production`
+* HTTP redirects to HTTPS
+* FuelPHP Environment set to `production`
 * XSendFile enabled for speedy media delivery
 * Max Upload set to 50MB for widget package uploading
 * PHP execution restricted to FuelPHP's entry script
 * All other PHP scripts do not execute, and result in a 404
 * All "dot" files and directories result in a 404
 
-## Find and Replace these strings as needed
+## Find and replace these strings as needed
 
 * `materia.YOUR_DOMAIN.edu`
 * `/var/www/materia`
@@ -44,7 +44,7 @@ category: [server, server_setup]
     # SET the FUELPHP environment
     SetEnv FUEL_ENV production
 
-    # Block php execution by default
+    # Block PHP execution by default
     php_value engine off
 
     # route 404 and 403 errors to FuelPHP
@@ -65,12 +65,12 @@ category: [server, server_setup]
         Require all granted
     </Directory>
 
-    # turn on php for index.php
+    # turn on PHP for index.php
     <FilesMatch "^index.php">
             php_value engine on
     </FilesMatch>
 
-    # hide/disable php for every script thats not index.php
+    # hide/disable PHP for every script thats not index.php
     <FilesMatch "^(?!index).*(\.php)">
         # this isn't needed, but just to make it obvious...
         php_value engine off

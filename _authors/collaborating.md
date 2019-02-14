@@ -21,7 +21,7 @@ To share a widget, select it on the *My Widgets* page and click *Collaborate*.
 
 ## Searching for Users
 
-To find users type their name or email address into the *Add People* input box at the top of the Collaboration dialog. Materia will search for that user as you type, providing matched results from which you can select.
+To find a user, type their name or email address into the *Add people* input box at the top of the Collaboration dialog. Materia will search for that user as you type, providing matched results from which you can select.
 
 > Note that you can only share with users that are current instructors in Materia.
 
@@ -35,11 +35,11 @@ To find users type their name or email address into the *Add People* input box a
 
 ### Full
 
-Grants the user a complete control. In addition to distributing the widget to students and receiving scores, the user may edit, copy, or delete the widget, as well as add or remove others from the list of collaborators.
+Grants the user complete control. In addition to distributing the widget to students and receiving scores, the user may edit, copy, or delete the widget, as well as add or remove others from the list of collaborators.
 
 ### View Scores
 
-Allows the user to distribute the widget among students and receive scores. The user cannot, however, edit, delete, or copy the widget.
+Allows the user to distribute the widget among students and receive scores. However, the user cannot edit, delete, or copy the widget.
 
 ### Expiration
 

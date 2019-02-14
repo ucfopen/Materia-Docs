@@ -7,7 +7,7 @@ highlighter: no
 ---
 # Contribute!
 
-First of all, Thanks for your interest in making Materia better!
+First of all, thanks for your interest in making Materia better!
 
 
 ## Report a Bug
@@ -20,7 +20,7 @@ Be sure to include:
 * Steps to reproduce the issue
 * What the expected results are
 
-We'll do our best to classify the issue and address them in order of importance amung the other issues.
+We'll do our best to classify the issue and address them in order of importance among the other issues.
 
 ## Resolve Issues
 
