@@ -70,6 +70,7 @@ score:
 
 meta_data:
   # REQUIRED. List of Strings. What feature tags should be displayed on the widget detail page
+  # If empty, set to an empty array - supported_data: []
   features:
     - Customizable
     - Scorable
@@ -77,6 +78,7 @@ meta_data:
 
   # REQUIRED. List of Strings. What question types can be imported.
   # Supported Options: `Question/Answer` and `Multiple Choice`.
+  # If empty, set to an empty array - supported_data: []
   supported_data:
     - Question/Answer
 
