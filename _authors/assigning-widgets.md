@@ -27,6 +27,6 @@ The second option is to use the embed code by selecting the *use the embed code*
 By default, embedded widgets will attempt to initiate a play automatically - you can optionally disable this feature by unchecking the 'Autoplay' option or changing `?autoplay=true` to `?autoplay=false` in your embed code. This is a useful feature if you are embedding multiple widgets on the same page, as it will require students to explicitly start playing each one.
 
 ## LTI Integration (External Tools in Canvas)
-Send scores to your gradebook and support single-sign-on for students. The best option option for sharing widgets is available for instructors using a Learning Management System that supports LTI (most do). Integrating your widgets into Instructure's Canvas is covered in the [Embedding in Canvas](embedding-in-canvas.html) section.
+Send scores to your gradebook and support single-sign-on for students. The best option for sharing widgets is available for instructors using a Learning Management System that supports LTI (most do). Integrating your widgets into Instructure's Canvas is covered in the [Embedding in Canvas](embedding-in-canvas.html) section.
 
 > LTI integrations will require some technical setup from your Materia and LMS administrators.
