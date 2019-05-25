@@ -9,6 +9,12 @@ category: administrative
 
 Materia widgets are distributed in the form of a .wigt file.  These files contain all the code, assets, and data needed to install a widget. To learn more about how widgets are built, check out the [Widget Developer Guide](widget-developer-guilde.html).
 
+## Finding Widgets to Install
+
+Widgets are maintained serpately from Materia itself, each having it's own, independant development cycle.  We have a [Materia Widget Gallery](https://ucfopen.github.io/materia-widget-gallery/) that searches github for all publicly shared widgets.
+
+> Note: The Widget Gallery will include widgets made by the core Materia development team **and** 3rd parties.
+
 ## Installing Widgets from the Admin Panel
 
 Materia's admin panel allows administrators to upload new widgets.  Log in as an administrator, and navigate to the Admin Widget Page (materia.your_school.edu/admin/widget). Uploading a widget is as easy as clicking upload and selecting the .wigt file from your computer.

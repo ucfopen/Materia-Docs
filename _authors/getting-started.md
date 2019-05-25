@@ -6,7 +6,7 @@ class: instructors
 category: first
 highlighter: no
 ---
-# Creating a New Widget
+# Customizing a New Widget
 The first step in using Materia in your course is to create a new widget with your own custom content. Each widget has a creation interface which allows you to easily customize it to your needs. Once created, the widget can be distributed and shared with students and other instructors.
 
 ## Selecting a Widget to Create
