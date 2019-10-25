@@ -70,7 +70,21 @@ $ npm install materia-widget-development-kit --save-dev
 
 ### Using the MWDK's common Webpack Rules
 
-> @TODO
+The MWDK offers several default webpack rules that are common across most widget build processes accessed through the webpack-widget file.
+
+The three main functions used to access these rules are:
+
+#### `getDefaultRules()`
+
+This function returns the typical rules used for loading, compiling, and copying development files for production. If you are developing a widget that requires a rule that isn't current default (e.g. React), you will need to add your own rule to your webpack config.
+
+#### `getDefaultCopyList()`
+
+This function returns the default items that need to be copied verbatim from the dev environment to production. See the [wigt package structure](wigt-package.html) to see what assets and directories are required.
+
+#### `getDefaultEntries()`
+
+This function adds the player and creator js and css files to the entries. However, it is reccommended that you create your own entries variable instead of using this function because the function only support CoffeScript for its JavaScript files.
 
 ### Running the MWDK
 
