@@ -40,4 +40,4 @@ class Score_Modules_MyWidget extends Score_Module
 
 This example uses `Score_Module`'s `questions` property which contains a reference to this widget instance's `qSet`.
 
-> Look at the <code>Score_Module</code> class for all of the properties available to you.
+> Look at the <code>Score_Module</code> class in [Materia](https://github.com/ucfopen/Materia) for all of the properties available to you.
