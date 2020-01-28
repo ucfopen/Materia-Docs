@@ -171,7 +171,7 @@ However, for more advanced uses a custom score screen can be provided.  It's *ju
 
 
 
-# Compiling with Webpack
+## Compiling with Webpack
 
 Here is a basic example of a webpack config for a widget. See the [materia widget development kit page](materia-widget-development-kit.html) for an explanation of the widgetWebpack functions called.
 
