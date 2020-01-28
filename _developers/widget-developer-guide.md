@@ -173,5 +173,41 @@ However, for more advanced uses a custom score screen can be provided.  It's *ju
 
 # Compiling with Webpack
 
-> @TODO
+Here is a basic example of a webpack config for a widget. See the [materia widget development kit page](materia-widget-development-kit.html) for an explanation of the widgetWebpack functions called.
 
+```javascript
+const path = require('path')
+const srcPath = path.join(__dirname, 'src') + path.sep
+const outputPath = path.join(__dirname, 'build') + path.sep
+const widgetWebpack = require('materia-widget-development-kit/webpack-widget')
+
+const rules = widgetWebpack.getDefaultRules()
+const copy = widgetWebpack.getDefaultCopyList()
+
+const entries = {
+	'player.js': [
+		path.join(srcPath, 'player.js')
+	],
+	'player.css': [
+		path.join(srcPath, 'player.html'),
+		path.join(srcPath, 'player.scss')
+	],
+	'creator.js': [
+		path.join(srcPath, 'creator.js')
+	],
+	'creator.css': [
+		path.join(srcPath, 'creator.html'),
+		path.join(srcPath, 'creator.scss')
+	]
+}
+
+const options = {
+	entries: entries,
+	moduleRules: rules,
+	copyList: copy
+}
+
+const buildConfig = widgetWebpack.getLegacyWidgetBuildConfig(options)
+
+module.exports = buildConfig
+```
