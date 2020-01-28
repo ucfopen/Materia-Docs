@@ -7,6 +7,11 @@ category: [server, server_setup]
 
 # Installing Materia on Ubuntu using Apache
 
+This guide was created for an older version of Materia. It's here as an example, but we suggest using the current release version, which is likely to have updated requirements.
+
+The dependencies to run Materia are included in the Dockerfiles we use for local development. Those can be found in the Materia repository here: [PHP webserver dockerfile](https://github.com/ucfopen/Materia/blob/master/docker/dockerfiles/materia-web) and [node dockerfile](https://github.com/ucfopen/Materia/blob/master/docker/dockerfiles/materia-node). Note that you don't need 2 servers, we just use 2 containers to isolate responsibilities.
+
+## Versions used in this Guide
 
 * Created August 2017
 * Materia version: **v3.5.2**

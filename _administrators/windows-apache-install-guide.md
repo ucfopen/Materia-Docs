@@ -9,6 +9,11 @@ category: [server, server_setup]
 
 This install guide runs you through installing Materia and all the required software on a brand new Windows Server 2012 machine.  You may have some pieces of this already installed if you're already running a web server.
 
+This guide was created for an older version of Materia. It's here as an example, but we suggest using the current release version, which is likely to have updated requirements.
+
+The dependencies to run Materia are included in the Dockerfiles we use for local development. Those can be found in the Materia repository here: [PHP webserver dockerfile](https://github.com/ucfopen/Materia/blob/master/docker/dockerfiles/materia-web) and [node dockerfile](https://github.com/ucfopen/Materia/blob/master/docker/dockerfiles/materia-node). Note that you don't need 2 servers, we just use 2 containers to isolate responsibilities.
+
+## Versions used in this Guide
 
 * Last Updated **May 2018**
 * Materia version: **v3.6.2**
@@ -16,7 +21,6 @@ This install guide runs you through installing Materia and all the required soft
 * Apache version: **2.4.28**
 * MySQL version: **5.7.20**
 * PHP version: **7.0.25**
-
 
 ## Relax Windows Security (optional?)
 
