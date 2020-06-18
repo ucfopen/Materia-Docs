@@ -38,7 +38,7 @@ Default PHP.ini with exception of:
 * zlib1g-dev
 
 ## Database
-* Mysql/MariaDB 5.7
+* Mysql 5.7 / MariaDB 10.2
 * Two databases (on one Mysql server) - one for production and one for test
 
 ## Deploy and Build Requirements
