@@ -18,7 +18,9 @@ Download Default layout in Color:
 [png]({{ site.baseurl }}/assets/img/logos/color/materia-logo-default-color.png),
 [svg]({{ site.baseurl }}/assets/img/logos/color/materia-logo-default-color.svg),
 [eps]({{ site.baseurl }}/assets/img/logos/color/materia-logo-default-color.eps),
-[pdf]({{ site.baseurl }}/assets/img/logos/color/materia-logo-default-color.pdf)
+[png - small]({{ site.baseurl }}/assets/img/logos/color/materia-logo-default-color-for-small-sizes.png),
+[svg - small]({{ site.baseurl }}/assets/img/logos/color/materia-logo-default-color-for-small-sizes.svg),
+[eps - small]({{ site.baseurl }}/assets/img/logos/color/materia-logo-default-color-for-small-sizes.eps)
 
 
 {% include figure.html
@@ -30,8 +32,7 @@ Download Default layout in Color:
 Download Default layout in Black:
 [png]({{ site.baseurl }}/assets/img/logos/black/materia-logo-default-black.png),
 [svg]({{ site.baseurl }}/assets/img/logos/black/materia-logo-default-black.svg),
-[eps]({{ site.baseurl }}/assets/img/logos/black/materia-logo-default-black.eps),
-[pdf]({{ site.baseurl }}/assets/img/logos/black/materia-logo-default-black.pdf)
+[eps]({{ site.baseurl }}/assets/img/logos/black/materia-logo-default-black.eps)
 
 
 {% include figure.html
@@ -43,8 +44,7 @@ Download Default layout in Black:
 Download Default layout in Grayscale:
 [png]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-default-grayscale.png),
 [svg]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-default-grayscale.svg),
-[eps]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-default-grayscale.eps),
-[pdf]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-default-grayscale.pdf)
+[eps]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-default-grayscale.eps)
 
 
 
@@ -60,7 +60,9 @@ Download Square layout in Color:
 [png]({{ site.baseurl }}/assets/img/logos/color/materia-logo-square-color.png),
 [svg]({{ site.baseurl }}/assets/img/logos/color/materia-logo-square-color.svg),
 [eps]({{ site.baseurl }}/assets/img/logos/color/materia-logo-square-color.eps),
-[pdf]({{ site.baseurl }}/assets/img/logos/color/materia-logo-square-color.pdf)
+[png - small]({{ site.baseurl }}/assets/img/logos/color/materia-logo-square-color-for-small-sizes.png),
+[svg - small]({{ site.baseurl }}/assets/img/logos/color/materia-logo-square-color-for-small-sizes.svg),
+[eps - small]({{ site.baseurl }}/assets/img/logos/color/materia-logo-square-color-for-small-sizes.eps)
 
 
 {% include figure.html
@@ -72,8 +74,7 @@ Download Square layout in Color:
 Download Square layout in Black:
 [png]({{ site.baseurl }}/assets/img/logos/black/materia-logo-square-black.png),
 [svg]({{ site.baseurl }}/assets/img/logos/black/materia-logo-square-black.svg),
-[eps]({{ site.baseurl }}/assets/img/logos/black/materia-logo-square-black.eps),
-[pdf]({{ site.baseurl }}/assets/img/logos/black/materia-logo-square-black.pdf)
+[eps]({{ site.baseurl }}/assets/img/logos/black/materia-logo-square-black.eps)
 
 
 {% include figure.html
@@ -85,8 +86,7 @@ Download Square layout in Black:
 Download Square layout in Grayscale:
 [png]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-square-grayscale.png),
 [svg]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-square-grayscale.svg),
-[eps]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-square-grayscale.eps),
-[pdf]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-square-grayscale.pdf)
+[eps]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-square-grayscale.eps)
 
 
 
@@ -101,9 +101,10 @@ Download Square layout in Grayscale:
 Download Inline layout in Color:
 [png]({{ site.baseurl }}/assets/img/logos/color/materia-logo-thin-color.png),
 [svg]({{ site.baseurl }}/assets/img/logos/color/materia-logo-thin-color.svg),
-[eps]({{ site.baseurl }}/assets/img/logos/color/materia-logo-thin-color.eps),
-[pdf]({{ site.baseurl }}/assets/img/logos/color/materia-logo-thin-color.pdf)
-
+[eps]({{ site.baseurl }}/assets/img/logos/color/materia-logo-thin-color.eps)
+[png - small]({{ site.baseurl }}/assets/img/logos/color/materia-logo-thin-color-for-small-sizes.png),
+[svg - small]({{ site.baseurl }}/assets/img/logos/color/materia-logo-thin-color-for-small-sizes.svg),
+[eps - small]({{ site.baseurl }}/assets/img/logos/color/materia-logo-thin-color-for-small-sizes.eps)
 
 {% include figure.html
 	no_thumb="true"
@@ -114,8 +115,7 @@ Download Inline layout in Color:
 Download Inline layout in Black:
 [png]({{ site.baseurl }}/assets/img/logos/black/materia-logo-thin-black.png),
 [svg]({{ site.baseurl }}/assets/img/logos/black/materia-logo-thin-black.svg),
-[eps]({{ site.baseurl }}/assets/img/logos/black/materia-logo-thin-black.eps),
-[pdf]({{ site.baseurl }}/assets/img/logos/black/materia-logo-thin-black.pdf)
+[eps]({{ site.baseurl }}/assets/img/logos/black/materia-logo-thin-black.eps)
 
 
 {% include figure.html
@@ -127,6 +127,5 @@ Download Inline layout in Black:
 Download Inline layout in Grayscale:
 [png]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-thin-grayscale.png),
 [svg]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-thin-grayscale.svg),
-[eps]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-thin-grayscale.eps),
-[pdf]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-thin-grayscale.pdf)
+[eps]({{ site.baseurl }}/assets/img/logos/grayscale/materia-logo-thin-grayscale.eps)
 
