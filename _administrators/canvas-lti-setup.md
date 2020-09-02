@@ -95,7 +95,11 @@ return [
 
 ## Setting up Canvas
 
-First, take a look at [Instructure's tutorial](https://community.canvaslms.com/docs/DOC-3020) which covers adding an extension to Canvas. You'll enter the following settings into the **Edit External Tool** form:
+First, take a look at [Instructure's tutorial](https://community.canvaslms.com/docs/DOC-3020) which covers adding an extension to Canvas.
+
+
+
+ We usually use the "By URL" method, but you could also use "Paste XML" if desired. You'll enter the following settings into the **Edit External Tool** form:
 
 * **Consumer Key**: Use a value from `lti.consumers.canvas.key` in the lti.php
 * **Shared Secret**: Use the value from `lti.consumers.canvas.secret` in the  lti.php
@@ -103,3 +107,9 @@ First, take a look at [Instructure's tutorial](https://community.canvaslms.com/d
 * **Configuration URL**: Enter the url to your LTI configuration xml `https://<YOUR_MATERIA_URL>/lti`
 
 > It is **very important** you keep the shared secret... well, *secret*.
+
+{% include figure.html
+	no_thumb="true"
+	url="admin/canvas-add-lti-app.png"
+	alt="Screen shot of installing Materia into Instructure's Canvas External Tools"
+%}

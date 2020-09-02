@@ -7,7 +7,7 @@
 
 ## Installation
 
-- Run `bundle install`
+- Run `bundle install --path vendor/bundle`
 
 ## Edit and live reloading the docs in the browser
 

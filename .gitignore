@@ -1,4 +1,9 @@
 # compiled html files
-_site
-_test
 .DS_Store
+_site/
+_test/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
