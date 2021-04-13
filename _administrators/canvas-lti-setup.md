@@ -9,100 +9,71 @@ category: administrative
 
 Installing Materia LTI into Canvas adds some very nice-to-have integrations for students and faculty.  It allows scores to be passed back to your course grade book and students to log in and play seamlessly.
 
-## Materia LTI Configuration
+## Heroku LTI Configuration
 
-The first step is to make sure Materia's LTI is configured. The [initial Materia install task](administrative-commands.html#initial-materia-install-task) sets up a lot of these variables, but they can be edited manually.
+Using the "Deploy to Heroku" button causes Heroku to generate a random secret for you. In most cases you simply need to locate those in the Heroku app dashboard. The `LTI_SECRET` and `LTI_KEY` values will be needed when you enter them into Canvas's LTI App installation.
 
-**Do not edit** the example/base configuration is in `fuel/app/packages/modules/lti/config/lti.php`. Rather, edit or create an *environment* configuration file in `/fuel/app/packages/modules/lti/config/<ENVIRONMENT>/lti.php`.
+## ENV Variables Configuration (v8.0.0 and newer)
 
-> FuelPHP uses environments to determine which configuration options to load.  For more information view the <a href="http://fuelphp.com/docs/general/environments.html#/env_config">Fuelphp Documentation</a>.  The environment will typically be either `production` or `development`.
+Materia [v8.0.0](https://github.com/ucfopen/Materia/releases/tag/v8.0.0) added a simplified configuration. The common LTI settings can be set in `.env.local` or by using [Environment variables](https://github.com/ucfopen/Materia#configuring).
 
-### Name Your Materia Install
 
-Create a unique identifier for your Materia server install.  In the context of LTI tools, this should be unique to your server.  Typically [reverse domain notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation) is used, converting your server's url `https://materia.ucf.edu` into to the value `edu.ucf.materia`.
+## Advanced Configuration (all versions)
 
-This identifier will be used for the value of `lti.tool_consumer_instance_guid` configuation setting.
+Use the advanced method if:
+* Environment variables are not provided for the setting you need to change.
+* A custom configuration is desired when connecting multiple consumers.
+* You are using Materia v7.0.1 or older, which don't support env configuration.
+
+
+### FuelPHP Configuration Info
+
+FuelPHP uses environments to determine which configuration options to load.  For more information view the [Fuelphp Documentation](http://fuelphp.com/docs/general/environments.html#/env_config).  The environment should be `production` for any server.
+
+Assuming `FUEL_ENV` is set to production, FuelPHP will load and merge the following in order:
+1. fuel/app/packages/modules/lti/config/lti.php
+2. fuel/app/packages/modules/lti/config/production/lti.php
+
+You can edit the base config or the environment config as needed by your use case.
+
+> Heroku is a special case.  To update a configuration file on Heroku, you must save those changes and re-deploy your app. Manually changing files by editing them on the running app will not persist.  If available, it is advisable to use env vars on Heroku.
+
+### Name Your Unique Materia Server (GUID)
+
+Create a unique identifier for your Materia install.  In the context of LTI tools, this should be unique to your server.  Typically [reverse domain notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation) is used, converting your server's url `https://materia.ucf.edu` into to the value `edu.ucf.materia`.
+
+Your GUID can be set in either:
+* Environment variable / .env.local: `LTI_GUID`
+* Manual config in lti.php: `lti.tool_consumer_instance_guid`
 
 ### Add a Consumer
 
-The configuration file defines which *consumers* can launch Materia widgets. For Canvas you need the following:
+When Materia receives an LTI launch, it looks at the `tool_consumer_info_product_family_code` sent by the consumer to determine which configuration to use.
 
-```php
-<?php
-// from /fuel/app/packages/modules/lti/config/<ENVIRONMENT>/lti.php
+Assuming an LTI launch is received using `tool_consumer_info_product_family_code` = `canvas`, Materia will search for the matching configuration by first checking for `lti.consumer.canvas`.  If it doesn't exist, the settings in `lti.consumer.default` will be used.  Prior to v8.0.0, the default fallback doesn't occur.
 
-return [
-	// Settings for this particular install
-	// Change the tool_consumer_instance_guid to something unique to your install!
-	'tool_consumer_info_product_family_code' => 'materia',
-	'tool_consumer_instance_guid'            => '<YOUR_REVERSE_DOMAIN_IDENTIFIER>',
+### Default Consumer (Materia v8.0.0 and newer)
 
-	'consumers' => [
-		 // the consumer names must match the LTI launch param:
-		 // 'tool_consumer_info_product_family_code'
-		'canvas' => [
-			// The LTI launch param to use for Materia's username
-			'remote_username'       => 'lis_person_sourcedid',
+The `default` consumer is the easiest way to set common LTI settings for all LTI consumers.  Changing a setting here will apply to all consumers that don't match a specifically configured consumer.
 
-			// When looking or creating local users based on the external
-			// system what fields do we use as an identifier?
-			// 'remote_identifier' is a variable from the lti launch the LMS sent
-			// 'local_identifier' is the column to search in the user database
-			// ex:
-			// if 'local_identifier' is 'username'
-			// and lti launch data lis_person_sourceid = 'dave'
-			// Materia will search the 'username' column for 'dave'
-			//
-			// Another option is to use email (remember email's change):
-			// 'remote_identifier' = 'lis_person_contact_email_primary'
-			// 'local_identifier' = 'email'
-			// ex:
-			// launch lis_person_contact_email_primary is 'me@mail.com'
-			// materia searches the 'email' column for 'me@mail.com'
-			'remote_identifier'     => 'lis_person_sourcedid',
-			'local_identifier'      => 'username',
+For reference, the default consumer is defined in the [lti.php config](https://github.com/ucfopen/Materia/blob/master/fuel/app/modules/lti/config/lti.php) under `lti.consumers.default`.
 
-			// When true, Materia will accept user data from the external system.
-			// This means it will create users we don't have and update their user
-			// data if it changes. It will NOT update any external roles
-			// (see 'use_launch_roles')
-			'creates_users'         => true,
+### Multiple Consumers
 
-			// allow an external system to define user roles in Materia
-			'use_launch_roles'      => true,
+If different settings are needed for different LTI consumers, they can easily be defined by duplicating the contents of `lti.consumers.default` and creating a new consumer setting group.  For instance, Obojobo uses the family code of `obojobo-next`.  To define different settings for Obojobo, one would create `lti.consumers.obojobo-next` and populate it with the required settings.
 
-			// which auth driver will do the final work authenticating this user
-			// custom auth modules can be added to use SAML or lookup users in LDAP
-			'auth_driver'           => 'Materiaauth',
-
-			// Settings for the course navigation link
-			// these affect the lti configuration xml
-			// used by Canvas when installing Materia LTI
-			'course_nav_enabled'    => 'true', // can it be turned on
-			'course_nav_default'    => 'disabled', // is it turned on by default
-			'course_nav_text'       => 'Materia', // what does the nav link say
-			'course_nav_visibility' => 'admins', // who can see the nav link
-
-			// Security Settings CHANGE THE SECRET (or both) !!!
-			'secret'            => '<CHANGE_ME_NOW_SECRET>',
-			'key'               => 'materia-production-lti-key',
-
-		],
-		//.. other consumers here
-	]
-];
-```
+For reference, a sample consumer for Obojobo Classic is commented out in [lti.php config](https://github.com/ucfopen/Materia/blob/master/fuel/app/modules/lti/config/lti.php) under `lti.consumers.obojobo`.
 
 ## Setting up Canvas
 
 First, take a look at [Instructure's tutorial](https://community.canvaslms.com/docs/DOC-3020) which covers adding an extension to Canvas.
 
+We usually use the "By URL" method, but you could also use "Paste XML" if desired.  The URL (and XML) you'll use should be visible at `https://<YOUR_MATERIA_URL>/lti` (view source for raw xml).
 
+You'll enter the following settings into the **Add/Edit App** form:
 
- We usually use the "By URL" method, but you could also use "Paste XML" if desired. You'll enter the following settings into the **Edit External Tool** form:
-
-* **Consumer Key**: Use a value from `lti.consumers.canvas.key` in the lti.php
-* **Shared Secret**: Use the value from `lti.consumers.canvas.secret` in the  lti.php
+* **Consumer Key**: Use a value from `lti.consumers.default.key` in the lti.php
+* **Shared Secret**: Use the value from `lti.consumers.default.secret` in the  lti.php
 * **Configuration Type**: Select `By URL`
 * **Configuration URL**: Enter the url to your LTI configuration xml `https://<YOUR_MATERIA_URL>/lti`
 
