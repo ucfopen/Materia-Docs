@@ -106,7 +106,7 @@ Follow the instructions under [Canvas LTI Setup]({{ site.baseurl }}/admin/canvas
 
 Due to limitations on Heroku, widgets must be installed in the Heroku app build process.
 
-To add or change which widgets are installed, you can make changes to the [Materia Heroku config file](https://github.com/ucfopen/Materia/blob/master/fuel/app/config/heroku/config.php) in your own fork of Materia.
+To add or change which widgets are installed, you can make changes to the [Materia Heroku config file](https://github.com/ucfopen/Materia/blob/master/fuel/app/config/config.php) in your own fork of Materia.
 
 The widget files need to be accessible from the web, and need to be accompanied by a yaml file containing build and checksum information.
 
