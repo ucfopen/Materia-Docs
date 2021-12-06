@@ -16,7 +16,7 @@ It can be a game, a study tool, a simulation, almost anything, really. A widget 
 
 ## Who Creates Widgets?
 
-Instructors from your institution can create widgets.  Your institution may allow students to build widgets as well. An easy way to test if you can create your own content is to visit the *My Widgets* page.
+Widgets are primarily authored by instructors. Depending on your institution's preferences, students may be able to author widgets as well. If you're not sure about your authorship permissions, visit the *My Widgets* page.
 
 # Playing Widgets
 
@@ -27,3 +27,7 @@ All widgets have a unique play URL. Visiting the link in your browser will take 
 ## Embedded Player
 
 All published widgets also have the option of being embedded in a page or in an online course. In these cases, you may not even realize you're using Materia as it seamlessly integrates into its surroundings.
+
+## Player Guides ##
+
+Not sure how a particular widget works, or want to double-check something? Visit the *Widget Catalog* page in Materia, select the widget in question, and select *Player Guide* at the bottom-left.
