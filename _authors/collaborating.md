@@ -7,7 +7,7 @@ highlighter: no
 ---
 # Sharing Widgets with Others
 
-Sharing widgets will allow you to collaborate with others to build your widget, distribute to students, and collect score results.
+Use the collaboration feature to grant authorship access to other Materia users at your institution. Depending on the access level you set, collaborators become co-owners of the widget, or can simply distribute the widget and collect scores without having the ability to make changes to it.
 
 ## The Collaboration Dialog
 
@@ -23,7 +23,7 @@ To share a widget, select it on the *My Widgets* page and click *Collaborate*.
 
 To find a user, type their name or email address into the *Add people* input box at the top of the Collaboration dialog. Materia will search for that user as you type, providing matched results from which you can select.
 
-> Note that you can only share with users that are current instructors in Materia.
+> Note that you can only share your widget with users who are current instructors in Materia. The other users will have had to log in to Materia at least once. Additionally, while students may be able to author widgets themselves, you cannot share a widget with a student unless it is in **guest mode**.
 
 {% include figure.html
 	no_thumb="true"
@@ -45,4 +45,8 @@ Allows the user to distribute the widget among students and receive scores. Howe
 
 You may set an expiration for each person's permissions. After this date, the collaboration will be revoked and the user will no longer have access to the widget.
 
-> Keep in mind that users with the *Full* permission level may edit their own expiration date.
+> Note that users with the **Full** permission may grant access to additional collaborators, but cannot modify their own access expiration date, if set.
+
+### Copying Widgets
+
+A collaborator can always make a derivative copy of a widget they have access to, regardless of access level. The copy dialog allows you to choose whether to share access to the derivative with the original owner.

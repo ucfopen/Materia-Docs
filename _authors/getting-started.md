@@ -6,8 +6,13 @@ class: instructors
 category: first
 highlighter: no
 ---
+
+# What is a Widget?
+
+A Materia _Widget_ is a catch-all term to describe the customizable games, study tools, and interactive content within the Materia catalog. However, the widget itself does not provide content specific to any topic or course - that's where you come in! Using the widget's creator interface, you create custom _instances_ of a particular widget. For example, a user can select the Crossword _widget_ and customize it to create an _instance_ of Crossword that's filled out with content they authored. 
+
 # Customizing a New Widget
-The first step in using Materia in your course is to create a new widget with your own custom content. Each widget has a creation interface which allows you to easily customize it to your needs. Once created, the widget can be distributed and shared with students and other instructors.
+The first step in using Materia in your course is to create a new widget _instance_ with your own custom content. Each widget has a creation interface which allows you to easily customize it to your needs. Once created, the widget instance can be distributed and shared with students and other instructors.
 
 ## Selecting a Widget to Create
 Begin by logging in to Materia using the appropriate credentials, and selecting the *Widget Catalog* link at the top of the page.
@@ -18,14 +23,14 @@ Begin by logging in to Materia using the appropriate credentials, and selecting 
 	alt="Select the <strong>Widget Catalog</strong> link to view the widgets available for use."
 %}
 
-The catalog page provides a list of available widgets, with filtration options on the left. Mousing over a widget provides an overview of their features and supported data.
+The catalog page provides a list of available widgets, with filtration options at the top. Mousing over a widget provides an overview of their features and supported data.
 
 {% include figure.html
 	url="widget_catalog.png"
 	alt="Select a widget to create from the Materia widget catalog."
 %}
 
-Selecting a widget brings you to the widget detail screen with screen shots of the widget in action, and links to play a demo or to build your own.
+Selecting a widget brings you to the widget detail screen with a short description, a playable demo, screenshots, and a link to create your own.
 
 {% include figure.html
 	url="widget_detail.png"
@@ -34,24 +39,23 @@ Selecting a widget brings you to the widget detail screen with screen shots of t
 
 ## Widget Creator Basics
 
-Each widget has a unique creator designed specifically to help you customize the content needed for that type of widget. While the details will change from widget to widget, all creators have several universal features in common. For details on creators for specific widgets, you may find them under the *Creating Widgets* menu at the top of this page.
+Each widget has a unique creator designed specifically to help you customize the content needed for that type of widget. While the details will change from widget to widget, all creators have several universal features in common. Use the Creator's Guide link on the widget's detail page to learn more about the creator interface for a specific widget.
 
 ## The Creator Page
-Below is an example of the *Hangman* widget creator.
+Below is an example of the *Crossword* widget creator.
 
 {% include figure.html
-	no_thumb="true"
+	no_thumb="false"
 	url="creator_example.png"
-	alt="Screenshot showing the hangman creator."
+	alt="Screenshot showing the Crossword creator."
 %}
 
-0. Question importing, Publish, Preview, and Save Draft features. *Note: these buttons are standard across all creators.*
-0. Adding questions and content. *This will be different for each individual creator.*
-0. Widget title. *This is standard across all creators.*
-0. Widget options. *These will be different for each individual creator.*
+0. Built-In Creator Controls.  *Note: these buttons are standard across all creators.*
+0. Widget Title. *This is standard across all creators, with modest variations.* 
+0. Widget Creator Interface. *This will be different for each individual creator.*
 
 ## Developing Questions for your Widget
-In most cases, content for widgets is comprised of a *question* or *hint*, and an *answer* or *series of answers* for a given question. In this example, our Hangman widget has a question that is initially posed to the student and an answer that is considered the correct response. Some widgets, such as *Enigma* or *Choose your Own Adventure*, can have multiple responses to each question.
+In most cases, content for widgets is comprised of a *question* or *hint*, and an *answer* or *series of answers* for a given question. In this example, our Crossword widget has a *clue* that acts as a question, a *puzzle word* that acts as answer text, and an optional *hint* associated with each puzzle word. Some widgets, such as *Enigma* or *Choose your Own Adventure*, can have multiple responses to each question. The specific nature of each question in your widget instance is largely unique to each widget in the Materia catalog.
 
 Note that each creator typically has a text box in which to enter a new question, as well as a text box (or boxes) in which to enter an answer or multiple answers. Each creator also has options to add new questions or to remove existing ones. Some widgets allow media such as images or audio to be used to supplement or replace questions.
 
@@ -79,6 +83,17 @@ All creators share the same options once your widget is ready to go.
 	url="publish-preview-save-draft-buttons.jpg"
 	alt="The Publish, Preview, and Save Draft buttons help you build and edit your widgets."
 %}
+
+## Save History
+Are you making revisions to a widget you created previously and regret your changes, or want to revisit what the widget looked like after an earlier save? Use Save History to browse previous versions of your widget, and if desired, restore your work to the earlier save.
+
+{% include figure.html
+	no_thumb="false"
+	url="creator_save_history.png"
+	alt="Save history UI."
+%}
+
+Select one of the saves listed to load it into the creator for review. Note that in this preview state, your old work is *not affected*. If you wish to commit to using the old version, select **Keep** on the header bar. Otherwise, selecting **Cancel** will revert the creator to the version you were working on.
 
 ## Guest Widget Instances
 

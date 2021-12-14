@@ -11,11 +11,12 @@ The MWDK automatically watches changes to your widget source files and re-builds
 
 ## Some MWDK Features include:
 
-* Supports player and creator html files
+* Locally hosts widget players and creators for rapid development
 * Uses the same Javascript as the production Materia Server
-* Utility for easily building .wigt packages
+* Utility for easily building .wigt packages and installation to a local Materia instance
 * Materia API mocking
 * Reusable Webpack rules common to many widget build processes
+* Icon generator and screenshot annotation tools
 
 {% include figure.html
 	url="mwdk/mwdk-home.png"
@@ -35,7 +36,7 @@ MWDK loads your widgets demo.json QSET into the player automatically.  It handle
 
 ## Build Widget Creators
 
-MWDK loads and displays your creator for easy development and testing. There is a mock question set importer and a mock media importer for testing those features in your creator. It handles all API calls a widget makes to the Creator Core.
+MWDK loads and displays your creator for easy development and testing. There is a mock question set importer and a mock media importer for testing those features in your creator. It handles all API calls a widget makes to the Creator Core. Once you save an instance, it can be seamlessly previewed in the player.
 
 {% include figure.html
 	url="mwdk/mwdk-creator.png"
@@ -45,28 +46,33 @@ MWDK loads and displays your creator for easy development and testing. There is 
 
 ## Package WIGT files
 
-To aid in widget packaging and testing, MWDK includes features to build and download a .wigt file.  If you're using Materia Docker to run a local development Materia Server - MWDK has a script to install it to the server for you.
+To aid in widget packaging and testing, MWDK includes features to build and download a .wigt file.  If you're using Docker to run a local development Materia Server - MWDK has a script to install it to the server for you.
 
 {% include figure.html
 	url="mwdk/mwdk-package.png"
 	alt="MWDK has a GUI interface to build .wigt files and install into a Docker Materia based local dev server"
 %}
 
+> Note: Make sure you're using the latest revisions of both the Materia Widget Development Kit and Materia itself to avoid communication problems between MWDK and Docker Materia.
 
 
 ## Using the MWDK
 
 The MWDK is an [npm package](https://www.npmjs.com/package/materia-widget-development-kit) that is included as a dev dependency in your widget's package.json.
 
-### Install using npm:
+> While you can use either yarn or npm to install and run the dev kit, we recommend yarn.
+
+### Install with yarn:
+
+```shell
+$ yarn add materia-widget-development-kit --dev
+```
+
+### Install with npm:
 
 ```shell
 $ npm install materia-widget-development-kit --save-dev
 ```
-
-### Configuring Your widget
-
-> @TODO
 
 ### Using the MWDK's common Webpack Rules
 
@@ -88,17 +94,14 @@ This function adds the player and creator js and css files to the entries. Howev
 
 ### Running the MWDK
 
-
-```shell
-$ npm run start
-```
+With yarn:
 
 ```shell
 $ yarn start
 ```
 
-### Install with yarn:
+With npm:
 
 ```shell
-$ yarn add materia-widget-development-kit --dev
+$ npm run start
 ```
