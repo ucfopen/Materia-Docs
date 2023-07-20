@@ -64,7 +64,7 @@ For example, **Sort It Out** involves an assortment of items cluttered on the sc
 %}
 
 - **Sighted users** see the items as an unordered pile, and the folders as a separate set of elements on the page. There is an implicit understanding that items must be dragged into the corresponding folders to categorize them.
-- **Non-sighted users** percieve the items as an unordered list when described by a screenreader. There is no non-sighted analog to dragging and dropping: rather, screenreader users make use of additional key controls to cycle between potential categories that the item belongs to. When the appropriate category is selected, they perform an additional keyboard input to confirm the choice.
+- **Non-sighted users** perceive the items as an unordered list when described by a screenreader. There is no non-sighted analog to dragging and dropping: rather, screenreader users make use of additional key controls to cycle between potential categories that the item belongs to. When the appropriate category is selected, they perform an additional keyboard input to confirm the choice.
 
 ### 2. Use semantic DOM elements when appropriate
 
