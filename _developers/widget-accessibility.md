@@ -101,17 +101,18 @@ Some occasions to make use of a live region include:
 
 Updating a live region is as simple as changing the text contents of the element associated with the live region:
 
-```
+```html
 <span id='assistive-notification' aria-live='polite' />
 ```
 
 In javascript:
-```
+```javascript
     const element = document.getElementById('assistive-notification')
     element.innerHTML = 'This text will be read by the screenreader.'
 ```
 
-This implementation can be altered to suit rendering methods for different javascript frameworks.
+> Note that the DOM rendering methods used by javascript frameworks may create issues with live regions behaving as expected. You may need to manipulate the DOM element directly, instead of relying on abstractions provided by frameworks like Angular and React.
+
 
 ### 7. When breaking navigation conventions, ensure controls are explained
 
@@ -159,7 +160,22 @@ Widgets often involve changing the contents of the screen significantly, and as 
 4. Using a hotkey to select an unanswered question from a list.
 5. Performing an action that renders a focused control inert or disabled.
 
-### 11. Ensure game state information can be reviewed before submission
+### 11. It's okay to add tab stops to non-interactive elements - sometimes
+
+As previously discussed, tab navigation is primarily responsible for cycling between various inputs on the page. In some cases, it's acceptable to assign tab stops to non-interactive elements, by providing a `tabindex` attribute greater than `-1`. `tabindex` values greater than 0 remain discouraged.
+
+When does it make sense to add non-interactive elements to the tab sequence? Generally, when the contents of an element are critical for comprehension of game state, or when a transition from one screen to another requires programmatic focus, as discussed previously. Consider the following example:
+
+{% include figure.html
+	url="accessibility-example-3.png"
+	alt="This or That player."
+%}
+
+In **This or That**, players select an answer choice by using `tab` to focus one of the two options and confirming their selection using `space` or `enter`. They can then tab to the **Next** button to cycle to the following question. Upon transitioning, the player would then have to use `shift+tab` to move the cursor _backwards_ through the answer choices to read the question text and select the next answer. It may be more intuitive, for both sighted and non-sighted users, to assign programmatic focus to the question after transitioning, given its importance in the context of the game flow. Users can then `tab` forwards through the answer choices and the next question button, adding a consistency to each interaction.
+
+> Note that even non-interactive elements should have a focus style when they are part of the tab sequence. However, it is good UX to ensure such a focus style is distinct from styles applied to inputs; you don't want users to mistake a static element like question text with an interactive component like a button or text area.
+
+### 12. Ensure game state information can be reviewed before submission
 
 Game state - particularly related to component questions or activities that have to be completed before submission - must be available on-demand to screenreaders in addition to being visible. Generally, this means:
 
