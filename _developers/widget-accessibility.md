@@ -20,7 +20,11 @@ It's important to note that while most of the widgets in the core Materia catalo
 
 Lastly, despite our lofty aspirations, not every widget _can_ be made fully accessible, due to the nature of the interaction being asked of the user. For example, Word Search may be of some pedagogical benefit to sighted users, but the nature of Word Search means it would not translate into an effective or enjoyable experience with screenreaders. In such cases, it's important to be up-front with users about such limitations, so instructors and stakeholders can plan appropriately.
 
-# Design Considerations
+# Accessibility Metadata
+
+The widget's [install.yaml](install-yaml.html) can contain metadata to communicate the accessibility status of your widget. While not required, it is highly recommended that you include these values. They are used to populate UI elements in the Catalog and Detail pages.
+
+# Implementation Considerations
 
 UCF is obligated to ensure that all digital course content abides by the [WCAG 2.0 standard](https://www.w3.org/WAI/standards-guidelines/wcag/), which serves as a blueprint for many of the considerations outlined below. However, in many cases, widgets operate outside of the context of a normal web document; as such, we've outlined best practices to follow when creating highly interactive interfaces.
 
