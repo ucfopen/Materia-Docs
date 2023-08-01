@@ -1,6 +1,6 @@
 ---
 title: Widget Install.yaml
-tagline: Widget Instal Configuration
+tagline: Widget Install Configuration
 class: developers
 category: widgets
 highlighter_langs:
@@ -95,4 +95,11 @@ meta_data:
   excerpt: >
     A quiz tool that uses words and clues to
     randomly generate a crossword puzzle.
+
+  # OPTIONAL. These enable the widget catalog and detail pages to communicate your widget's accessibility status.
+  accessibility_keyboard: Full # Allowed values are `Full`, `Limited`, or `None`
+  accessibility_reader: Full # Allowed values are `Full`, `Limited`, or `None`
+  accessibility_description: >
+    Special navigation hotkeys are utilized. These
+    hotkeys are communicated visually and to the screen reader.
 ```
