@@ -185,19 +185,15 @@ const rules = widgetWebpack.getDefaultRules()
 const copy = widgetWebpack.getDefaultCopyList()
 
 const entries = {
-	'player.js': [
-		path.join(srcPath, 'player.js')
-	],
-	'player.css': [
+	'player': [
 		path.join(srcPath, 'player.html'),
-		path.join(srcPath, 'player.scss')
+		path.join(srcPath, 'player.js'),
+		path.join(srcPath, 'player.scss'),
 	],
-	'creator.js': [
-		path.join(srcPath, 'creator.js')
-	],
-	'creator.css': [
+	'creator': [
 		path.join(srcPath, 'creator.html'),
-		path.join(srcPath, 'creator.scss')
+		path.join(srcPath, 'creator.scss'),
+		path.join(srcPath, 'creator.js')
 	]
 }
 
