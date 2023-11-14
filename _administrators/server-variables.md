@@ -8,10 +8,6 @@ highlighter: yes
 
 # Using Environment Variables
 
-_This document is sourced from the configuration section of Materia's [readme](https://github.com/ucfopen/Materia#configuring)_
-
----
-
 Configuration settings are handled through environment variables. There are several ways to accomplish changing these settings (yay, flexibility!). Pick the one that best suits your deployment.
 
 > Note: It is crucial that you don't expose phpinfo() pages to the web. It will display your secrets! In development mode, Materia exposes /dev/php-info!).
