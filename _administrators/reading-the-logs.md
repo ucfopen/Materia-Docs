@@ -2,7 +2,7 @@
 title: Materia Log Files
 tagline: Understanding the Materia Logs
 class: admin
-category: administrative
+category: maintenance
 highlighter: no
 ---
 # Reading Materia's Log Files

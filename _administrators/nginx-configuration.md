@@ -1,11 +1,11 @@
 ---
-title: Server Setup - NGINX Configuration
+title: Setting up NGINX
 tagline: A guide to configuring an NGINX to work with Materia
 class: admin
-category: [server, server_setup]
+category: first_time
 ---
 
-# Production ready Nginx Webserver configuration
+# Production-Ready NGINX Configuration
 
 ## Features
 * Options for hosting behind a load balancer like (AWS ALB)
@@ -27,7 +27,7 @@ Search for 'SETUP' and update settings as needed.  The config below assumes you'
 user nginx;
 worker_processes auto;
 error_log /var/log/nginx/error.log;
-pid /var/run/nginx.pid;
+pid /tmp/nginx.pid;
 
 events {
     worker_connections 1024;
@@ -38,10 +38,10 @@ http {
                       '$status $body_bytes_sent "$http_referer" '
                       '"$http_user_agent" "$http_x_forwarded_for"';
 
-    log_format slim '[$time_local] "$request_method $request_uri" $status';
+    log_format slim '[$time_local] "$request_method $request_uri" $status - $remote_addr';
 
     # choose main or slim formats
-    access_log  /var/log/nginx/access.log  main;
+    access_log  /var/log/nginx/access.log  slim;
 
     sendfile            on;
     tcp_nopush          on;
@@ -57,19 +57,20 @@ http {
     gzip_proxied any;
     gzip_vary on;
     gzip_types
-      application/javascript
-      application/json
-      application/vnd.ms-fontobject
-      application/x-font-ttf
-      application/x-web-app-manifest+json
-      application/xhtml+xml
-      application/xml
-      font/opentype
-      image/svg+xml
-      image/x-icon
-      text/css
-      text/plain
-      text/x-component;
+        application/javascript
+        application/json
+        application/vnd.ms-fontobject
+        application/x-font-ttf
+        application/x-web-app-manifest+json
+        application/xhtml+xml
+        application/xml
+        font/opentype
+        image/svg+xml
+        image/x-icon
+        text/css
+        text/javascript
+        text/xml
+        text/plain;
 
     include        /etc/nginx/mime.types;
     default_type   application/octet-stream;
@@ -83,9 +84,12 @@ http {
     ## These options are simply a placeholder and are likely outdated
     ## an excellent place to start: https://ssl-config.mozilla.org/
     #
-    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    ssl_prefer_server_ciphers on;
-    ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers off;
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384;
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:SSL:50m;
+    ssl_session_tickets off;
     ssl_certificate     /etc/nginx/conf.d/cert.pem;
     ssl_certificate_key /etc/nginx/conf.d/key.pem;
 
@@ -113,6 +117,10 @@ http {
         ## this domain should match /config/materia.php urls
         ## for 'static' and 'engines'
         server_name  static-materia.your-org.edu;
+
+        ## SETUP MUST SET ROOT
+        ## The root directory should be configured to match the public directory's volume mount location
+        root /var/www/html/public;
 
         ## Redirect to https if non-https request received
         if ($scheme = http) {
@@ -182,8 +190,8 @@ http {
         }
 
         ## SETUP MUST SET ROOT
-        ## Root is the public directory in materia (materia/public)
-        root /srv/materia/public;
+        ## The root directory should be configured to match the public directory's volume mount location
+        root /var/www/html/public;
 
         index index.php index.html index.htm;
 
@@ -241,7 +249,7 @@ http {
             ## SETUP
             ## note that your phpfpm socket may not be at this location
             ## especially for multi-tenant uses
-            fastcgi_pass        unix:/var/run/php-fpm/www.sock;
+            fastcgi_pass        unix:/var/run/php/php-fpm.sock;
             fastcgi_index       index.php;
             fastcgi_param       SCRIPT_FILENAME $document_root$fastcgi_script_name;
             fastcgi_param       FUEL_ENV production;
@@ -252,7 +260,10 @@ http {
             ## PHP needs to know if it's using https via the $_SERVER['HTTPS'] variable
             ## options: hard code to 'on', use $https, or some processing of $http_x_forwarded_proto
             #
-            # fastcgi_param     HTTPS $https;
+            fastcgi_param       HTTPS $http_x_forwarded_proto;
+
+			add_header X-Content-Type-Options "nosniff";
+    		add_header X-XSS-Protection "1; mode=block";
 
             ## SETUP OPTIONAL
             ## set php ini values to increase file upload capacity.
@@ -268,6 +279,7 @@ http {
             access_log off;
             log_not_found off;
             expires 30d;
+            add_header Cache-Control "public, no-transform";
         }
 
         ## deny direct access to any php files
