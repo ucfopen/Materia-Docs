@@ -67,6 +67,8 @@ services:
 
 ```
 
+One significant element to this base compose config is the version of the application to be run: this is defined by the tags associated with the `webserver` and `app` `image:` definitions. For a closer look at versioning, consult the [versioning and updating guide](versioning-and-updating.html).
+
 The `app` and `webserver` service definitions will need to be expanded to include **volume mounts** and **environment variables**. These may vary depending on your local configuration needs:
 
 ```ini
