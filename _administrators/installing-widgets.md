@@ -2,12 +2,12 @@
 title: Installing Widgets
 tagline: for your copy of Materia
 class: admin
-category: administrative
+category: maintenance
 ---
 
 # Installing Widget Packages
 
-Materia widgets are distributed in the form of a .wigt file.  These files contain all the code, assets, and data needed to install a widget. To learn more about how widgets are built, check out the [Widget Developer Guide](widget-developer-guilde.html).
+Materia widgets are distributed in the form of a .wigt file.  These files contain all the code, assets, and data needed to install a widget. To learn more about how widgets are built, check out the [Widget Developer Guide](../develop/widget-developer-guide.html).
 
 ## Finding Widgets to Install
 
