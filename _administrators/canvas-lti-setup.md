@@ -24,25 +24,26 @@ Create a unique identifier for your Materia install.  In the context of LTI tool
 
 This value should be represented via the `LTI_GUID` environment variable.
 
-### Add a Consumer
+### Managing Consumers
 
 When Materia receives an LTI launch, it looks at the `tool_consumer_info_product_family_code` sent by the consumer to determine which configuration to use.
 
 Assuming an LTI launch is received using `tool_consumer_info_product_family_code` = `canvas`, Materia will search for the matching configuration by first checking for `lti.consumer.canvas`.  If it doesn't exist, the settings in `lti.consumer.default` will be used unless the `BOOL_LTI_GRACEFUL_CONFIG_FALLBACK` server variable is explicitly set to `false`.
 
-### Default Consumer
-
-The `default` consumer is the easiest way to set common LTI settings for all LTI consumers.  Changing a setting here will apply to all consumers that don't match a specifically configured consumer.
-
-For reference, the default consumer is defined in the [lti.php config](https://github.com/ucfopen/Materia/blob/master/fuel/app/modules/lti/config/lti.php) under `lti.consumers.default`.
-
 ### Multiple Consumers
+
+Materia can support multiple consumer configurations, though it only ships with one by default: the `default` consumer. The LTI server variables are applied to this default consumer, as seen in the [lti.php config](https://github.com/ucfopen/Materia/blob/master/fuel/app/modules/lti/config/lti.php).
 
 If different settings are needed for different LTI consumers, they can easily be defined by duplicating the contents of `lti.consumers.default` and creating a new consumer setting group.  For instance, Obojobo uses the family code of `obojobo-next`.  To define different settings for Obojobo, one would create `lti.consumers.obojobo-next` and populate it with the required settings.
 
 For reference, a sample consumer for Obojobo Classic is commented out in [lti.php config](https://github.com/ucfopen/Materia/blob/master/fuel/app/modules/lti/config/lti.php) under `lti.consumers.obojobo`.
 
-> Direct modification of PHP files such as the `lti.php` config will require additional volume mounts in your `app` compose definition, or the creation of a custom image with these changes built in.
+Note that adding additional consumers requires modification of the LTI config PHP file. This isn't as straightforward as changing the file on the `app` container filesystem, as these changes are ephemeral for the lifetime of the container. Modification of the LTI configuration file requires either:
+
+1. Creating a custom variation of `lti.php` and volume-mounting it to `/var/www/html/fuel/app/modules/lti/config/lti.php` on the `app` container.
+2. Publishing the modified `lti.php` file as part of a custom `app` image used in lieu of an official ucfopen `app` image.
+
+For more information about volume mounting or publishing custom images, consult the [docker setup page](setup-configure-docker.html).
 
 ## Setting up Canvas
 
