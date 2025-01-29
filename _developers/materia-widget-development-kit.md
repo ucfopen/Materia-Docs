@@ -11,12 +11,15 @@ The MWDK automatically watches changes to your widget source files and re-builds
 
 ## Some MWDK Features include:
 
-* Locally hosts widget players and creators for rapid development
+* Supports rapid development of player, creator, and score screen* interfaces
 * Uses the same Javascript as the production Materia Server
 * Utility for easily building .wigt packages and installation to a local Materia instance
 * Materia API mocking
+* Live reloading
 * Reusable Webpack rules common to many widget build processes
 * Icon generator and screenshot annotation tools
+
+*experimental feature
 
 {% include figure.html
 	url="mwdk/mwdk-home.png"
@@ -60,19 +63,7 @@ To aid in widget packaging and testing, MWDK includes features to build and down
 
 The MWDK is an [npm package](https://www.npmjs.com/package/materia-widget-development-kit) that is included as a dev dependency in your widget's package.json.
 
-> While you can use either yarn or npm to install and run the dev kit, we recommend yarn.
-
-### Install with yarn:
-
-```shell
-$ yarn add materia-widget-development-kit --dev
-```
-
-### Install with npm:
-
-```shell
-$ npm install materia-widget-development-kit --save-dev
-```
+For installation, visit the [MWDK wiki page](https://github.com/ucfopen/Materia-Widget-Dev-Kit/wiki).
 
 ### Using the MWDK's common Webpack Rules
 
@@ -90,18 +81,4 @@ This function returns the default items that need to be copied verbatim from the
 
 #### `getDefaultEntries()`
 
-This function adds the player and creator js and css files to the entries. However, it is reccommended that you create your own entries variable instead of using this function because the function only support CoffeScript for its JavaScript files.
-
-### Running the MWDK
-
-With yarn:
-
-```shell
-$ yarn start
-```
-
-With npm:
-
-```shell
-$ npm run start
-```
+This function adds the player and creator js and css files to the entries. However, it is recommended that you create your own entries variable instead of using this function because the function only support CoffeScript for its JavaScript files.
