@@ -1,3 +1,10 @@
+{% assign current_version = "v11" %}
+{% if page.url contains "/v10/" %}
+	{% assign current_version = "v10" %}
+{% elsif page.url contains "/v11/" %}
+	{% assign current_version = "v11" %}
+{% endif %}
+
 <header class="container">
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
@@ -10,12 +17,24 @@
 				<a class="brand" href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/img/materia-logo.svg" alt="Materia" title="Materia" width="152" height="27"></a>
 				<div class="nav-collapse collapse">
 					<ul class="nav">
+						<!-- Version Switcher -->
+						<li class="dropdown" id="version-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Version: {{ current_version }}<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="{{ site.baseurl }}/v11/" data-version="v11">Version 11 (Latest)</a></li>
+								<li><a href="{{ site.baseurl }}/v10/" data-version="v10">Version 10 and below</a></li>
+							</ul>
+						</li>
+						{% if current_version == "v10" %}
+						<!-- v10 menus -->
 						<li class="dropdown" id="student-menu">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								Player Guide<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								{% include menu_list.html collection=site.players %}
+								{% include menu_list.html collection=site.v10_players %}
 							</ul>
 						</li>
 						<li class="dropdown" id="instructors-menu">
@@ -23,7 +42,7 @@
 								Author Guide<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								{% include menu_list.html collection=site.authors %}
+								{% include menu_list.html collection=site.v10_authors %}
 							</ul>
 						</li>
 						<li class="dropdown" id="admin-menu">
@@ -31,7 +50,7 @@
 								Administrators	<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								{% include menu_list.html collection=site.administrators %}
+								{% include menu_list.html collection=site.v10_administrators %}
 							</ul>
 						</li>
 						<li class="dropdown" id="developers-menu">
@@ -39,7 +58,7 @@
 								Developers	<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								{% include menu_list.html collection=site.developers %}
+								{% include menu_list.html collection=site.v10_developers %}
 							</ul>
 						</li>
 						<li class="dropdown" id="support-menu">
@@ -47,12 +66,86 @@
 								Support	<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-								{% include menu_list.html collection=site.support %}
+								{% include menu_list.html collection=site.v10_support %}
 							</ul>
 						</li>
+						{% else %}
+						<!-- v11 menus -->
+						<li class="dropdown" id="users-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								User Guide<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								{% include menu_list.html collection=site.v11_users %}
+							</ul>
+						</li>
+						<li class="dropdown" id="admin-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Administrators	<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								{% include menu_list.html collection=site.v11_administrators %}
+							</ul>
+						</li>
+						<li class="dropdown" id="developers-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Developers	<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								{% include menu_list.html collection=site.v11_developers %}
+							</ul>
+						</li>
+						<li class="dropdown" id="support-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Support	<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								{% include menu_list.html collection=site.v11_support %}
+							</ul>
+						</li>
+						{% endif %}
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
 		</div>
 	</div>
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	// Handle version switching with intelligent path preservation
+	var versionLinks = document.querySelectorAll('#version-menu a[data-version]');
+	versionLinks.forEach(function(link) {
+		link.addEventListener('click', function(e) {
+			e.preventDefault();
+			var targetVersion = this.getAttribute('data-version');
+			var currentPath = window.location.pathname;
+			var baseUrl = '{{ site.baseurl }}';
+			
+			// Try to preserve the page type when switching versions
+			var newPath = baseUrl + '/' + targetVersion + '/';
+			
+			// Extract page type from current path
+			if (currentPath.includes('/admin/')) {
+				newPath += 'admin/getting-started.html';
+			} else if (currentPath.includes('/develop/')) {
+				newPath += 'develop/widget-developer-guide.html';
+			} else if (currentPath.includes('/support/')) {
+				newPath += 'support/managing-instances.html';
+			} else if (currentPath.includes('/create/') || currentPath.includes('/play/') || currentPath.includes('/users/')) {
+				// v10 has create/play, v11 has users - map intelligently
+				if (targetVersion === 'v11') {
+					newPath += 'users/getting-started.html';
+				} else {
+					newPath += 'play/getting-started.html';
+				}
+			} else {
+				// Default to version home page
+				newPath = baseUrl + '/' + targetVersion + '/';
+			}
+			
+			window.location.href = newPath;
+		});
+	});
+});
+</script>
