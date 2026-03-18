@@ -131,6 +131,7 @@ _For both services:_
 The directory where Materia is located on your host machine ( we generally recommend `/var/www/html/`) should look something like this:
 
 ```ini
+.env
 docker-compose.yml
 site.custom.conf
 nginx/

@@ -1,8 +1,8 @@
 ---
-title: Version 11 Overview
+title: Materia v11 Overview
 tagline: A Foundational Rebuild of Materia
 class: admin
-category: first_time
+category: v11_upgrade
 ---
 
 ## Server Application Rewrite

@@ -23,6 +23,8 @@ Consult the [Canvas LTI Setup](canvas-lti-setup.html) page to integrate Materia 
 
 Creation of service users is best performed through the Django administration interface.
 
+Regardless of your authentication configuration, service users can always access the built-in Materia login page by visiting `/login?directlogin=1`. Doing so bypasses login restrictions such as those imposed by the `RESTRICT_LOGINS_TO_LAUNCHES` configuration.
+
 ## Granting Roles
 
 ### Role Provisioning With LTI

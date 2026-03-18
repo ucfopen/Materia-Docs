@@ -50,6 +50,10 @@ Let's review the `.env.template` file and walk through configurations.
 # REQUIRED SETTINGS
 # ==========================================================
 
+# django settings
+DJANGO_EV=prod
+DJANGO_SECRET_KEY=
+
 # DB
 MYSQL_HOST=
 MYSQL_DATABASE=
@@ -75,6 +79,15 @@ ASSET_STORAGE_DRIVER=file
 ```
 
 These values are required and should be set at a minimum.
+
+#### Django Settings
+
+```ini
+DJANGO_EV=prod
+DJANGO_SECRET_KEY=
+```
+
+It should go without saying that `DJANGO_ENV` should always be `prod` for any public-facing instance of a Django application. Additionally, ensure `DJANGO_SECRET_KEY` is set to a reasonably long randomized hash.
 
 #### Database Configuration
 
