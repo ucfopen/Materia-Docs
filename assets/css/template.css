@@ -498,30 +498,84 @@ h1 {
 
 
 /* Large */
-@media (min-width: 980px) {
+@media (min-width: 1040px) {
 	.page-wrapper .container,
 	.navbar-static-top .container,
 	.navbar-fixed-top .container,
 	.navbar-fixed-bottom .container {
-		width: 900px;
+		width: 1020px;
 	}
 	.span12 {
-		width: 900px;
+		width: 1020px;
 	}
 	.span11 {
-		width: 900px;
+		width: 1020px;
 	}
 }
 
 /* Tablet */
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) and (max-width: 1039px) {
 
+	.page-wrapper {
+		width: 100%;
+
+		div.container, section.container {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		header.container {
+			width: 100%;
+		}
+	}
+
+	.navbar {
+
+		width: 100%;
+		margin-bottom: 0;
+
+		div.container {
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
 }
 
 /* Phone */
 @media (max-width: 767px) {
+
+	body.admin {
+		width: 100vw;
+		padding: 0;
+	}
+
+	.page-wrapper {
+		width: 100%;
+
+		div.container, section.container {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		header.container {
+			width: 100%;
+		}
+	}
+
+	.navbar {
+
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 0;
+
+		div.container {
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
+
 	.graphical-heading {
-		margin: -20px -20px 0 -20px;
 		padding: 10px 10px 0 10px;
 	}
 

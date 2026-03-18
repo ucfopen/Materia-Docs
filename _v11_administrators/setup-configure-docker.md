@@ -131,13 +131,13 @@ _For both services:_
 The directory where Materia is located on your host machine ( we generally recommend `/var/www/html/`) should look something like this:
 
 ```ini
-├── docker-compose.yml
-├── site.custom.conf
-├── nginx/
-│   ├── key.pem
-│   └── cert.pem
-├── media/
-└── widget/
+docker-compose.yml
+site.custom.conf
+nginx/
+  key.pem
+  cert.pem
+media/
+widget/
 ```
 
 As mentioned above, double-check ownership of the `media/` and `widget/` directories to ensure python can write to the volume-mounted locations on the `python` container's filesystem.

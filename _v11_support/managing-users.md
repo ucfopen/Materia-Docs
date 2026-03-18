@@ -13,7 +13,7 @@ The user administration interface allows support users to review certain attribu
 
 Users can be looked up using their name or email address. It's extremely important to remember that user administration is limited to users within Materia itself. When an instructor or student authenticates with Materia, either through the LMS or via direct login, Materia will verify whether a row in the user table exists with their information. If a row does not exist, Materia will try and create one.
 
-> In some rare circumstances, users logging in to Materia for the first time may encounter an HTTP 500 error.  This is typically due to a collision in email addresses. It may be worth investigating whether the email associated with the user is already in use by another user in Materia.
+> In some rare circumstances, users logging in to Materia for the first time may encounter an error. This is typically due to a collision in email addresses. It may be worth investigating whether the email associated with the user is already in use by another user in Materia.
 
 If a user is part of your institution but does not appear in search results, it is likely they have not interacted with Materia previously. They must authenticate with Materia at least to be eligible for certain actions, like being given access to a widget instance.
 
@@ -49,9 +49,16 @@ There are a few considerations to keep in mind when reviewing user play history:
 
 - The **Time elapsed** value is not to be relied upon for incomplete plays. This is because while some widget engines will transmit logs to the server after every user interaction, many will instead transmit all log data upon submission. The server can extrapolate a play duration for incomplete plays based on the submission time of logs, but if no further logs were transmitted after the play was initialized, the duration will be noted as `1s`, which may or may not be the actual duration the student spent on the page before abandoning the play.
 
-- The **Context** value will be `Web` or `LTI` depending on where the instance was played. If embedded as an assignment in your LMS, the widget will likely be played in an `LTI` context. LTI-enabled plays typically transmit score data back to the LMS, however they will *not* transmit score data if embedded as a module item instead of an assignment. The user admin panel does not provide information as to whether the score passback actually occurred.
+- The **Context** value will be `Web` or `LTI` depending on where the instance was played. If embedded as an assignment in your LMS, the widget will likely be played in an `LTI` context. LTI-enabled plays typically transmit score data back to the LMS, however they will *not* transmit score data if embedded as a module item instead of an assignment.
 
-> You can use the Context property to help determine whether a grade passback should have occurred (and didn't), or if a student mistakenly played an instance outside of the LTI context.
+- The **Submission Status** property indicates the grade passback status of the play session. Note that play sessions from earlier versions of Materia will not have their submission status recorded; these are indicated by a "Legacy" status. Other submission status codes include:
+
+* `NOT_SUBMITTED`: this is the default value. It generally means the play session was not completed.
+* `NOT_GRADED`: the activity the widget was embedded in was not graded (for example: a module item).
+* `SUCCESS`: the score was successfully received by the LMS.
+* `AGS_NOT_INCLUDED`: similar to `NOT_GRADED`, the activity did not support score submissions.
+* `ERR_NO_ATTEMPTS`: Materia attempted to submit the score but it was not accepted by the LMS because the activity's attempt limit was already reached.
+* `ERR_FAILURE`: indicates a general failure. When this status is present, an option to re-submit the score to the LMS will become available.
 
 As a support user, you have the ability to review the score screen associated with a specific play session. Clicking the score percentage for a play will bring up the score screen associated with that play, allowing you to review how the student responded to individual questions.
 
@@ -59,11 +66,11 @@ As a support user, you have the ability to review the score screen associated wi
 
 Below are a few examples of common issues related to user management we've seen when supporting Materia:
 
-### Student claims they completed a widget but the gradebook in their LMS did not update
+### Students claim they completed a widget but the gradebook in their LMS did not update
 
-Typically, this is due to one of several reasons:
+This was a periodic issue that manifested with our LTI 1.1 integration; it typically occured due to session timeout or destruction due to user behavior. With Materia v11 and the LTI 1.3 integration, the gradebook passback code has been overhauled to better persist launch information and the passback status is reported to the user on the score screen. When in doubt, you can review the user's play history and view the score screen for a given play session by clicking on the score percentage, which includes the passback status to confirm whether or not the gradebook sync occurred.
 
-- The student did not actually complete the widget. You can verify this by reviewing the student's instance play history.
-- The student completed the widget, but not in an LTI context. This most often occurs when the assignment loads the external tool (in this case, the Materia widget) in a new tab, and the student mistakenly refreshes the page. Doing so may nullify the LTI session. You can verify whether this is the case by reviewing the **Context** property of the play in question.
-- The student completed the widget, but the LTI association timed out. This occurs when a student loads the widget, then leaves the browser tab idle for a period of time (we've seen cases widgets being left idle for several hours.) Much like a login session, the LTI association may time out after a period of inactivity. In this case, the Context property may still show `LTI`, but the Time Elapsed property may be considerable.
+### Students receive a launch validation failure message
+
+This is typically associated with a malformed or invalid LTI launch, which may be due to user behavior such as using the back button to resubmit form content. The student should revisit the activity from the original page or link from the LMS.
 

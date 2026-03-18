@@ -3,53 +3,65 @@ title: WIGT Package Structure
 tagline: How a .wigt package is Structured
 class: developers
 category: widgets
-highlighter: no
 ---
 
-# Wigt Package Structure Specfics
+# Wigt Package Structure Specifics
 
-Wigt packages have rigid file structure requirements so that the installer knows where to find every assets.
+Materia compiles widget engines into `.wigt` files for easy updates and installation. They contain the widget's front-end source code, metadata, score module, icons, and demo qset. `.wigt` packages have relatively rigid file structure requirements so that the installer knows where to find and install various assets.
 
-<pre>
-├── /_score-modules
-│   └── /<a href="score-module.html">score_module.php</a>
-├── /assets
-├── /img
-│   ├── /screen-shots
-│   │   ├── 1-thumb.png
-│   │   ├── 1.png
-│   │   ├── 2-thumb.png
-│   │   ├── 2.png
-│   │   ├── 3-thumb.png
-│   │   └── 3.png
-│   ├── icon-60.png
-│   ├── icon-60@2x.png
-│   ├── icon-92.png
-│   ├── icon-92@2x.png
-│   ├── icon-275.png
-│   ├── icon-275@2x.png
-│   ├── icon-394.png
-│   └── icon-394@2x.png
-├── <a href="widget-developer-guide.html#the-creator">creator.html</a>
-├── <a href="question-structures.html#demojson">demo.json</a>
-├── <a href="install-yaml.html">install.yaml</a>
-├── <a href="widget-developer-guide.html#the-player">player.html</a>
-└── <a href="widget-developer-guide.html#the-score-screen">scoreScreen.html</a>
-</pre>
-
-
+```ini
+src/
+  _score/
+    score_module.py
+  _icons/
+    icon-60.png
+    icon-60@2x.png
+    icon-92.png
+    icon-92@2x.png
+    icon-275.png
+    icon-275@2x.png
+    icon-394.png
+    icon-394@2x.png
+  _screen-shots/
+    1-thumb.png
+    1.png
+    2-thumb.png
+    2.png
+    3-thumb.png
+    3.png
+creator.html
+demo.json
+install.yaml
+player.html
+LICENSE
+package.json
+README.md
+webpack.config.js
+```
 
 ## Display Icons
 
-This folder should contain a square icon for your widget.  The icon requires 4 sizes with 2 pixel densities, together totaling 8 files.
+This folder should contain a square icon for your widget.  The icon requires 4 sizes with 2 pixel densities, together totaling 8 files:
 
-![Icon]({{ site.baseurl }}/assets/img/widget-icons/icon-394.png)
-![Icon]({{ site.baseurl }}/assets/img/widget-icons/icon-275.png)
-![Icon]({{ site.baseurl }}/assets/img/widget-icons/icon-92.png)
-![Icon]({{ site.baseurl }}/assets/img/widget-icons/icon-60.png)
+```shell
+  _icons/
+    icon-60.png
+    icon-60@2x.png
+    icon-92.png
+    icon-92@2x.png
+    icon-275.png
+    icon-275@2x.png
+    icon-394.png
+    icon-394@2x.png
+```
 
-> Download the set of [default Materia widget icons]({{ site.baseurl }}/assets/img/widget-icons/default-materia-widget-icons.zip)
+> The Materia Widget Development Kit has a convenient tool to generate all the required sizes of widget icons quickly. Create an icon of the maximum required size (788x788px) and then select "Generate Icons" from the MWDK landing page.
 
+{% include figure.html
+	no_thumb="true"
+	url="mwdk-landing-page.png"
+	alt="The landing page of the Materia Widget Development Kit."
+%}
 
 ## Screen Shots
 

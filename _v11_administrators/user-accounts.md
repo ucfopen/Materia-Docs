@@ -23,9 +23,9 @@ Consult the [Canvas LTI Setup](canvas-lti-setup.html) page to integrate Materia 
 
 Creation of service users is best performed through the Django administration interface.
 
-### Granting Roles
+## Granting Roles
 
-#### Role Provisioning With LTI
+### Role Provisioning With LTI
 
 Materia intelligently manages user roles during LTI authentication. Roles are inferred from the contents of the LTI payload. These roles are defined in the `lti.py` settings file:
 
@@ -54,7 +54,7 @@ LTI_INSTITUTION_ROLES = {
 
 Note that Materia relies on course and institutional roles in different contexts. The `basic_author` role is applied based on a user's _institutional_ role in the LTI payload. However, when interacting with Materia in LTI contexts, the _course_ role is used to determine what content to render. For example, if a widget embedded as an assignment is visited by an institutional staff member who is a student in the current course, the widget will render appropriate to the user's course role as a student.
 
-#### Service User Role Management
+### Service User Role Management
 
 With Materia v11, service user roles are now primarily managed via Django user groups:
 

@@ -76,6 +76,17 @@ ASSET_STORAGE_DRIVER=file
 
 These values are required and should be set at a minimum.
 
+#### Database Configuration
+
+```ini
+MYSQL_HOST=
+MYSQL_DATABASE=
+MYSQL_USER=
+MYSQL_PASSWORD=
+```
+
+Your database configuration values. `MYSQL_HOST` should not include the `mysql://` protocol. These values **must** be set.
+
 #### URL Configuration
 
 Generally, your URLs will conform to the values below:
@@ -109,6 +120,8 @@ ASSET_STORAGE_DRIVER=s3
 ```
 
 Configures the media asset storage driver. Allowed values are `s3`, `file`, and `db`. **We do not recommend using the database for asset storage**. If using AWS S3, additional configuration values must be provided; those are detailed below.
+
+---
 
 
 ```ini
@@ -191,6 +204,8 @@ ASSET_STORAGE_S3_ENDPOINT="http://fakes3:10001"
 - `DEV_ONLY_USE_FAKES3`: toggles whether to use fakes3 in development. Enabled by default. Force-disabled if `DJANGO_ENV` is `prod`.
 - `ASSET_STORAGE_S3_ENDPOINT`: the S3 endpoint. Used in conjunction with fakes3. Not required for S3 on AWS.
 
+---
+
 ```ini
 # ==========================================================
 # LESS MANDATORY SETTINGS
@@ -212,6 +227,8 @@ CSS_BASEURL=
 ```
 
 These only needs to be updated if the directory of your static assets is somewhere other than `./staticfiles/`.
+
+---
 
 ```ini
 # === LTI CONFIGURATION ====================================
@@ -245,6 +262,8 @@ LTI_PAYLOAD_AGS_USER_IDENTIFIER="user_canvas_id"
 
 AGS (Assignments and Grades Service) uses a different user identifier than the standard user claim/identifier defined above. If `LTI_PAYLOAD_AGS_USER_CLAIM` is not populated, the `LTI_PAYLOAD_AGS_USER_IDENTIFIER` will be referenced at the top level of the payload.
 
+---
+
 
 ```ini
 # === GENERATIVE AI ========================================
@@ -275,6 +294,8 @@ These determine whether or not generative AI features are enabled and where requ
 - `GENERATION_API_ENDPOINT`: if Azure OpenAI is in use, this is typically the base URL of the resource. Include a trailing slash.
 - `GENERATION_API_MODEL`: the model to use within the generative AI resource.
 - `GENERATION_LOG_STATS`: enables verbose stats logging for generative AI requests. Defaults to `false`.
+
+---
 
 ```ini
 # === SYSTEM EMAILS ========================================
@@ -327,6 +348,8 @@ SENDGRID_API_KEY=""
 
 Populate the API key to use sendgrid.
 
+---
+
 #### Auth login overrides
 
 ```ini
@@ -341,6 +364,8 @@ These booleans override the default login behavior:
 
 - `AUTH_LOGIN_ROUTE_OVERRIDE`: if set to a value other than `false`, visits to `/login` will redirect to the path provided. This is useful when making use of an external authentication service, such as an institutional single sign-on page. Materia will intelligently render an interstitial frame in some contexts with a "Login" button when appropriate, such as widget pre-embed views.
 - `RESTRICT_LOGINS_TO_LAUNCHES`: effectively disables external or direct authentication options and requires users to authenticate through the LMS via LTI. This is ideal for "out of the box" Materia implementations. If `AUTH_LOGIN_ROUTE_OVERRIDE` is populated with a value other than `false`, the Materia login view will provide a redirect link using the URL configured in `AUTH_LOGIN_ROUTE_OVERRIDE`.
+
+---
 
 #### Sentry configuration
 

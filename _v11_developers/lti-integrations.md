@@ -7,27 +7,31 @@ highlighter: no
 ---
 # LTI Integrations
 
-Materia can be embedded into other systems that support [the LTI standard](http://www.imsglobal.org/toolsinteroperability2.cfm) for regular or graded external tools. This standard allows Materia to securely authenticate users and pass scores back to the external system.
+Materia can be embedded into other systems that support [the LTI standard](https://www.1edtech.org/standards/lti) for regular or graded external tools. This standard allows Materia to securely authenticate users and pass scores back to the external system.
+
+In Materia v10 and below, the LTI integration was authored to the [version 1.1 specification](https://www.imsglobal.org/specs/ltiv1p1). With Materia v11, the LTI integration has been re-authored from the ground up for the [version 1.3 specification](https://www.imsglobal.org/spec/lti/v1p3/). Key differences between 1.1 and 1.3 include:
+
+* More robust, secure authentication via OAuth 2 instead of the shared secret authentication model of OAuth 1.
+* A broader feature set that includes various gradebook and class roster integrations.
+
+Note that if you're coming from an earlier version of Materia, the LTI 1.3 integration must be installed as a new, separate tool instance in your LMS. We go into this in detail in the [Canvas LTI Setup](../admin/canvas-lti-setup.html) page.
 
 ## LTI Roles
 
-There are many [roles in the LTI standard](http://www.imsglobal.org/LTI/v1p1/ltiIMGv1p1.html#_Toc319560486). They are far too granular for Materia's purposes, so we group the roles together into two capabilities: Instructor and Student.  Instructors are given control of which widget the resource links to, while students are simply logged in and shown the chosen widget.
+There are many [roles in the LTI standard](https://www.imsglobal.org/spec/lti/v1p3/#role-vocabularies). They are far too granular for Materia's purposes, so we group the roles together into two capabilities: Instructor and Student. Instructors are given control of which widget the resource links to, while students are simply logged in and shown the chosen widget. Note that LTI 1.3 provides both institutional and course-level role information: we go into role provisioning in more detail on the [User Accounts](../admin/user-accounts.html) page.
 
 ### Instructor Role
 
-Instructors are able to create widgets and link to them from a given resource in the LMS. "Resource" in this case refers to an assignment or content module.
-
-> This role is used when Materia receives one of these LTI roles: `Administrator`, `Instructor` or `ContentDeveloper`.
+Instructors are able to create widgets and link to them from a given resource in the LMS. "Resource" in this case refers to an assignment or module item.
 
 ### Student Role
 
-A student's role is so streamlined that they will probably not realize they are using an external application. The LTI consumer will send along the user's information and resource id, which are used to log them in and locate the desired widget. Typically the student will just see the working widget embedded in the page.
-
-> This role is used when Materia receives one of these LTI roles: `Learner` or `Student`.
+A student's role is so streamlined that they will probably not realize they are using an external application. The LMS will send along a payload containing information about the user and resource item, which are used to log them in and locate the desired widget. Typically the student will just see the working widget embedded in the page.
 
 ## Selecting a Widget as an Instructor
 
 {% include figure.html
+	no_thumb="true"
 	url="lti-select.png"
 	alt="Selecting a widget from within another system via a LTI integration."
 %}
@@ -36,40 +40,51 @@ The above screen will be shown in the LMS when the instructor is choosing an ass
 
 > The picker page emits a [PostMessage event for 3rd party integration](integration-events.html#widget-selection-event).
 
-> If the course containing the linked Materia Widget is copied or moved, the LMS may reset this selection because it assignes a new `lis_resourt_sourceid`.
+All assignment- or activity- related settings are then configured on the LMS side. These include:
 
+* Attempt limits: These are completely distinct from Materia's own attempt limits applied to widgets. Per LTI 1.3, each score submission from Materia to the LMS is counted as an assignment submission, and LMS attempt limits are applied accordingly. It is therefore possible for a student to play a widget more times than the activity's attempt limits. Plays completed over this limit will not have their scores accepted.
+* Availability windows: These are unique to the LMS and not communicated to Materia. If an availability window is applied, ensure it aligns with settings configured for the associated instance in Materia.
+* Points: Materia submits a percentage value at the conclusion of a play. This is converted into a point value by LMS based on the points configured for the activity.
+* Launch in a new tab: Materia widgets can be embedded in the LMS page or launched in a new tab. In both cases, LTI launches and score passback will occur without issue. The instructor is free to select their preference.
+
+## LTI Launches
+
+Visiting a widget embedded in an assignment or module item will kick off the LTI launch process via the following sequence:
+
+1. The LMS and Materia perform the oauth2 authentication flow.
+2. The LMS performs a request to the LTI launch endpoint for Materia: `/ltilaunch/`, with the LTI payload that includes user data, AGS data, and the `target_link_uri` which determines the user's eventual destination.
+3. Materia stores the launch data and inspects the `target_link_uri` to assemble a redirect URL.
+4. The user is redirected to the URL, the launch data is recovered, and the play session is initialized.
+
+### "Recovery" Launches
+
+What happens when a user selects "Play Again" at the conclusion of a play session, or in situations where the widget is launched in a new tab, refreshes the page? These are known as "recovery" launches:
+
+1. Materia retrieves information from the original play session via the `?token` GET parameter that's appended to the URL at the conclusion of the launch process.
+2. Materia cross-checks the user from the original play with the current user. If they don't match, the play session initialization is aborted.
+3. The new play session is initialized and the relevant LTI data is copied from the play session associated with the original launch, including AGS submission information.
 
 ## Score Passback
 
-When a student views a page with the LTI widget embedded in it, information about how to send scores back to the consumer is sent to Materia.  Materia stores that info, and uses it to return score data once the student completes the widget. Materia uses the `lis_outcome_service_url` parameter to determine if it should send a score, and where to send it to.  Materia will use the [replaceResult](http://www.imsglobal.org/LTI/v1p1/ltiIMGv1p1.html#_Toc319560473) message which can allow multiple widget attempts to overwrite the previous scores.
+When Materia detects a widget is launched as an LTI resource, it extracts information about the resource from the LTI payload and stores it in the play record. This enables the use of the [Assignments & Grades Service](https://www.imsglobal.org/spec/lti-ags/v2p0), or AGS.
 
-## LTI Configuration XML
+Upon completion of the play session, Materia initializes an internal AGS client using this stored information and requests an authentication token from the LMS. Once the access token is acquired, Materia attempts to submit the activity completion to the line item endpoint for the resource. The status of this submission is made visible to students on the score screen for the widget play session.
 
-The configuration url is: `http://materia/lti`. The default configuration allows for grade passback, and designates a picker interface that your consumer will display to choose a widget to link to.
+{% include figure.html
+	no_thumb="true"
+	url="lti-ags-score-submission.png"
+	alt="A section of the score screen that includes gradebook submission status."
+%}
 
-## Materia LTI Launch Message
+The score screen submission status will display a number of alternative status messages, based on the submission state and the associated resource. These include:
 
-LTI launch events must conform to the LTI standard. Below is a subset of the LTI paramaters that may be of note within Materia.
+* **Not Graded**: If Materia detects the activity is not graded - typically because certain AGS information was omitted from the initial payload - this message will be displayed instead.
+* **Attempt Limit Reached**: The LMS may reject the grade submission because the associated resource (an assignment, typically) does not have any remaining attempts.
+* **Submission Error**: The submission was unsuccessful with a non-specific error. If this state occurs, the student has the ability to re-submit the score a number of times within a 24-hour period starting from completion of the play.
 
-| Param | Required | Description |
-|---
-| `oauth_consumer_key` | **yes** | Matches the configuration's key. |
-| `oauth_nonce` | **yes** | An arbitrary number only used once. |
-| `oath_timestamp` | **yes** | A unix timestamp for when the signature was signed. |
-| `tool_consumer_instance_guid` | **yes** | Unique identifier of your consumer install. |
-| `tool_consumer_info_product_family_code` | **yes** | Type of consumer (eg: Canvas. Obojobo). Used to determine configuration settings. |
-| `resource_link_id` | **yes** | Unique id for this widget use. |
-| `roles` | **yes** | This role tells Materia to expect to show the selection screen. |
-| `launch_presentation_return_url` | no | Used by the picker interface to set the link to this widget in the consumer. |
-| `context_id` | no | ID of the course. |
-| `context_title` | no | Name of the course. |
-| `user_id` | no | User ID of the user performing the operation. |
-| `lis_outcome_service_url` | no | If set, Materia sends the final widget score to this url. See Score Passback above. |
-| `lis_result_sourcedid` | no | ID sometimes required by the consumer to return scores. |
-| `lis_person_sourcedid` | no | Often used as the user ID to match in Materia's local data. |
-| `lis_person_name_family` | no | User's last name. |
-| `lis_person_name_given` | no | User's first name. |
-| `lis_person_contact_email_primary` | no | Useful if Materia is set up to create users on LTI handshakes. |
-| `custom_widget_instance_id` | no | Some systems (like Obojobo) know the ID of the widget it's requesting. |
+## Reviewing Prior Submissions
 
-> Note the Materia specific `custom_widget_instance_id` paramater allows the launch to specify the widget id.
+Materia surfaces the type of play session - LTI or not LTI - in a number of different places visible to both students and instructors. These include:
+
+* **The Profile page**: LTI play sessions will be tagged with "LTI" when a student reviews their play history.
+* **The Individual Scores tab in My Widgets**: Individual play sessions for each student are tagged "WEB" or "LTI" based on their launch context.

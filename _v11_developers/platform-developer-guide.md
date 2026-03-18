@@ -14,74 +14,83 @@ Our dev team uses Docker for all server development. See [Server Setup - Docker 
 
 ## Application Server Architecture
 
-Materia has led a long life, changing iteratively as it ages. Although the FuelPHP framework is a Rails-like MVC, the entire code base is not yet taking full advantage of it. We do desire to head in that direction, but features and stability fixes have driven its direction.  We welcome pull requests!
+Materia is witten in [Django](https://www.djangoproject.com/), a popular and well-established python framework. The server application contains a first-party API using [Django Rest Framework](https://www.django-rest-framework.org/). Within Materia, individual widgets can be written in any front-end language, provided they implement a number of required callbacks and possess a score module written in python.
 
 ### Directory Structure
 
-```shell
+Note: this is not a comprehensive breakdown of the entire Materia server file structure.
+
+```ini
 Materia
-├── fuel
-│   ├── app
-│   │   ├── classes
-│   │   │   ├── controller      # all routes call a controller method
-│   │   │   ├── materia         # much of Materia's non-fuelphp logic
-│   │   │   ├── model
-│   │   │   ├── service         # services to create skinnier models
-│   │   │   ├── trait           # make use of Traits as much as possible: DRY
-│   │   │   └── view
-│   │   ├── config              # majority of configuration files here
-│   │   ├── logs                # application log files
-│   │   ├── media               # uploaded media content from widgets
-│   │   ├── migrations
-│   │   ├── modules
-│   │   │   └── lti
-│   │   │       ├── classes
-│   │   │       ├── config      # don't forget, lti configuration files are in here
-│   │   │       ├── migrations  # the lti module has it's own migrations
-│   │   │       └── tests
-│   │   ├── tasks               # this is where all the cli task code is
-│   │   ├── themes              # Most of our views (templates) are here
-│   │   └── tmp
-│   ├── core                    # fuelphp core package
-│   └── packages
-│       ├── ltiauth             # auth module for lti use
-│       └── materiaauth         # base Materia auth module
-├── githooks                    # githooks for testing and linting
-└── public                      # the only publicly hosted files
-    ├── css
-    ├── img
-    ├── js
-    └── widget                  # all widget engines get installed here
+  app/
+    api/                      # api app
+      tests/                  # api test suites
+      urls/                   # api url configuration
+      views/                  # api views
+      filters.py                # DRF filter backends
+      paginators.py             # DRF pagination classes
+      permissions.py            # DRF permissions classes
+      serializers.py            # DRF serializers
+    core/                     # core app
+      management/               # django management commands
+      migrations/               # database migrations
+      services/                 # cross-app services
+      templates/                # view rendering templates
+      templatetags/             # tags utility for templates
+      utils/                    # service utilities
+      views/                    # view classes
+      context_processors.py     # context processors for views
+      mixins.py                 # view mixins for preprocessing
+      models.py                 # model classes to facilitate the django ORM
+    lti/                      # lti app
+      ags/                      # classes to facilitate the LTI 1.3 Assignments & Grades Service
+      services/                 # lti-specific services
+      templates/                # lti view templates
+      views/                    # lti-specific views
+      mixins.py                 # lti-specific mixins for preprocessing
+      urls.py                   # lti url configuration
+    materia/                  # materia application configurations
+    media/                    # media directory when the "file" asset driver is in use
+    scoring/                  # scoring app
+      module_factory.py         # factory class for widget score module instantiation
+      module.py                 # base score module class that all widgets inherit
+    storage/                  # storage driver configs
+    util/                     # utility classes
+  githooks                    # githooks for linting
+  public/                     # publicly visible files and static assets
+    css/
+    img/
+    js/
+    dist/                     # static assets are emitted here in dev
 ```
 
 
 
 ## Configuration
 
-Materia completely relies on [FuelPHP's configuration mechanism](https://fuelphp.com/docs/classes/config.html), which can be a little complex.  The crux of it is, FuelPHP merges multiple config files together, starting with the base configs and over-writing variables from more specific configurations.
+Materia adheres to Django's settings format for server configurations. The base settings file is `app/materia/settings/base.py`, which imports all other settings files. In practice, Materia server configurations can be imported at any time via:
 
-FuelPHP allows for configuration files for each "environment".  This means production, development, test, and staging all have their own settings that merge with the base configuration.
+```python
+from django.conf import settings
+```
 
-Materia attempts to consolidate the default configuration files are in `/fuel/app/config/`, however different modules and packages may contain their own configuration files.  It's suggested that you peruse that directory to familiarize yourself.
-
-
-## User Authentication Modules
-
-Materia uses FuelPHP's `Auth` package to handle basic authentication. This package allows for easy and modular integration with external user data.  View FuelPHP's documentation for details about [writing your own authentication drivers](http://fuelphp.com/docs/packages/auth/drivers.html).
+The majority of configurable options are sourced from environment variables, with default fallback values provided in most cases. Certain configurations may require custom overrides or settings unique to your institution: these can be placed in `app/materia/settings/extra.py`, which is best volume-mounted from the host machine. Refer to the Docker development page for more info.
 
 ### Object Permissions
 
-Users have permissions to specific widget instances.  There are two permission levels defined in Materia:
+Materia uses the `ObjectPermission` model to delegate user permissions, via generic relations, to various model instances across the system. Principally, this is used to manage user permission to individual widget instances. There are two permission levels defined in Materia, though the system allows for extensibility in the future:
 
 * **Full**: the user has full control over the instance, options, and data.
 * **View Scores**: the user only has permission to collect score information.
+
+Additionally, `ObjectPermission` records can include a `context_id` value, which associates a user's access to an object to a specific course context. This is known as **Provisional Access** and allows delegation of access to resources associated with a course that a user may not otherwise have permissions to see.
 
 ### Roles
 
 Materia has a very simple three-role system:
 
-* **Admin** (role name - super_user): Can manage all instances, users, and install widget engines.
-* **Instructor** (role name - basic_author): Can see and manage their own instances.
+* **Admin** (django users with the `super_user` flag): Can manage all instances, users, and install widget engines.
+* **Instructor** (django users in the `basic_author` group): Can see and manage their own instances.
 * **Student**: Can only create [guest widget instances](../create/getting-started.html#guest-widget-instances).
 
 ## Widgets
@@ -92,7 +101,7 @@ Materia hosts and manages various widget engines for use in course content. Belo
 
 ### Widget Engines vs Widget Instances
 
-Conceptually a **widget engine** is a specific kind of widget, like Hangman or Labeling.  Engines include the assets needed to display in the server's catalog and the code needed to customize and display content. Widget engines are installed by Materia admin users.
+Conceptually a **widget engine** is a specific kind of widget, like Guess the Phrase or Labeling.  Engines include the assets needed to display in the server's catalog and the code needed to customize and display content. Widget engines are installed by Materia admin users.
 
 On the other hand, a **widget instance** is a single use of a widget engine, created and customized by an instructor for use in a course.
 
@@ -105,22 +114,27 @@ Instances tie a widget engine to specific useage data like:
 
 ## API
 
-The majority of the Materia API is defined in a single api class.  This API is used by the client's Angular.js code to communicate with the server.
+Materia uses a first-party API to facilitate communication of asynchronous resources between the front-end and server. The API is authored in Django Rest Framework, and split across a number of top-level endpoints:
 
-> All new API development is expected to use FuelPHP's built-in controllers more directly like the admin API has started to do.  It is expected to head in a more RESTFUL direction.
+```ini
+/api/assets/               # user media asset management
+/api/generation/           # AI-generated content
+/api/notifications/        # user notifications
+/api/play-sessions/        # play session management
+/api/storage/              # play-related data storage management
+/api/scores/               # instance score data
+/api/sessions/             # user sessions
+/api/users/                # user data (NOT management)
+/api/instances/            # widget instance management
+/api/widgets/              # widget engine management
+```
 
-The older portions of the API were built with the following conventions:
+When API endpoints map to a model, API classes inherit DRF's `ModelViewSet` class. We use DRF serializers and permissions classes to manage data transformation and check access permissions on a model and model instance level.
 
-* Input validation is executed **first**, followed by authorization, then method-specific code.
-* Method names **start** with nouns, the object or construct that is the subject of the API action.
-* Method names **end** with a verb applied to the noun (widget_get, widget_instance_update, etc.).
-* In case of an error or problem, return a `Msg` object with details about the error to the client.
+## Tests
 
+Materia uses Django's built-in testing framework and are mapped to the API. GitHub workflows automatically run the test suite on push and pull request.
 
-## Unit Tests
-
-Materia uses FuelPHP's built in unit tests that rely on PHPUnit.  We have built unit tests for the entire Materia API as well as for each score module. The tests are easily run using oil:
-
-```shell
-$ php oil test
+```
+$ python manage.py test
 ```

@@ -18,7 +18,7 @@ Most widgets are built with HTML, CSS, and Javascript.  However, just about anyt
 
 The [Materia Widget Development Kit](materia-widget-development-kit.html) provides the best environment to build and test widgets.  It's a combination of an Express.js server, a splash of javascript borrowed from the Materia Server, and a little bit of webpack to glue it all together.  Check out the MWDK page to get set up and running.
 
-## What's a Widget
+## What's a Widget?
 
 A widget is a little packaged application that adheres to a few basic requirements.  It has full control over what happens within it's iframe, with a simple API to get data and save scores to the server. The simplest widgets can be simply static web pages.
 
@@ -26,7 +26,7 @@ A widget is a little packaged application that adheres to a few basic requiremen
 
 ## The Player
 
-A widget player is just an html page.  You can place whatever you like on the page like graphics, Javascript, Flash, Unity, whatever.  To load content and save scores, you'll need to load a javascript file, `materia.enginecore.js`.  The Engine Core abstracts communicating with Materia into a simple API.
+A widget player is just another small, relatively self-contained web application. It can contain static or dynamic content and can be written in just about any front-end framework - or none at all. To load content and save scores, you'll need to load a javascript file, `materia.enginecore.js`.  The Engine Core abstracts communicating with Materia into a simple API.
 
 Here's an empty player.html file:
 
@@ -49,7 +49,7 @@ Here's an empty player.html file:
 </html>
 ```
 
-> See the [Materia Engine Core API](engine-core.html) for details on all of it's magical super powers.
+> See the [Materia Engine Core API](engine-core.html) for details on all of its magical super powers.
 
 ### A Typical Sequence of Events in The Player
 
@@ -63,9 +63,11 @@ Here's an empty player.html file:
 
 ## The Creator
 
-A creator, like [the player](#the-player), is just an HTML page with your assets and code.  Just like the player, there is a helper script to talk to the Materia API: `materia.creatorcore.js`.
+A creator, like [the player](#the-player), is just an HTML page with your assets and code. Just like the player, there is a helper script to talk to the Materia API: `materia.creatorcore.js`.
 
 A creator is totally optional, but if you want to allow users to create customized content for widgets, you'll need one.
+
+> If your widget doesn't need a creator, you don't need to include any creator assets at all: in the `install.yaml`, ensure `creator: default` is used instead.
 
 Here's an empty creator.html file, it's got a few special properties you'll want to define:
 
@@ -115,7 +117,6 @@ Here's an empty creator.html file, it's got a few special properties you'll want
 4. The user clicks Save
 5. Creator Core calls `onSaveClicked` where you build a qset and call `Materia.CreatorCore.save`
 
-
 ---
 
 ## The Score Screen
@@ -150,26 +151,24 @@ However, for more advanced uses a custom score screen can be provided.  It's *ju
 
 ---
 
-## Typical Source Code File Structure
+## Widget Source Code File Structure
 
-<pre>
-├── /src
-│   ├── /<a href="wigt-package.html#display-icons">_icons</a>               # REQUIRED - unique icon in multiple sizes
-│   ├── /<a href="wigt-package.html#screen-shots">_screen-shots</a>        # REQUIRED - screenshots for widget detail page
-│   ├── /_score
-│   │   └── /<a href="score-module.html">score_module.php</a> # server side score checking
-│   ├── /assets               # js, css, assets for demo.json
-│   ├── <a href="widget-developer-guide.html#the-player">player.html</a>           # REQUIRED
-│   ├── <a href="widget-developer-guide.html#the-creator">creator.html</a>
-│   ├── <a href="widget-developer-guide.html#the-score-screen">scoreScreen.html</a>
-│   ├── <a href="question-structures.html#demojson">demo.json</a>             # REQUIRED - A qset used for the demo instance
-│   └── <a href="install-yaml.html">install.yaml</a>          # REQUIRED - Installation settings
-├── README.md
-├── package.json
-└── webpack.config.js
-</pre>
-
-
+```shell
+src/
+  _icons/                 # REQUIRED - unique icon in multiple sizes
+  _screen-shots/          # REQUIRED - screenshots for widget detail page
+  _score/
+    score_module.py       # server side score checking
+  assets/                 # js, css, assets for demo.json
+  player.html             # REQUIRED
+  creator.html
+  scorescreen.html
+  demo.json               # REQUIRED - A qset used for the demo instance
+  install.yaml            # REQUIRED - Installation settings
+README.md
+package.json              # REQUIRED - NPM/Yarn configuration
+webpack.config.js         # We recommend Webpack for compiling widgets
+```
 
 ## Compiling with Webpack
 
