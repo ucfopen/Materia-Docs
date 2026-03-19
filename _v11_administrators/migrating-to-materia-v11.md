@@ -67,7 +67,7 @@ $ docker exec -it <python container id> sh
 
 ## Begin the Database Migration
 
-First, some context: our team engineered the migrations in Django treat the PHP Materia database schema as the "starting point" of the database, then apply Django-specific changes on top. Migration `0001`'s primary purpose is to create this initial starting condition: it generates functional equivalents to the state of the database when used with FuelPHP, though not identical ones. Django is more strict about data integrity and expects certain schema conventions to be followed that are not present in the FuelPHP database.
+First, some context: our team engineered the migrations in Django to treat the PHP Materia database schema as the "starting point" of the database, then apply Django-specific changes on top. Migration `0001`'s primary purpose is to create this initial starting condition: it generates functional equivalents to the state of the database when used with FuelPHP, though not identical ones. Django is more strict about data integrity and expects certain schema conventions to be followed that are not present in the FuelPHP database.
 
 In cases where an instance of Materia is transitioning from PHP to python, the changes in migration `0001` are not required since we can assume the database is at that point already. Therefore, we have to tell Django that the migration has been performed, then proceed to migration `0002` through the remainder.
 

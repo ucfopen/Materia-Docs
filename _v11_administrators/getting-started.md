@@ -119,9 +119,18 @@ docker compose up -d
 
 ### Things To Do After Initialization
 
-1. Configure service user accounts. We recommend creating a dedicated super user to facilitate widget administration. Visit the [User Accounts](user-accounts.html) page to learn more.
-2. Install Materia in your LMS.
-3. Install widgets.
+1. Populate the database with default values (see the note below.)
+2. Configure service user accounts. We recommend creating a dedicated super user to facilitate widget administration. Visit the [User Accounts](user-accounts.html) page to learn more.
+3. Install Materia in your LMS.
+4. Install widgets.
+
+> The database needs to be prepopulated with default values in the `DateRange` and `auth_user_groups` tables if you're starting Materia for the first time. We have a `make` command to quickly perform this first-time setup: `make post-install`.
+
+If Make is not available, the database population commands can be run manually via a Django management command:
+
+```shell
+$ python manage.py post_install populate_db
+```
 
 ### Widget Installation & Management
 

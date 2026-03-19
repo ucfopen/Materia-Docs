@@ -15,6 +15,14 @@ Widgets are maintained serpately from Materia itself, each having its own, indep
 
 > Note: The Widget Gallery will include widgets made by the core Materia development team **and** 3rd parties.
 
+## Installing Default Widgets
+
+For first-time setup, particularly in development environments, you can use a python management command to quickly install a set of default widgets:
+
+```shell
+$ python manage.py post-install install_from_config
+```
+
 ## Installing Widgets from the Admin Panel
 
 Materia's admin panel allows administrators to upload new widgets.  Log in as an administrator, and navigate to the Admin Widget Page (`https://your-materia-institution.edu/admin/widget/`). Uploading a widget is as easy as clicking upload and selecting the .wigt file from your computer.

@@ -29,6 +29,13 @@ in their course.
 
 Lastly, we took the opportunity to polish our course navigation landing page, and added contextually relevant content depending on the user's role (staff or student) in the course.
 
+<<<<<<< Updated upstream
+=======
+## Improved Gradebook Sync
+
+Our LTI 1.3 integration gave us access to a suite of new options to improve the gradebook passback experience for students. We squashed bugs and addressed various edge cases to make the sync more robust, and we made the gradebook sync status visible to students as soon as they visit the score screen for a given play session. The context of plays (LTI or standalone) is also visible to instructors in the Student Activity section of My Widgets as well as students on the profile page.
+
+>>>>>>> Stashed changes
 ## Improved Widget Management
 
 A long-desired feature for us was a better way of managing Materia's currently installed suite of widget engines, and making the update process more straightforward. With Materia v11, open-source widgets can now include metadata that enables Materia to track the currently installed version, and easily check for new updates.
@@ -36,3 +43,10 @@ A long-desired feature for us was a better way of managing Materia's currently i
 ## Better Theming
 
 We've built some improved tooling for customizing your instance of Materia with information relevant to your own institution. It's now easier to define custom strings and override specific components in React to make Materia yours.
+<<<<<<< Updated upstream
+=======
+
+## Other Enhancements
+
+As part of a platform-wide effort to continue improving widget accessibility and usability across various devices, we improved responsiveness of the widget player and score screen. Additionally, we reworked the dark mode toggle to include a third option to automatically switch based on the user's system preference.
+>>>>>>> Stashed changes

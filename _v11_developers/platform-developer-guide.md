@@ -10,7 +10,11 @@ A local running copy of the server is useful to develop, test, or demo Materia. 
 
 ## Docker Development Environment
 
+<<<<<<< Updated upstream
 Our dev team uses Docker for all server development. See [Server Setup - Docker for Development](../admin/server-docker-development.html) to get started.
+=======
+Our dev team uses Docker for all server development. See [Server Setup - Docker for Development](../admin/setup-configure-docker.html) to get started.
+>>>>>>> Stashed changes
 
 ## Application Server Architecture
 
@@ -135,6 +139,10 @@ When API endpoints map to a model, API classes inherit DRF's `ModelViewSet` clas
 
 Materia uses Django's built-in testing framework and are mapped to the API. GitHub workflows automatically run the test suite on push and pull request.
 
+<<<<<<< Updated upstream
 ```
+=======
+```shell
+>>>>>>> Stashed changes
 $ python manage.py test
 ```
