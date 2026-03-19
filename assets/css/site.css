@@ -5,6 +5,11 @@ html, body {
 	font-size:16px;
 }
 
+a
+{
+	cursor: pointer;
+}
+
 h1, h2, h3, h4
 {
 	color: #333333;
@@ -178,7 +183,6 @@ header .navbar .nav {
 {
 	background: white;
 	width: 100%;
-	height: 313px;
 	border-top: 1px solid #A9A9A9;
 	border-bottom: 1px solid #A9A9A9;
 	box-shadow: 0 3px 0 #D3D3D3;
@@ -187,10 +191,10 @@ header .navbar .nav {
 
 .learning-experience-content
 {
-	height: 313px;
 	margin: 0 auto;
-	background: url('../img/desk.jpg') no-repeat right center;
-	padding-right: 138px;
+	margin-right: 138px;
+	background: url('../img/kogneato_building_banner_img.svg') no-repeat right center;
+	background-size: 40%;
 }
 
 .learning-experience .pompous-text
@@ -211,7 +215,7 @@ header .navbar .nav {
 {
 	font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", "Verdana", sans;
 	color: black;
-	width: 55%;
+	width: 60%;
 	line-height: 1.5em;
 }
 
@@ -253,7 +257,6 @@ header .navbar .nav {
 	padding-left: 1em;
 	padding-right: 1em;
 }
-
 .features .thumbnail
 {
 	min-height: 360px;
@@ -411,6 +414,10 @@ i
 	{
 		min-height: 340px;
 	}
+	.learning-experience
+	{
+		background-size: 25%;
+	}
 
 	.learning-experience .pompous-text h1
 	{
@@ -437,7 +444,7 @@ i
 	.learning-experience .pompous-text h1
 	{
 		font-weight: bold;
-		margin-top; 0;
+		margin-top: 0;
 		font-size: 22px;
 		margin-bottom: .5em;
 	}
@@ -543,7 +550,7 @@ i
 	}
 
 	footer {
-		margin: -20px -20px 0 -20px;
+		margin: 20px 0 0 0;
 	}
 
 	footer .trademark {

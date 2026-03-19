@@ -25,21 +25,36 @@ url: "https://ucfopen.github.io" # the base hostname & protocol for your site, e
 google_analytics_id : 'UA-16482230-3'
 
 collections:
-  administrators:
+  # Version 10 collections
+  v10_administrators:
     output: true
-    permalink: /admin/:name.html
-  authors:
+    permalink: /v10/admin/:name.html
+  v10_authors:
     output: true
-    permalink: /create/:name.html
-  players:
+    permalink: /v10/create/:name.html
+  v10_players:
     output: true
-    permalink: /play/:name.html
-  developers:
+    permalink: /v10/play/:name.html
+  v10_developers:
     output: true
-    permalink: /develop/:name.html
-  support:
+    permalink: /v10/develop/:name.html
+  v10_support:
     output: true
-    permalink: /support/:name.html
+    permalink: /v10/support/:name.html
+  # Version 11 collections
+  v11_administrators:
+    output: true
+    permalink: /v11/admin/:name.html
+  v11_users:
+    output: true
+    permalink: /v11/users/:name.html
+  v11_developers:
+    output: true
+    permalink: /v11/develop/:name.html
+  v11_support:
+    output: true
+    permalink: /v11/support/:name.html
+  # Data-only collection
   users:
     output: false
 
