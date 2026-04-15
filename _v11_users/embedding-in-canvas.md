@@ -10,7 +10,7 @@ category: second
 Embedding a Materia widget offers two advantages to using them standalone:
 
 1. User authentication is handled automatically, behind the scenes. Students will never see a login prompt to interact with your Materia content.
-2. If embedded in a context that is associated with a gradebook, such as an assignment, Materia will send the score to the gradebook for that activity.
+2. If embedded in a context that is associated with a gradebook, such as an assignment, Materia will send the score to the gradebook for that activity. Visit the [Widget Gradebook Submissions](gradebook-submissions.html) page for a deeper dive into how Materia syncs scores with the gradebook.
 
 Use the External Tool selection in Canvas to select and embed a widget. Here are two examples:
 

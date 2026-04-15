@@ -41,8 +41,8 @@ Materia reports the status of a play session's gradebook sync on the score scree
 
 In addition to the successful sync message, the status message may indicate a number of error or failure states:
 
-* **No Grade Submission Status**: Historical plays (those recorded in earlier versions of Materia) do not have gradebook sync records available.
-* **No Grade Submission**: Indicated if the widget was embedded in an activity was not graded or did not support gradebook sync, such as module items.
+* **No Grade Submission Status**: Historical plays (those recorded in earlier versions of Materia) do not have gradebook sync records available. This is not an indicator of a gradebook sync failure; rather, the status of the sync is not known.
+* **No Grade Submission**: Indicated if the widget was embedded in an activity that was not graded or did not support gradebook sync, such as module items.
 * **Attempt Limit Reached**: Indicates that the LMS rejected the submission because the attempt limit for the associated activity has already been reached.
 * **Submission Error**: Indicates there was an error during the submission process. Students are given an opportunity to retry the submission within a certain period of time after the original submission.
 
