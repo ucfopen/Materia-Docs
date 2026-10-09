@@ -23,7 +23,7 @@ When selecting a widget instance, the Community Library section will populate if
 
 - **Status**: Indicates the share status of the widget (Shared or Unpublished)
 - **Reports**: The report count the entry has accumulated, and the types of each report.
-- **Copies**: The number of derivative copies created from the library entry.
+- **Copies**: The number of derivative copies created from the Library entry.
 - **Likes**: The number of times instructors have "liked" (Recommended) the widget.
 - **Featured**: Determines whether the widget will be included in the Featured section at the top of the Community Library.
 - **Ban**: Bans (or unbans) the widget from the Library. Note that banned widgets are automatically unlisted.

@@ -11,7 +11,17 @@ The Community Library makes it easy to browse widgets customized by other member
 
 ## Browsing, Searching, and Copying Widgets
 
-The landing page of the Community Library features a selection of widgets across a range of disciplines: by default, these include **Arts & Humanities**, **Business**, **Education**, **Engineering & Computer Science**, **Health, Medicine, and Nursing**, **Hospitality & Tourism**, **Public Affairs & Law**, **Sciences**, and **Social Sciences**.
+The landing page of the Community Library features a selection of widgets across a range of disciplines: by default, these include:
+
+* **Arts & Humanities**
+* **Business**
+* **Education**
+* **Engineering & Computer Science**
+* **Health, Medicine, and Nursing**
+* **Hospitality & Tourism**
+* **Public Affairs & Law**
+* **Sciences**
+* **Social Sciences**
 
 Select and combine filters on the left to refine your search. You can filter by level of study: **Introductory**, **Intermediate**, and **Advanced**, as well as widget engine, such as Crossword, Adventure, Labeling, and so on.
 

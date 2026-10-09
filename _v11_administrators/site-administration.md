@@ -29,7 +29,7 @@ As of this time the catalog banner is not yet implemented. A future version of M
 
 ## Message Management
 
-Message management lets you administrate strings and messages used in several places across your instance. These include:
+Message management lets you administrate messages used in several places across your instance. These include:
 
 #### System Notifications
 

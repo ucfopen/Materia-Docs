@@ -13,7 +13,7 @@ _Materia_ is a platform and ecosystem for interactive study tools and games call
 
 The widget catalog includes a wide variety of widget types that range from highly generalized to specialized for a particular concept. The majority of Materia widgets are designed to be customized with content for your course, and provide a straightforward, simple authoring interface to do so.
 
-The vast majority of widgets in our catalog can be authored in a manner of minutes. Each widget that's customizable includes a bespoke "creator" interface that you can use to author the widget to your needs. Give it a title and use the creator to make your perfect widget. When it's ready, select **Save Draft** or **Publish** to save it.
+The vast majority of widgets in our catalog can be authored in a matter of minutes. Each widget that's customizable includes a bespoke "creator" interface that you can use to author the widget to your needs. Give it a title and use the creator to make your perfect widget. When it's ready, select **Save Draft** or **Publish** to save it.
 
 Most widgets in the Materia widget catalog contain Player and Creator guides to provide extra guidance on how to use the player and creator interfaces. When available, these are linked in the Catalog page for each widget, and the Creator's Guide will be available from the action bar of the creator interface.
 
