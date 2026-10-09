@@ -67,13 +67,11 @@ Ensure all critical persistent data is properly backed up before performing any 
 
 Consult the release notes on GitHub associated with the version you intend to update to for specific considerations associated with the release. These may include things like database migrations or server configuration changes.
 
-### Stop and Remove Running Containers
-
-The currently running containers must be stopped and removed. If your compose process is running in a detached state, use `docker compose stop <container name or id>` to halt each container associated with Materia, followed by `docker compose rm <container name or id>` to destroy them.
-
 ### Update Your Compose File
 
-Next, update your compose file with the tags associated with the new release. At minimum, `python` and `nginx` should be updated:
+Update your compose file with the tags associated with the new release. This can be done prior to interacting with the currently running containers, which will continue to run the previous version until they're replaced.
+
+At minimum, `python` and `nginx` should be updated:
 
 ```ini
 services:
@@ -87,6 +85,20 @@ services:
 
     ...additional python service definitions...
 ```
+
+### Stop and Remove Running Containers and Volumes
+
+Under normal circumstances, you can stop and remove the containers and volumes comprising Materia with one command:
+
+```shell
+docker compose down -v
+```
+
+> Why do we need to destroy volumes too? Materia defines a `static_files` virtual volume to make compiled static assets available to both the python and nginx container. The old volume will contain cached versions of these assets, so you'll need to replace it alongside the containers to ensure the front-end and back-end are consistent with the new version.
+
+However, keep in mind that this will destroy all top-level virtual volumes. If you have additional volumes defined beyond `static_files`, you may want to remove the containers and volumes individually. You can verify these top-level volumes via `docker compose config --volumes`.
+
+To stop and remove containers individually, use `docker compose stop <container name or id>` to halt each container associated with Materia, followed by `docker compose rm <container name or id>` to destroy them. Similarly, `docker volume rm <volume name>` will remove a named volume.
 
 ### Pull Images and Restart Containers
 
