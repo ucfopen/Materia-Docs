@@ -38,6 +38,8 @@ The Collaboration dialog lets you share ownership or access to your widget with 
 
 You can additionally provide an expiration date for users' permissions. Their access will be invalid following the expiration date that you set. For example, if your TA is graduating the following semester, you can set the expiration date for the end of the semester so you don't have to worry about revoking their access later.
 
+We go into a little more detail about ownership, inheritance, and access in the [Widget Ownership](embedding-in-canvas.html) page.
+
 ### Viewing Scores and Data
 
 Materia will always store student interaction data for you to review at any time. This is visible in the **Student Activity** section of a selected widget in My Widgets. Scores are organized by the semester they were collected, and you can review prior semesters by selecting "Show Older Scores" at the bottom.
